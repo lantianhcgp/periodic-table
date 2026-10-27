@@ -1,0 +1,78 @@
+<div class="page">
+  <text class="dttl">{{ headTtl }}</text>
+
+  <!-- hero: tile + names -->
+  <div class="hero">
+    <div class="tile" style="background-color: {{ catColor }};">
+      <text class="tile-sym">{{ sym }}</text>
+      <text class="tile-num">{{ idx }}</text>
+    </div>
+    <div class="names">
+      <text class="cn">{{ cn }}</text>
+      <text class="en">{{ en }}</text>
+      <div class="tags">
+        <text class="cat" style="color: {{ catColor }};">{{ catLabel }}</text>
+        <text class="coretag" if="{{ core }}">{{ star }} {{ coreWord }}</text>
+      </div>
+    </div>
+  </div>
+
+  <!-- electron shells + config -->
+  <div class="mid">
+    <div class="shellbox">
+      <text class="m-k">{{ kShell }}</text>
+      <div class="chips">
+        <text class="chip" for="{{ s in shells }}">{{ s.n }}</text>
+      </div>
+    </div>
+    <div class="confbox">
+      <text class="m-k">{{ kConf }}</text>
+      <text class="conf">{{ conf }}</text>
+      <text class="oxline" if="{{ hasOx }}">{{ kOx }}  {{ oxText }}</text>
+    </div>
+  </div>
+
+  <!-- stats strip -->
+  <div class="stats">
+    <div class="stat">
+      <text class="s-k">{{ kAtomic }}</text>
+      <text class="s-v">{{ idx }}</text>
+    </div>
+    <div class="stat">
+      <text class="s-k">{{ kMass }}</text>
+      <text class="s-v">{{ w }}</text>
+    </div>
+    <div class="stat">
+      <text class="s-k">{{ kPeriod }}</text>
+      <text class="s-v">{{ period }} {{ group }}</text>
+    </div>
+  </div>
+
+  <!-- gaokao notes -->
+  <div class="notes">
+    <text class="n-k">{{ notesK }}</text>
+    <text class="n-line" for="{{ nt in notes }}">{{ nt }}</text>
+  </div>
+
+  <!-- back -->
+  <div class="backbtn" @click="onBack()">
+    <text class="back-txt">{{ bBack }} · {{ headTtl }}</text>
+  </div>
+
+  <!-- foot: prev | progress | next -->
+  <div class="foot">
+    <div class="navb" @click="onPrev()" if="{{ canPrev }}">
+      <text class="navb-l">{{ bPrev }}</text>
+      <text class="navb-s">{{ prevSym }}</text>
+    </div>
+    <div class="prog">
+      <text class="prog-idx">{{ idx }}/{{ total }}</text>
+      <div class="prog-bar"><div class="prog-fill" style="width: {{ barPct }}%;"></div></div>
+      <text class="prog-lab">{{ progLab }}</text>
+    </div>
+    <div class="navb navb-next" @click="onNext()" if="{{ canNext }}">
+      <text class="navb-l">{{ bNext }}</text>
+      <text class="navb-s">{{ nextSym }}</text>
+    </div>
+  </div>
+</div>

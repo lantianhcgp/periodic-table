@@ -1,25 +1,25 @@
 <div class="page">
-  <div class="header">
-    <text class="title">{{ $t('strings.title') }}</text>
-    <text class="today">{{ todayText }}</text>
+  <div class="head">
+    <text class="head-t">{{ title }}</text>
+    <text class="head-b">{{ badge }}</text>
   </div>
-  <text class="time">{{ timeText }}</text>
-  <div class="track">
-    <div class="fill" style="width: {{ barWidth }};"></div>
-  </div>
-  <text class="status" style="color: {{ statusColor }};">{{ statusText }}</text>
-  <div class="presets">
-    <div class="preset" for="{{ (idx, item) in presets }}" @click="pick(item.min)" style="background-color: {{ item.bg }};">
-      <text class="preset-text" style="color: {{ item.fg }};">{{ item.label }}</text>
+  <div class="grid">
+    <div class="row" for="{{ (ri, row) in rows }}" style="margin-bottom: {{ row.gap }};">
+      <div class="cell" for="{{ c in row.cells }}"
+           style="background-color: {{ c.bg }}; border: {{ c.border }};"
+           @click="onOpenElement(c.z)">
+        <text class="cnum" if="{{ c.z > 0 }}">{{ c.z }}</text>
+        <div class="cdot" if="{{ c.dot }}"></div>
+        <text class="csym" if="{{ c.z > 0 }}" style="color: {{ c.color }};">{{ c.sym }}</text>
+        <text class="cph" if="{{ c.z === 0 && c.sym !== '' }}" style="color: {{ c.color }};">{{ c.sym }}</text>
+      </div>
     </div>
   </div>
-  <div class="controls">
-    <div class="btn-main" @click="toggle">
-      <text class="btn-text">{{ toggleText }}</text>
-    </div>
-    <div class="btn-ghost" @click="reset">
-      <text class="btn-text">{{ $t('strings.reset') }}</text>
+  <text class="hint">{{ hint }}</text>
+  <div class="legend">
+    <div class="lg" for="{{ (li, l) in legend }}">
+      <div class="lgdot" style="background-color: {{ l[1] }};"></div>
+      <text class="lgtxt">{{ l[0] }}</text>
     </div>
   </div>
-  <text class="hint">{{ $t('strings.hint') }}</text>
 </div>

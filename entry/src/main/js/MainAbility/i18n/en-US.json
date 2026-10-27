@@ -1,10 +1,8 @@
 {
   "strings": {
-    "title": "Focus",
-    "reset": "Reset",
-    "hint": "Vibrates when done",
-    "p15": "15m",
-    "p25": "25m",
-    "p45": "45m"
+    "title": "Periodic",
+    "badge": "Gaokao · 35 core",
+    "hint": "Tap an element for details",
+    "core": "Core"
   }
 }
