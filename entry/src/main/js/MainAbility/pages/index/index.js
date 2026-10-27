@@ -6,13 +6,17 @@ var LEGEND = [["\u78b1\u91d1\u5c5e", "#ff6b6b"], ["\u78b1\u571f", "#ffa94d"], ["
 var L = {"title": "\u5143\u7d20\u5468\u671f\u8868", "badge": "\u9ad8\u8003\u7248 \u00b7 35 \u6838\u5fc3", "hint": "\u70b9\u6309\u5143\u7d20\u67e5\u770b\u8be6\u60c5 \u00b7 \u4eae\u8272 = \u9ad8\u8003\u6838\u5fc3"};
 var EMPTY = { z:0, sym:'', bg:'#0d0d16', color:'transparent' };
 function buildRows(){
-  var rows=[];
-  for(var i=0;i<9;i++){ var a=[]; for(var j=0;j<18;j++){ a.push(EMPTY); } rows.push(a); }
+  var R=[];
+  for(var i=0;i<9;i++){ var a=[]; for(var j=0;j<18;j++){ a.push(EMPTY); } R.push(a); }
   for(var k=0;k<ELEM.length;k++){ var e=ELEM[k], p=PAL[e[2]];
-    rows[e[4]][e[5]-1]={ z:e[0], sym:e[1], bg:p[e[3]?2:0], color:p[e[3]?3:1] }; }
-  rows[5][2]={ z:0, sym:'57~71',  bg:PHBG[0], color:PAL[8][3] };
-  rows[6][2]={ z:0, sym:'89~103', bg:PHBG[1], color:PAL[9][3] };
-  return rows;
+    R[e[4]][e[5]-1]={ z:e[0], sym:e[1], bg:p[e[3]?2:0], color:p[e[3]?3:1] }; }
+  R[5][2]={ z:0, sym:'57~71',  bg:PHBG[0], color:PAL[8][3] };
+  R[6][2]={ z:0, sym:'89~103', bg:PHBG[1], color:PAL[9][3] };
+  // HML: for="(ri,row) in rows" + "c in row.cells" + "row.gap" → 每行返回 {cells,gap}
+  // 物理行1-7→0-6(行距2px)，镧系行7 / 锕系行8；主表与镧系之间留 8px 间隔
+  var out=[];
+  for(var i=0;i<9;i++){ out.push({ cells:R[i], gap:(i===6?'8px':(i===8?'0px':'2px')) }); }
+  return out;
 }
 export default {
   data: {
