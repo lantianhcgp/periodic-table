@@ -12,116 +12,102 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-top: 6px;
 }
 
 .head-t {
-  font-size: 16px;
-  color: #eef2fa;
-  letter-spacing: 1px;
+  font-size: 18px;
+  color: #ffffff;
+  font-weight: bold;
 }
 
 .head-b {
-  font-size: 8px;
-  color: #9fb4d8;
-  border-radius: 8px;
-  padding-left: 6px;
-  padding-right: 6px;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  background-color: #16233a;
+  font-size: 11px;
+  color: #4dd0e1;
 }
 
-/* 周期表主体：column 容器必须显式定高（Lite 塌缩坑，elcton 真机验证套路）
-   7 主行×22 + frow(6mt+22) + frow2(4mt+22) = 210px */
-.grid {
+/* 表冠滚动的纵向 list */
+.table-list {
   width: 92%;
-  height: 210px;
   flex-direction: column;
-  align-items: center;
-  margin-top: 4px;
 }
 
 .row {
-  width: 92%;
-  height: 22px;
   flex-direction: row;
-  align-items: center;
   justify-content: center;
 }
 
 .frow {
-  width: 92%;
-  height: 22px;
   flex-direction: row;
-  align-items: center;
   justify-content: center;
-  margin-top: 6px;
+  margin-top: 8px;
 }
 
 .frow2 {
-  width: 92%;
-  height: 22px;
   flex-direction: row;
-  align-items: center;
   justify-content: center;
   margin-top: 4px;
 }
 
-/* 单元格：固定 19×20；间距用拆分 margin（Lite 不支持简写 data-binding，纯静态简写也拆开保险） */
 .cell {
-  width: 19px;
-  height: 20px;
-  margin-left: 0px;
-  margin-right: 1px;
-  border-radius: 3px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
 .sym {
-  font-size: 9px;
+  text-align: center;
 }
 
 .ph {
-  font-size: 6px;
+  text-align: center;
+  color: #4a4a5a;
 }
 
-.hint {
-  width: 92%;
-  height: 12px;
-  font-size: 8px;
-  color: #7f8aa0;
-  letter-spacing: 1px;
-  margin-top: 6px;
-}
-
+/* 图例行 */
 .legend {
   width: 92%;
-  height: 14px;
+  height: 24px;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-top: 6px;
 }
 
-.lg {
-  height: 14px;
+.legend-t {
+  font-size: 10px;
+  color: #8a8a9a;
+}
+
+/* 缩放工具条：◀ − ⊕ ＋ ▶ */
+.zoombar {
+  width: 92%;
+  height: 44px;
   flex-direction: row;
   align-items: center;
-  margin-left: 3px;
-  margin-right: 3px;
+  justify-content: space-between;
+  margin-top: 4px;
 }
 
-.lgdot {
-  width: 7px;
-  height: 7px;
-  border-radius: 2px;
-  margin-right: 3px;
+.zb {
+  width: 56px;
+  height: 32px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a1a28;
+  border-radius: 8px;
 }
 
-.lgtxt {
-  font-size: 7px;
-  color: #7f8aa0;
+.zb-t {
+  font-size: 18px;
+  color: #4dd0e1;
+}
+
+.zbl {
+  background-color: #10222b;
+}
+
+.zb-l {
+  font-size: 14px;
+  color: #ffffff;
+  font-weight: bold;
 }
