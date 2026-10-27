@@ -17,13 +17,11 @@
     </div>
   </div>
 
-  <!-- electron shells + config -->
+  <!-- electron shells (single line) + config -->
   <div class="mid">
     <div class="shellbox">
       <text class="m-k">{{ kShell }}</text>
-      <div class="chips">
-        <text class="chip" for="{{ s in shells }}">{{ s.n }}</text>
-      </div>
+      <text class="shelltext">{{ shellText }}</text>
     </div>
     <div class="confbox">
       <text class="m-k">{{ kConf }}</text>
@@ -42,7 +40,7 @@
       <text class="s-k">{{ kMass }}</text>
       <text class="s-v">{{ w }}</text>
     </div>
-    <div class="stat">
+    <div class="stat stat-l">
       <text class="s-k">{{ kPeriod }}</text>
       <text class="s-v">{{ period }} {{ group }}</text>
     </div>

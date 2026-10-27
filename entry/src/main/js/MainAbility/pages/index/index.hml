@@ -6,10 +6,12 @@
   <div class="grid">
     <div class="row" for="{{ (ri, row) in rows }}" style="margin-bottom: {{ row.gap }};">
       <div class="cell" for="{{ c in row.cells }}"
-           style="background-color: {{ c.bg }}; border: {{ c.border }};"
+           style="background-color: {{ c.bg }};"
            @click="onOpenElement(c.z)">
-        <text class="cnum" if="{{ c.z > 0 }}">{{ c.z }}</text>
-        <div class="cdot" if="{{ c.dot }}"></div>
+        <div class="ctop">
+          <text class="cnum" if="{{ c.z > 0 }}">{{ c.z }}</text>
+          <div class="cdot" if="{{ c.dot }}"></div>
+        </div>
         <text class="csym" if="{{ c.z > 0 }}" style="color: {{ c.color }};">{{ c.sym }}</text>
         <text class="cph" if="{{ c.z === 0 && c.sym !== '' }}" style="color: {{ c.color }};">{{ c.sym }}</text>
       </div>
