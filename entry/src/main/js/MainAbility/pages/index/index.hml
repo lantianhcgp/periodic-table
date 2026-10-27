@@ -8,12 +8,8 @@
       <div class="cell" for="{{ c in row.cells }}"
            style="background-color: {{ c.bg }};"
            @click="onOpenElement(c.z)">
-        <div class="ctop">
-          <text class="cnum" if="{{ c.z > 0 }}">{{ c.z }}</text>
-          <div class="cdot" if="{{ c.dot }}"></div>
-        </div>
-        <text class="csym" if="{{ c.z > 0 }}" style="color: {{ c.color }};">{{ c.sym }}</text>
-        <text class="cph" if="{{ c.z === 0 && c.sym !== '' }}" style="color: {{ c.color }};">{{ c.sym }}</text>
+        <text class="sym" if="{{ c.z > 0 }}" style="color: {{ c.color }};">{{ c.sym }}</text>
+        <text class="ph" if="{{ c.z === 0 && c.sym !== '' }}" style="color: {{ c.color }};">{{ c.sym }}</text>
       </div>
     </div>
   </div>
