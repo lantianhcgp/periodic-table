@@ -8,59 +8,73 @@
 
 .head {
   width: 92%;
-  height: 36px;
+  height: 34px;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-top: 8px;
+  margin-top: 6px;
 }
 
 .head-t {
-  font-size: 17px;
+  font-size: 16px;
   color: #eef2fa;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 .head-b {
   font-size: 8px;
   color: #9fb4d8;
   border-radius: 8px;
-  padding-left: 7px;
-  padding-right: 7px;
+  padding-left: 6px;
+  padding-right: 6px;
   padding-top: 3px;
   padding-bottom: 3px;
-  background-color: rgba(56, 189, 248, 0.12);
+  background-color: #16233a;
 }
 
+/* 周期表主体：column 容器必须显式定高（Lite 塌缩坑，elcton 真机验证套路）
+   7 主行×22 + frow(6mt+22) + frow2(4mt+22) = 210px */
 .grid {
   width: 92%;
+  height: 210px;
   flex-direction: column;
   align-items: center;
   margin-top: 4px;
 }
 
 .row {
+  width: 92%;
+  height: 22px;
   flex-direction: row;
+  align-items: center;
   justify-content: center;
 }
 
 .frow {
+  width: 92%;
+  height: 22px;
   flex-direction: row;
+  align-items: center;
   justify-content: center;
-  margin-top: 8px;
+  margin-top: 6px;
 }
 
 .frow2 {
+  width: 92%;
+  height: 22px;
   flex-direction: row;
+  align-items: center;
   justify-content: center;
   margin-top: 4px;
 }
 
+/* 单元格：固定 19×20；间距用拆分 margin（Lite 不支持简写 data-binding，纯静态简写也拆开保险） */
 .cell {
   width: 19px;
   height: 20px;
-  margin: 1px;
-  border-radius: 4px;
+  margin-left: 0px;
+  margin-right: 1px;
+  border-radius: 3px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -71,34 +85,38 @@
 }
 
 .ph {
-  font-size: 5px;
-  margin-top: 1px;
+  font-size: 6px;
 }
 
 .hint {
+  width: 92%;
+  height: 12px;
   font-size: 8px;
   color: #7f8aa0;
   letter-spacing: 1px;
-  margin-top: 5px;
+  margin-top: 6px;
 }
 
 .legend {
   width: 92%;
+  height: 14px;
   flex-direction: row;
+  align-items: center;
   justify-content: center;
   margin-top: 6px;
 }
 
 .lg {
+  height: 14px;
   flex-direction: row;
   align-items: center;
-  margin-left: 2px;
-  margin-right: 2px;
+  margin-left: 3px;
+  margin-right: 3px;
 }
 
 .lgdot {
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
   border-radius: 2px;
   margin-right: 3px;
 }
