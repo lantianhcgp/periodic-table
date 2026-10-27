@@ -1,0 +1,77 @@
+# 官方 Lite 模拟器出图（sim-preview）
+# 独立文件：revert 本条提交（或删文件）即整体回档，不影响 build.yml。
+# 链路：build 成功 → 取 artifact → 解包 .app → GH macOS runner 跑华为官方 Simulator 出图。
+# sdk/驱动来自私仓 lantianhcgp/deveco-sim-ci（deploy key 只读拉取，官方二进制不入本仓）。
+# 计费：public 仓标准 runner 免费无限。
+# FIT3 主验 fit3（rect 412×484 dpi320，用户装 FIT3）；两页 index+detail 由 driver 的
+# periodic-table render-only 分支覆盖（不上滑/不点底部，防返回手势退 App 与翻页误触）。
+name: sim-preview
+on:
+  workflow_run:
+    workflows: [build]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      profiles:
+        description: '渲染档位（逗号分隔，空=仅 fit3）：fit3 / circle390,circle454,circle466 / rect280x456,rect336x480'
+        required: false
+        default: 'fit3'
+
+jobs:
+  sim:
+    if: github.event_name == 'workflow_dispatch' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'master')
+    runs-on: macos-14
+    timeout-minutes: 30
+    steps:
+      - name: checkout simulator driver (private, deploy key)
+        uses: actions/checkout@v4
+        with:
+          repository: lantianhcgp/deveco-sim-ci
+          ref: master
+          ssh-key: ${{ secrets.SIM_CI_SSH_KEY }}
+          path: _sim
+
+      - name: download build artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            RID=$(gh run list -R "$GITHUB_REPOSITORY" --workflow build --branch "${{ github.ref_name || 'master' }}" --limit 1 --json databaseId --jq '.[0].databaseId')
+          else
+            RID=${{ github.event.workflow_run.id }}
+          fi
+          echo "run id: $RID"
+          gh run download "$RID" -R "$GITHUB_REPOSITORY" --dir built
+
+      - name: unpack .app
+        run: python3 _sim/unpack_app.py built _sim/apps
+
+      - name: env
+        run: |
+          sw_vers
+          SIM=_sim/sdk/openharmony/previewer/liteWearable/bin/Simulator
+          chmod +x "$SIM"
+          file "$SIM"
+
+      - name: capture (official simulator)
+        working-directory: _sim
+        env:
+          CAPTURE_APPS: periodic-table
+          CAPTURE_PROFILES: ${{ inputs.profiles || 'fit3' }}
+        run: |
+          python3 -m pip install --quiet pillow 2>/dev/null || \
+            python3 -m pip install --quiet --user pillow 2>/dev/null || \
+            python3 -m pip install --quiet --break-system-packages pillow
+          python3 capture.py 2>&1 | tee spawn.txt
+
+      - name: upload frames
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sim-preview
+          path: |
+            _sim/frames/**
+            _sim/results.json
+            _sim/spawn.txt
+            _sim/logs/**
+          if-no-files-found: ignore
