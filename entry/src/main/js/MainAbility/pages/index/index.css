@@ -44,6 +44,18 @@
   justify-content: center;
 }
 
+.frow {
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.frow2 {
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 4px;
+}
+
 .cell {
   width: 19px;
   height: 20px;

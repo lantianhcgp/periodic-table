@@ -5,18 +5,16 @@ var PHBG = ["rgba(34,211,238,0.06)", "rgba(129,140,248,0.06)"];
 var LEGEND = [["\u78b1\u91d1\u5c5e", "#ff6b6b"], ["\u78b1\u571f", "#ffa94d"], ["\u8fc7\u6e21", "#5c7cfa"], ["\u540e\u8fc7\u6e21", "#4dabf7"], ["\u7c7b\u91d1\u5c5e", "#69db7c"], ["\u975e\u91d1\u5c5e", "#ffd43b"], ["\u5364\u7d20", "#f783ac"], ["\u7a00\u6709\u6c14\u4f53", "#b197fc"], ["\u9567\u7cfb", "#22d3ee"], ["\u9515\u7cfb", "#818cf8"]];
 var L = {"title": "\u5143\u7d20\u5468\u671f\u8868", "badge": "\u9ad8\u8003\u7248 \u00b7 35 \u6838\u5fc3", "hint": "\u70b9\u6309\u5143\u7d20\u67e5\u770b\u8be6\u60c5 \u00b7 \u4eae\u8272 = \u9ad8\u8003\u6838\u5fc3"};
 var EMPTY = { z:0, sym:'', bg:'#0d0d16', color:'transparent' };
-function buildRows(){
-  var R=[];
-  for(var i=0;i<9;i++){ var a=[]; for(var j=0;j<18;j++){ a.push(EMPTY); } R.push(a); }
-  for(var k=0;k<ELEM.length;k++){ var e=ELEM[k], p=PAL[e[2]];
-    R[e[4]][e[5]-1]={ z:e[0], sym:e[1], bg:p[e[3]?2:0], color:p[e[3]?3:1] }; }
-  R[5][2]={ z:0, sym:'57~71',  bg:PHBG[0], color:PAL[8][3] };
-  R[6][2]={ z:0, sym:'89~103', bg:PHBG[1], color:PAL[9][3] };
-  // HML: for="(ri,row) in rows" + "c in row.cells" + "row.gap" → 每行返回 {cells,gap}
-  // 物理行1-7→0-6(行距2px)，镧系行7 / 锕系行8；主表与镧系之间留 8px 间隔
-  var out=[];
-  for(var i=0;i<9;i++){ out.push({ cells:R[i], gap:(i===6?'8px':(i===8?'0px':'2px')) }); }
-  return out;
+function buildRow(i){
+  var a=[];
+  for(var j=0;j<18;j++){ a.push(EMPTY); }
+  for(var k=0;k<ELEM.length;k++){
+    var e=ELEM[k];
+    if(e[4]===i){ a[e[5]-1]={ z:e[0], sym:e[1], bg:PAL[e[2]][e[3]?2:0], color:PAL[e[2]][e[3]?3:1] }; }
+  }
+  if(i===5){ a[2]={ z:0, sym:'57~71', bg:PHBG[0], color:PAL[8][3] }; }
+  if(i===6){ a[2]={ z:0, sym:'89~103', bg:PHBG[1], color:PAL[9][3] }; }
+  return a;
 }
 export default {
   data: {
@@ -24,7 +22,8 @@ export default {
     badge: L.badge,
     hint: L.hint,
     legend: LEGEND,
-    rows: buildRows()
+    r0: buildRow(0), r1: buildRow(1), r2: buildRow(2), r3: buildRow(3),
+    r4: buildRow(4), r5: buildRow(5), r6: buildRow(6), r7: buildRow(7), r8: buildRow(8)
   },
   onOpenElement: function (z) {
     if (!z) { return; }

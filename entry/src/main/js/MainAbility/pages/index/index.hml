@@ -4,10 +4,56 @@
     <text class="head-b">{{ badge }}</text>
   </div>
   <div class="grid">
-    <div class="row" for="{{ (ri, row) in rows }}" style="margin-bottom: {{ row.gap }};">
-      <div class="cell" for="{{ c in row.cells }}"
-           style="background-color: {{ c.bg }};"
-           @click="onOpenElement(c.z)">
+    <div class="row">
+      <div class="cell" for="{{ c in r0 }}" style="background-color: {{ c.bg }};" @click="onOpenElement(c.z)">
+        <text class="sym" if="{{ c.z > 0 }}" style="color: {{ c.color }};">{{ c.sym }}</text>
+        <text class="ph" if="{{ c.z === 0 && c.sym !== '' }}" style="color: {{ c.color }};">{{ c.sym }}</text>
+      </div>
+    </div>
+    <div class="row">
+      <div class="cell" for="{{ c in r1 }}" style="background-color: {{ c.bg }};" @click="onOpenElement(c.z)">
+        <text class="sym" if="{{ c.z > 0 }}" style="color: {{ c.color }};">{{ c.sym }}</text>
+        <text class="ph" if="{{ c.z === 0 && c.sym !== '' }}" style="color: {{ c.color }};">{{ c.sym }}</text>
+      </div>
+    </div>
+    <div class="row">
+      <div class="cell" for="{{ c in r2 }}" style="background-color: {{ c.bg }};" @click="onOpenElement(c.z)">
+        <text class="sym" if="{{ c.z > 0 }}" style="color: {{ c.color }};">{{ c.sym }}</text>
+        <text class="ph" if="{{ c.z === 0 && c.sym !== '' }}" style="color: {{ c.color }};">{{ c.sym }}</text>
+      </div>
+    </div>
+    <div class="row">
+      <div class="cell" for="{{ c in r3 }}" style="background-color: {{ c.bg }};" @click="onOpenElement(c.z)">
+        <text class="sym" if="{{ c.z > 0 }}" style="color: {{ c.color }};">{{ c.sym }}</text>
+        <text class="ph" if="{{ c.z === 0 && c.sym !== '' }}" style="color: {{ c.color }};">{{ c.sym }}</text>
+      </div>
+    </div>
+    <div class="row">
+      <div class="cell" for="{{ c in r4 }}" style="background-color: {{ c.bg }};" @click="onOpenElement(c.z)">
+        <text class="sym" if="{{ c.z > 0 }}" style="color: {{ c.color }};">{{ c.sym }}</text>
+        <text class="ph" if="{{ c.z === 0 && c.sym !== '' }}" style="color: {{ c.color }};">{{ c.sym }}</text>
+      </div>
+    </div>
+    <div class="row">
+      <div class="cell" for="{{ c in r5 }}" style="background-color: {{ c.bg }};" @click="onOpenElement(c.z)">
+        <text class="sym" if="{{ c.z > 0 }}" style="color: {{ c.color }};">{{ c.sym }}</text>
+        <text class="ph" if="{{ c.z === 0 && c.sym !== '' }}" style="color: {{ c.color }};">{{ c.sym }}</text>
+      </div>
+    </div>
+    <div class="row">
+      <div class="cell" for="{{ c in r6 }}" style="background-color: {{ c.bg }};" @click="onOpenElement(c.z)">
+        <text class="sym" if="{{ c.z > 0 }}" style="color: {{ c.color }};">{{ c.sym }}</text>
+        <text class="ph" if="{{ c.z === 0 && c.sym !== '' }}" style="color: {{ c.color }};">{{ c.sym }}</text>
+      </div>
+    </div>
+    <div class="frow">
+      <div class="cell" for="{{ c in r7 }}" style="background-color: {{ c.bg }};" @click="onOpenElement(c.z)">
+        <text class="sym" if="{{ c.z > 0 }}" style="color: {{ c.color }};">{{ c.sym }}</text>
+        <text class="ph" if="{{ c.z === 0 && c.sym !== '' }}" style="color: {{ c.color }};">{{ c.sym }}</text>
+      </div>
+    </div>
+    <div class="frow2">
+      <div class="cell" for="{{ c in r8 }}" style="background-color: {{ c.bg }};" @click="onOpenElement(c.z)">
         <text class="sym" if="{{ c.z > 0 }}" style="color: {{ c.color }};">{{ c.sym }}</text>
         <text class="ph" if="{{ c.z === 0 && c.sym !== '' }}" style="color: {{ c.color }};">{{ c.sym }}</text>
       </div>
