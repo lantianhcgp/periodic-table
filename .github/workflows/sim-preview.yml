@@ -14,7 +14,8 @@ on:
 jobs:
   sim:
     if: github.event_name == 'workflow_dispatch' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'master')
-    runs-on: macos-14
+    # macos-14 ARM64 于 2026-11-02 退役且高峰排队超时；macos-15 同为标准 M1 ARM64。
+    runs-on: macos-15
     timeout-minutes: 30
     steps:
       - name: checkout exact app source under test
