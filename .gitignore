@@ -1,4 +1,4 @@
-/node_modules
+node_modules/
 /oh_modules
 /local.properties
 /.idea
@@ -10,3 +10,12 @@
 /.clang-tidy
 **/.test
 /.appanalyzer
+/tools/*.otf
+/tools/names-2017.html
+/qa/official
+/qa/*.wsbin
+/qa/*.log
+/qa/*.png
+/qa/tile-metrics.json
+__pycache__/
+*.pyc
