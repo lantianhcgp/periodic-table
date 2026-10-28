@@ -66,6 +66,17 @@ function fill(page) {
   page.idx = el[0];
   page.total = 118;
   page.barPct = Math.round(el[0] / 118 * 100);
+  // 核结构（高考：原子序数=质子数=核外电子数；中子数=质量数-质子数）
+  var massStr = String(el[4]).replace(/[()\[\]]/g, "");
+  var massNum = Math.round(parseFloat(massStr));
+  if (isNaN(massNum)) { massNum = 0; }
+  page.massNum = massNum;
+  page.neutrons = massNum - el[0];
+  // 最外层电子数 = 电子层末位（高考：最高正价=最外层电子数，最低负价=最外层-8）
+  var outerV = "";
+  var shAll = (el[11] || "").split(",");
+  for (var t = shAll.length - 1; t >= 0; t--) { if (shAll[t]) { outerV = shAll[t]; break; } }
+  page.outer = outerV;
   // prev / next
   var prev = byZ(el[0] - 1);
   var next = byZ(el[0] + 1);
@@ -84,6 +95,8 @@ export default {
     conf: '', oxText: '', hasOx: 0,
     core: 0, notes: [], notesK: '',
     period: '', group: '', shells: [], shellText: '',
+    massNum: 0, neutrons: 0, outer: '',
+    kProton: '\u8d28\u5b50\u6570', kNeutron: '\u4e2d\u5b50\u6570', kOuter: '\u6700\u5916\u5c42\u7535\u5b50',
     idx: 0, total: 118, barPct: 0,
     prevSym: '', nextSym: '', canPrev: 0, canNext: 0,
     headTtl: '\u5143 \u7d20 \u8be6 \u60c5',

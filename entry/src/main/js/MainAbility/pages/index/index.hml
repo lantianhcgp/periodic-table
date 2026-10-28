@@ -1,66 +1,66 @@
 <div class="page">
-  <div class="head">
-    <text class="head-t">{{ title }}</text>
-    <text class="head-b">{{ badge }} · {{ zoomLabel }}</text>
+  <div class="head" style="width: {{ pageW }}px;">
+    <text class="head-t" style="width: 150px;">{{ title }}</text>
+    <text class="head-b" style="width: 180px;">{{ badge }} · {{ zoomLabel }}</text>
   </div>
 
-  <list class="table-list" ref="tableList" style="height: {{ listH }}px;">
-    <list-item class="row" style="height: {{ ch }}px;">
-      <div class="cell" for="{{ c in r0 }}" style="width: {{ cw }}px; height: {{ ch }}px; background-color: {{ c.bg }};" @click="onOpenElement(c.z)">
-        <text style="color: {{ c.color }}; font-size: {{ c.fs }}px;">{{ c.sym }}</text>
+  <!-- 表冠纵向滚 + onswipe 横向滑动手势（skill：div 的 swipe 真机不触发，list 的 onswipe 可用） -->
+  <list class="table-list" ref="tableList" style="width: {{ listW }}px; height: {{ listH }}px;" onswipe="onSwipe">
+    <list-item class="row" style="width: {{ listW }}px; height: {{ ch }}px;">
+      <div class="cell" for="{{ c in r0 }}" style="width: {{ cw }}px; height: {{ ch }}px; background-color: {{ c.bg }};" onclick="onOpenElement(c.z)">
+        <text class="csym" style="width: {{ cw }}px; color: {{ c.color }}; font-size: {{ c.fs }}px;">{{ c.sym }}</text>
       </div>
     </list-item>
-    <list-item class="row" style="height: {{ ch }}px;">
-      <div class="cell" for="{{ c in r1 }}" style="width: {{ cw }}px; height: {{ ch }}px; background-color: {{ c.bg }};" @click="onOpenElement(c.z)">
-        <text style="color: {{ c.color }}; font-size: {{ c.fs }}px;">{{ c.sym }}</text>
+    <list-item class="row" style="width: {{ listW }}px; height: {{ ch }}px;">
+      <div class="cell" for="{{ c in r1 }}" style="width: {{ cw }}px; height: {{ ch }}px; background-color: {{ c.bg }};" onclick="onOpenElement(c.z)">
+        <text class="csym" style="width: {{ cw }}px; color: {{ c.color }}; font-size: {{ c.fs }}px;">{{ c.sym }}</text>
       </div>
     </list-item>
-    <list-item class="row" style="height: {{ ch }}px;">
-      <div class="cell" for="{{ c in r2 }}" style="width: {{ cw }}px; height: {{ ch }}px; background-color: {{ c.bg }};" @click="onOpenElement(c.z)">
-        <text style="color: {{ c.color }}; font-size: {{ c.fs }}px;">{{ c.sym }}</text>
+    <list-item class="row" style="width: {{ listW }}px; height: {{ ch }}px;">
+      <div class="cell" for="{{ c in r2 }}" style="width: {{ cw }}px; height: {{ ch }}px; background-color: {{ c.bg }};" onclick="onOpenElement(c.z)">
+        <text class="csym" style="width: {{ cw }}px; color: {{ c.color }}; font-size: {{ c.fs }}px;">{{ c.sym }}</text>
       </div>
     </list-item>
-    <list-item class="row" style="height: {{ ch }}px;">
-      <div class="cell" for="{{ c in r3 }}" style="width: {{ cw }}px; height: {{ ch }}px; background-color: {{ c.bg }};" @click="onOpenElement(c.z)">
-        <text style="color: {{ c.color }}; font-size: {{ c.fs }}px;">{{ c.sym }}</text>
+    <list-item class="row" style="width: {{ listW }}px; height: {{ ch }}px;">
+      <div class="cell" for="{{ c in r3 }}" style="width: {{ cw }}px; height: {{ ch }}px; background-color: {{ c.bg }};" onclick="onOpenElement(c.z)">
+        <text class="csym" style="width: {{ cw }}px; color: {{ c.color }}; font-size: {{ c.fs }}px;">{{ c.sym }}</text>
       </div>
     </list-item>
-    <list-item class="row" style="height: {{ ch }}px;">
-      <div class="cell" for="{{ c in r4 }}" style="width: {{ cw }}px; height: {{ ch }}px; background-color: {{ c.bg }};" @click="onOpenElement(c.z)">
-        <text style="color: {{ c.color }}; font-size: {{ c.fs }}px;">{{ c.sym }}</text>
+    <list-item class="row" style="width: {{ listW }}px; height: {{ ch }}px;">
+      <div class="cell" for="{{ c in r4 }}" style="width: {{ cw }}px; height: {{ ch }}px; background-color: {{ c.bg }};" onclick="onOpenElement(c.z)">
+        <text class="csym" style="width: {{ cw }}px; color: {{ c.color }}; font-size: {{ c.fs }}px;">{{ c.sym }}</text>
       </div>
     </list-item>
-    <list-item class="row" style="height: {{ ch }}px;">
-      <div class="cell" for="{{ c in r5 }}" style="width: {{ cw }}px; height: {{ ch }}px; background-color: {{ c.bg }};" @click="onOpenElement(c.z)">
-        <text style="color: {{ c.color }}; font-size: {{ c.fs }}px;">{{ c.sym }}</text>
+    <list-item class="row" style="width: {{ listW }}px; height: {{ ch }}px;">
+      <div class="cell" for="{{ c in r5 }}" style="width: {{ cw }}px; height: {{ ch }}px; background-color: {{ c.bg }};" onclick="onOpenElement(c.z)">
+        <text class="csym" style="width: {{ cw }}px; color: {{ c.color }}; font-size: {{ c.fs }}px;">{{ c.sym }}</text>
       </div>
     </list-item>
-    <list-item class="row" style="height: {{ ch }}px;">
-      <div class="cell" for="{{ c in r6 }}" style="width: {{ cw }}px; height: {{ ch }}px; background-color: {{ c.bg }};" @click="onOpenElement(c.z)">
-        <text style="color: {{ c.color }}; font-size: {{ c.fs }}px;">{{ c.sym }}</text>
+    <list-item class="row" style="width: {{ listW }}px; height: {{ ch }}px;">
+      <div class="cell" for="{{ c in r6 }}" style="width: {{ cw }}px; height: {{ ch }}px; background-color: {{ c.bg }};" onclick="onOpenElement(c.z)">
+        <text class="csym" style="width: {{ cw }}px; color: {{ c.color }}; font-size: {{ c.fs }}px;">{{ c.sym }}</text>
       </div>
     </list-item>
-    <list-item class="frow" style="height: {{ ch }}px;">
-      <div class="cell" for="{{ c in r7 }}" style="width: {{ cw }}px; height: {{ ch }}px; background-color: {{ c.bg }};" @click="onOpenElement(c.z)">
-        <text style="color: {{ c.color }}; font-size: {{ c.fs }}px;">{{ c.sym }}</text>
+    <list-item class="frow" style="width: {{ listW }}px; height: {{ ch }}px;">
+      <div class="cell" for="{{ c in r7 }}" style="width: {{ cw }}px; height: {{ ch }}px; background-color: {{ c.bg }};" onclick="onOpenElement(c.z)">
+        <text class="csym" style="width: {{ cw }}px; color: {{ c.color }}; font-size: {{ c.fs }}px;">{{ c.sym }}</text>
       </div>
     </list-item>
-    <list-item class="frow2" style="height: {{ ch }}px;">
-      <div class="cell" for="{{ c in r8 }}" style="width: {{ cw }}px; height: {{ ch }}px; background-color: {{ c.bg }};" @click="onOpenElement(c.z)">
-        <text style="color: {{ c.color }}; font-size: {{ c.fs }}px;">{{ c.sym }}</text>
+    <list-item class="frow2" style="width: {{ listW }}px; height: {{ ch }}px;">
+      <div class="cell" for="{{ c in r8 }}" style="width: {{ cw }}px; height: {{ ch }}px; background-color: {{ c.bg }};" onclick="onOpenElement(c.z)">
+        <text class="csym" style="width: {{ cw }}px; color: {{ c.color }}; font-size: {{ c.fs }}px;">{{ c.sym }}</text>
       </div>
     </list-item>
   </list>
 
-  <div class="legend">
-    <text class="legend-t">{{ hint }}</text>
+  <div class="legend" style="width: {{ pageW }}px;">
+    <text class="legend-t" style="width: 370px;">{{ hint }}</text>
   </div>
 
-  <div class="zoombar">
-    <div class="zb" @click="panLeft"><text class="zb-t">◀</text></div>
-    <div class="zb" @click="zoomOut"><text class="zb-t">－</text></div>
-    <div class="zb zbl"><text class="zb-l">{{ zoomLabel }}</text></div>
-    <div class="zb" @click="zoomIn"><text class="zb-t">＋</text></div>
-    <div class="zb" @click="panRight"><text class="zb-t">▶</text></div>
+  <!-- 底部工具条：固定尺寸，缩放不随之缩放。左侧 − / ＋ 只缩放元素格；右侧 ◀ ▶ 已删，横滑换列 -->
+  <div class="zoombar" style="width: {{ pageW }}px;">
+    <div class="zb" onclick="zoomOut()"><text class="zb-t" style="width: 40px;">－</text></div>
+    <div class="zb zbl"><text class="zb-l" style="width: 60px;">{{ zoomLabel }}</text></div>
+    <div class="zb" onclick="zoomIn()"><text class="zb-t" style="width: 40px;">＋</text></div>
   </div>
 </div>
