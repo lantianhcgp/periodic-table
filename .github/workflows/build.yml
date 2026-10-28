@@ -16,7 +16,7 @@ jobs:
       # CLT 6.1.1.280：与工程 modelVersion 6.1.1 / faMode 匹配（勿升 26.x）
       - name: Setup HarmonyOS Command Line Tools
         id: ohos
-        uses: ErBWs/setup-ohos@v2
+        uses: ErBWs/setup-ohos@4dbb63025116eb6165ceac58a4bf47cbdc5ac721 # v2
         with:
           version: 6.1.1.280
           cache: true
@@ -42,30 +42,44 @@ jobs:
       - name: Sanitize packed config.json (Lite schema)
         run: python3 scripts/clean_config_in_app.py build/outputs/default/*.app
 
-      # 签名：只有当 certs/periodic.p7b 存在（AGC 为该 bundle 新签发证书后）才签名。
-      # 现在（首版）无证书 → 只交付未签名 .app，用于官方模拟器验收。
-      # jvor1(app.p7b) 被 focus/memo 占用，禁止复用（装表会覆盖同名身份）。
-      - name: Sign (only if certs/periodic.p7b present)
+      - name: Audit actual Lite payload (48KB pages / image bins / identity)
+        run: |
+          mkdir -p dist
+          python3 scripts/audit_built_app.py 'build/outputs/default/*.app' --report dist/built-audit.json
+
+      # periodic.p7b 绑定 periodic.nexus.qu84q；禁止复用其他应用身份。
+      - name: Sign required release HAP
         env:
           SIGN_P12_PEM: ${{ secrets.SIGN_P12_PEM }}
         run: |
           mkdir -p dist
           if [ -f "certs/periodic.p7b" ] && [ -n "$SIGN_P12_PEM" ]; then
             cp -r tools/sign /tmp/sign && cd /tmp/sign
-            npm install --no-audit --no-fund
+            npm ci --ignore-scripts --no-audit --no-fund
             cd -
             FORCE_P7B_BUNDLE=1 node /tmp/sign/sign-app-to-hap.js build/outputs/default/*.app certs/periodic.p7b dist/periodic-table.hap
             echo "signed dist/periodic-table.hap"
           else
-            echo "无 periodic.p7b 证书（或 Secret 未配）→ 本次仅交付未签名 .app（用于模拟器）"
+            echo "::error::缺少 certs/periodic.p7b 或 SIGN_P12_PEM，禁止产出假绿的未签名交付"
+            exit 1
           fi
 
-      - name: Verify signature (fail loud) — only when a .hap was produced
+      - name: Verify signature (fail loud)
         run: |
           if [ -f "dist/periodic-table.hap" ]; then
             python3 tools/sign/verify_sign.py "dist/periodic-table.hap" "certs/periodic.p7b"
           else
-            echo "无签名产物，跳过验签"
+            echo "::error::签名步骤未生成 dist/periodic-table.hap"
+            exit 1
+          fi
+
+      - name: Re-audit final signed HAP payload
+        run: |
+          if [ -f "dist/periodic-table.hap" ]; then
+            python3 scripts/audit_built_app.py dist/periodic-table.hap --report dist/signed-hap-audit.json
+          else
+            echo "::error::缺少最终 HAP，无法载荷复审"
+            exit 1
           fi
 
       - name: Collect artifacts

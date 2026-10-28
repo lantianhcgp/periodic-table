@@ -53,7 +53,7 @@ async function signHap(appBuffer, p7bBuffer) {
   if (process.env.FORCE_P7B_BUNDLE === "1") {
     config.app.bundleName = bundleName;
   }
-  config.app.version.code = 0;
+  // 保留工程 version code/name；交付审计会在签名前后对账，确保升级版本不被签名器重置。
   hapLoad.file("config.json", JSON.stringify(config));
 
   // 转换 & 签名
