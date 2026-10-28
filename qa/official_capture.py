@@ -43,6 +43,17 @@ def drag_left(name, y=200):
     return seq
 
 
+def drag_up(name, x=206):
+    seq = [(name + ".press", c.mouse("MousePress", x, 310, 0))]
+    for i, y in enumerate((260, 210, 160, 110)):
+        seq.append((name + ".move" + str(i), {
+            "version": "1.0.0", "command": "MouseMove", "type": "action",
+            "args": {"x": x, "y": y, "button": 0}
+        }))
+    seq.append((name + ".release", c.mouse("MouseRelease", x, 70, 0)))
+    return seq
+
+
 def pause(name, seconds):
     return [(name, {"__periodic_pause__": seconds})]
 
@@ -96,8 +107,7 @@ def stress_sequence(w, h):
         seq += click("stress.minus" + str(i), minus_x, footer_y)
     for i in range(4):
         seq += drag_left("stress.left" + str(i), 190)
-    # Three -24 ticks only reached Xe on the official engine. Give the crown
-    # enough travel budget to expose the period-7 tail (Nh..Og) for inspection.
+    # Repeated crown input remains part of the pressure/scroll gate.
     for i in range(10):
         seq.append(("stress.crown.down" + str(i + 1), {
             "version": "1.0.0", "command": "CrownRotate", "type": "action",
@@ -108,6 +118,12 @@ def stress_sequence(w, h):
         "version": "1.0.0", "command": "CrownRotate", "type": "action",
         "args": {"rotate": 12}
     }))
+    # The simulator coalesces rapid crown commands even though every receipt is
+    # true. Touch-drag the same list to its real bottom solely to retain an
+    # inspectable official frame for the Chinese glyphs of Nh..Og.
+    for i in range(3):
+        seq += drag_up("stress.vertical" + str(i + 1))
+        seq += pause("wait.stress.vertical" + str(i + 1), 0.35)
     return seq
 
 
