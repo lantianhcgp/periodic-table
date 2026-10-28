@@ -69,7 +69,7 @@ def functional_sequence(w, h):
     for i in range(3):
         seq.append(("detail.crown" + str(i + 1), {
             "version": "1.0.0", "command": "CrownRotate", "type": "action",
-            "args": {"rotate": -8}
+            "args": {"rotate": -24}
         }))
         seq += pause("wait.crown" + str(i + 1), 0.25)
     return seq

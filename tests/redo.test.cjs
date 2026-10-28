@@ -192,7 +192,7 @@ test('catalog is owned once by app state so detail page stays below Lite page bu
   assert(!detail.includes("common/catalog"));assert(detail.includes('a.getElement'));
 });
 test('detail integrates selected chlorine, isotope switch and back route', () => {
-  const jobs=new Map();let next=0;const routes=[];
+  const jobs=new Map();let next=0;const routes=[],rotations=[];
   const appGlobal={selectedElement:17,getElement(z){return catalog().get(z);}};
   const page=load('pages/detail/detail.js',{
     model:model(),getApp(){return appGlobal;},
@@ -201,8 +201,10 @@ test('detail integrates selected chlorine, isotope switch and back route', () =>
     setTimeout(f){const id=++next;jobs.set(id,f);return id;},clearTimeout(id){jobs.delete(id);}
   });
   const p=Object.assign({},page.data,page);
-  p.$refs={detailList:{rotation(){}}};
+  p.$refs={detailList:{rotation(o){rotations.push(o.focus);}}};
   p.onInit();
+  while(jobs.size){const first=[...jobs.entries()][0];jobs.delete(first[0]);first[1]();}
+  assert(rotations.includes(true));
   assert.equal(p.ready,true);assert.equal(p.z,17);assert.equal(p.nameCN,'氯');
   assert.equal(p.isoLabel,'Cl-35');assert.equal(p.protonCount,17);assert.equal(p.neutronCount,18);
   p.switchIsotope(1);assert.equal(p.isoLabel,'Cl-37');assert.equal(p.neutronCount,20);

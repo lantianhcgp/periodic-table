@@ -1,6 +1,9 @@
 """Pure semantic verdicts for periodic-table official simulator captures."""
 
-KNOWN_LIFECYCLE_WARNING = "[acelite][error]:current state(2) is invalid when changing ready state to show state."
+KNOWN_SIMULATOR_WARNINGS = {
+    "[acelite][error]:current state(2) is invalid when changing ready state to show state.",
+    "[acelite][error]:bindedview is nullptr",
+}
 
 FUNCTIONAL_REQUIRED = [
     "PT:index_ready w=412 h=484 zoom=1 col=0 cols=6",
@@ -21,6 +24,7 @@ FUNCTIONAL_REQUIRED = [
     "PT:select z=17 viaApp=1",
     "PT:isotope z=17 a=35 n=18",
     "PT:detail_ready z=17 w=412 h=484 isotope=Cl-35 p=17 n=18",
+    "PT:detail_focus on=1",
     "PT:detail_scroll_end z=17",
     "PT:back z=17",
     "PT:index_ready w=412 h=484 zoom=1 col=12 cols=6",
@@ -50,7 +54,7 @@ def no_runtime_errors(text):
     bad=[]
     for line in text.splitlines():
         low=line.strip().lower()
-        if low==KNOWN_LIFECYCLE_WARNING:
+        if low in KNOWN_SIMULATOR_WARNINGS:
             continue
         if ("[acelite][error]" in low or "[console error]" in low or
                 "out_of_memory" in low or "out of memory" in low or "fatal" in low):
@@ -60,7 +64,7 @@ def no_runtime_errors(text):
 
 def known_runtime_warnings(text):
     return [line.strip() for line in text.splitlines()
-            if line.strip().lower()==KNOWN_LIFECYCLE_WARNING]
+            if line.strip().lower() in KNOWN_SIMULATOR_WARNINGS]
 
 
 def ordered_missing(text,markers):

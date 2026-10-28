@@ -86,7 +86,10 @@ export default {
     console.info('PT:isotope z='+e.z+' a='+a+' n='+n.neutrons);
   },
   clearFocus: function () {if(this.focusTimer){clearTimeout(this.focusTimer);this.focusTimer=0;}},
-  focus: function (on) {var r=this.$refs && this.$refs.detailList;if(r && r.rotation){try{r.rotation({focus:on});}catch(e){console.warn('PT:detail_focus_error');}}},
+  focus: function (on) {
+    var r=this.$refs && this.$refs.detailList;
+    if(r && r.rotation){try{r.rotation({focus:on});if(on)console.info('PT:detail_focus on=1');}catch(e){console.warn('PT:detail_focus_error');}}
+  },
   focusLater: function () {this.clearFocus();if(!this.active)return;var self=this;this.focusTimer=setTimeout(function(){self.focusTimer=0;if(self.alive && self.active)self.focus(true);},150);},
   onScrollEnd: function () {console.info('PT:detail_scroll_end z='+this.z);},
   onHide: function () {this.active=false;this.ticket++;this.clearFocus();this.focus(false);},

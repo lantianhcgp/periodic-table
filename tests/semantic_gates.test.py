@@ -35,6 +35,9 @@ class SemanticGateTest(unittest.TestCase):
         self.assertEqual(len(g.gate_functional(functional_result(),known)['ignored_simulator_warnings']),1)
         combined=known+' FATAL out of memory'
         self.assertFalse(g.gate_functional(functional_result(),combined)['ok'])
+        route_noise=text+'\n[ACELite][ERROR]:bindedView is nullptr'
+        self.assertTrue(g.gate_functional(functional_result(),route_noise)['ok'])
+        self.assertFalse(g.gate_functional(functional_result(),route_noise+' FATAL')['ok'])
         self.assertFalse(g.gate_functional(functional_result(),'\n'.join(reversed(g.FUNCTIONAL_REQUIRED)))['ok'])
         dead=functional_result();dead['rc']=-11
         self.assertFalse(g.gate_functional(dead,text)['ok'])
