@@ -7,69 +7,50 @@
   <div class="grid" style="height: {{ listH }}px;">
     <div class="row" style="height: {{ ch }}px;">
       <div class="cell" for="{{ c in r0 }}" style="width: {{ cw }}px; height: {{ ch }}px; background-color: {{ c.bg }};" @click="onOpenElement(c.z)">
-        <text class="sym" if="{{ c.z > 0 }}" style="color: {{ c.color }}; font-size: {{ fs }}px;">{{ c.sym }}</text>
-        <text class="ph" if="{{ c.z === 0 && c.sym !== '' }}" style="color: {{ c.color }}; font-size: {{ fsph }}px;">{{ c.sym }}</text>
+        <text style="color: {{ c.color }}; font-size: {{ c.fs }}px;">{{ c.sym }}</text>
       </div>
     </div>
-
     <div class="row" style="height: {{ ch }}px;">
       <div class="cell" for="{{ c in r1 }}" style="width: {{ cw }}px; height: {{ ch }}px; background-color: {{ c.bg }};" @click="onOpenElement(c.z)">
-        <text class="sym" if="{{ c.z > 0 }}" style="color: {{ c.color }}; font-size: {{ fs }}px;">{{ c.sym }}</text>
-        <text class="ph" if="{{ c.z === 0 && c.sym !== '' }}" style="color: {{ c.color }}; font-size: {{ fsph }}px;">{{ c.sym }}</text>
+        <text style="color: {{ c.color }}; font-size: {{ c.fs }}px;">{{ c.sym }}</text>
       </div>
     </div>
-
     <div class="row" style="height: {{ ch }}px;">
       <div class="cell" for="{{ c in r2 }}" style="width: {{ cw }}px; height: {{ ch }}px; background-color: {{ c.bg }};" @click="onOpenElement(c.z)">
-        <text class="sym" if="{{ c.z > 0 }}" style="color: {{ c.color }}; font-size: {{ fs }}px;">{{ c.sym }}</text>
-        <text class="ph" if="{{ c.z === 0 && c.sym !== '' }}" style="color: {{ c.color }}; font-size: {{ fsph }}px;">{{ c.sym }}</text>
+        <text style="color: {{ c.color }}; font-size: {{ c.fs }}px;">{{ c.sym }}</text>
       </div>
     </div>
-
     <div class="row" style="height: {{ ch }}px;">
       <div class="cell" for="{{ c in r3 }}" style="width: {{ cw }}px; height: {{ ch }}px; background-color: {{ c.bg }};" @click="onOpenElement(c.z)">
-        <text class="sym" if="{{ c.z > 0 }}" style="color: {{ c.color }}; font-size: {{ fs }}px;">{{ c.sym }}</text>
-        <text class="ph" if="{{ c.z === 0 && c.sym !== '' }}" style="color: {{ c.color }}; font-size: {{ fsph }}px;">{{ c.sym }}</text>
+        <text style="color: {{ c.color }}; font-size: {{ c.fs }}px;">{{ c.sym }}</text>
       </div>
     </div>
-
     <div class="row" style="height: {{ ch }}px;">
       <div class="cell" for="{{ c in r4 }}" style="width: {{ cw }}px; height: {{ ch }}px; background-color: {{ c.bg }};" @click="onOpenElement(c.z)">
-        <text class="sym" if="{{ c.z > 0 }}" style="color: {{ c.color }}; font-size: {{ fs }}px;">{{ c.sym }}</text>
-        <text class="ph" if="{{ c.z === 0 && c.sym !== '' }}" style="color: {{ c.color }}; font-size: {{ fsph }}px;">{{ c.sym }}</text>
+        <text style="color: {{ c.color }}; font-size: {{ c.fs }}px;">{{ c.sym }}</text>
       </div>
     </div>
-
     <div class="row" style="height: {{ ch }}px;">
       <div class="cell" for="{{ c in r5 }}" style="width: {{ cw }}px; height: {{ ch }}px; background-color: {{ c.bg }};" @click="onOpenElement(c.z)">
-        <text class="sym" if="{{ c.z > 0 }}" style="color: {{ c.color }}; font-size: {{ fs }}px;">{{ c.sym }}</text>
-        <text class="ph" if="{{ c.z === 0 && c.sym !== '' }}" style="color: {{ c.color }}; font-size: {{ fsph }}px;">{{ c.sym }}</text>
+        <text style="color: {{ c.color }}; font-size: {{ c.fs }}px;">{{ c.sym }}</text>
       </div>
     </div>
-
     <div class="row" style="height: {{ ch }}px;">
       <div class="cell" for="{{ c in r6 }}" style="width: {{ cw }}px; height: {{ ch }}px; background-color: {{ c.bg }};" @click="onOpenElement(c.z)">
-        <text class="sym" if="{{ c.z > 0 }}" style="color: {{ c.color }}; font-size: {{ fs }}px;">{{ c.sym }}</text>
-        <text class="ph" if="{{ c.z === 0 && c.sym !== '' }}" style="color: {{ c.color }}; font-size: {{ fsph }}px;">{{ c.sym }}</text>
+        <text style="color: {{ c.color }}; font-size: {{ c.fs }}px;">{{ c.sym }}</text>
       </div>
     </div>
-
     <div class="frow" style="height: {{ ch }}px;">
       <div class="cell" for="{{ c in r7 }}" style="width: {{ cw }}px; height: {{ ch }}px; background-color: {{ c.bg }};" @click="onOpenElement(c.z)">
-        <text class="sym" if="{{ c.z > 0 }}" style="color: {{ c.color }}; font-size: {{ fs }}px;">{{ c.sym }}</text>
-        <text class="ph" if="{{ c.z === 0 && c.sym !== '' }}" style="color: {{ c.color }}; font-size: {{ fsph }}px;">{{ c.sym }}</text>
+        <text style="color: {{ c.color }}; font-size: {{ c.fs }}px;">{{ c.sym }}</text>
       </div>
     </div>
-
     <div class="frow2" style="height: {{ ch }}px;">
       <div class="cell" for="{{ c in r8 }}" style="width: {{ cw }}px; height: {{ ch }}px; background-color: {{ c.bg }};" @click="onOpenElement(c.z)">
-        <text class="sym" if="{{ c.z > 0 }}" style="color: {{ c.color }}; font-size: {{ fs }}px;">{{ c.sym }}</text>
-        <text class="ph" if="{{ c.z === 0 && c.sym !== '' }}" style="color: {{ c.color }}; font-size: {{ fsph }}px;">{{ c.sym }}</text>
+        <text style="color: {{ c.color }}; font-size: {{ c.fs }}px;">{{ c.sym }}</text>
       </div>
     </div>
-
-  </div><!--/grid-->
-
+  </div>
 
   <div class="legend">
     <text class="legend-t">{{ hint }}</text>
