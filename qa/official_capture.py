@@ -96,7 +96,9 @@ def stress_sequence(w, h):
         seq += click("stress.minus" + str(i), minus_x, footer_y)
     for i in range(4):
         seq += drag_left("stress.left" + str(i), 190)
-    for i in range(3):
+    # Three -24 ticks only reached Xe on the official engine. Give the crown
+    # enough travel budget to expose the period-7 tail (Nh..Og) for inspection.
+    for i in range(10):
         seq.append(("stress.crown.down" + str(i + 1), {
             "version": "1.0.0", "command": "CrownRotate", "type": "action",
             "args": {"rotate": -24}

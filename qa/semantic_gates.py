@@ -114,7 +114,7 @@ def gate_stress(result,text):
     missing=ordered_missing(text,STRESS_REQUIRED)
     send_fail=failed_sends(result)
     crowns=receipts_for(result,"CrownRotate")
-    crown_ok=len(crowns)==4 and all(x.get("ok") is True for x in crowns)
+    crown_ok=len(crowns)==11 and all(x.get("ok") is True for x in crowns)
     return {
         "ok": (result.get("verdict")=="PASS" and result.get("rc")=="alive"
                and not send_fail and not errors and not missing and crown_ok),
