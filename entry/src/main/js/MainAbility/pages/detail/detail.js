@@ -79,6 +79,7 @@ function fill(page) {
   page.idx = el[0];
   page.total = 118;
   page.barPct = Math.round(el[0] / 118 * 100);
+  page.progFillW = Math.round((page.progW || 90) * page.barPct / 100);
   // 核结构（高考：原子序数=质子数=核外电子数；中子数=质量数-质子数）
   var massNum = Math.round(parseFloat(stripParen(el[4])));
   if (isNaN(massNum)) { massNum = 0; }
@@ -104,7 +105,7 @@ export default {
     hasData: 0,
     // 几何（measure() 按 device 实测窗口重算；初值 396 兜底，不同分辨率自动通吃）
     dW: 340, heroW: 340, midW: 340, statsW: 340, nucW: 340, notesW: 340, backW: 340, footW: 340,
-    shellW: 110, confW: 210, statW: 104, navW: 90, progW: 110,
+    shellW: 110, confW: 210, statW: 104, navW: 90, progW: 110, progFillW: 0,
     sym: '', cn: '', en: '', w: '',
     catLabel: '', catColor: '#888',
     conf: '', oxText: '', hasOx: 0,
@@ -139,6 +140,7 @@ export default {
       that.statW = Math.floor(cW / 3) - 4;
       that.navW = Math.floor(cW * 0.27);
       that.progW = Math.max(80, cW - 2 * that.navW - 20);
+      that.progFillW = Math.round(that.progW * (that.barPct || 0) / 100);
     };
     apply(396);
     try {

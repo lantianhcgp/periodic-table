@@ -81,7 +81,7 @@
     </div>
     <div class="prog" style="width: {{ progW }}px;">
       <text class="prog-idx">{{ idx }}/{{ total }}</text>
-      <div class="prog-bar" style="width: {{ progW }}px;"><div class="prog-fill" style="width: {{ barPct }}%;"></div></div>
+      <div class="prog-bar" style="width: {{ progW }}px;"><div class="prog-fill" style="width: {{ progFillW }}px;"></div></div>
       <text class="prog-lab">{{ progLab }}</text>
     </div>
     <div class="navb navb-next" style="width: {{ navW }}px;" @click="onNext()" if="{{ canNext }}">
