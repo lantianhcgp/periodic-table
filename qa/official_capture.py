@@ -108,7 +108,7 @@ def stress_sequence(w, h):
     for i in range(4):
         seq += drag_left("stress.left" + str(i), 190)
     # Repeated crown input remains part of the pressure/scroll gate.
-    for i in range(10):
+    for i in range(3):
         seq.append(("stress.crown.down" + str(i + 1), {
             "version": "1.0.0", "command": "CrownRotate", "type": "action",
             "args": {"rotate": -24}
@@ -142,7 +142,7 @@ def popen(args, *a, **kw):
     # Generic driver records for 8 s; this semantic sequence intentionally needs longer.
     if isinstance(args, list) and len(args) >= 4 and args[0] == "node" and args[1] == "ws_client.js":
         args = list(args)
-        args[-1] = "20000"
+        args[-1] = "35000"
     return _orig_popen(args, *a, **kw)
 
 

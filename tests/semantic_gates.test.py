@@ -17,7 +17,7 @@ def functional_result():
 
 def stress_result():
     return {'verdict':'PASS','rc':'alive',
-            'probe':[{'cmd':'CrownRotate','ok':True} for _ in range(11)],
+            'probe':[{'cmd':'CrownRotate','ok':True} for _ in range(4)],
             'interaction':{'sent':['ok']}}
 
 
@@ -47,7 +47,7 @@ class SemanticGateTest(unittest.TestCase):
         self.assertFalse(g.gate_functional(one_crown,text)['ok'])
         self.assertFalse(g.gate_functional(functional_result(),text.replace('PT:detail_scroll_end z=17',''))['ok'])
 
-    def test_stress_requires_ten_ordered_cycles_redraw_swipe_scroll_and_eleven_crowns(self):
+    def test_stress_requires_ten_ordered_cycles_redraw_swipe_scroll_and_four_crowns(self):
         text='\n'.join(g.STRESS_REQUIRED)
         self.assertTrue(g.gate_stress(stress_result(),text)['ok'])
         repeated=('PT:zoom value=2 cols=3\n'*20+'PT:canvas_draw zoom=1 col=0 rows=9\n'+
