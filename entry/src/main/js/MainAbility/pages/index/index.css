@@ -25,10 +25,11 @@
   color: #4dd0e1;
 }
 
-/* 表冠滚动的纵向 list */
-.table-list {
+/* 表体容器（静态 grid，表冠滚动在 FIT3 512KB 堆上 OOM 故退回；缩放靠底部按钮）*/
+.grid {
   width: 92%;
   flex-direction: column;
+  align-items: center;
 }
 
 .row {
