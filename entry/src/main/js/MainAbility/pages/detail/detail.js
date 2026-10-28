@@ -16,7 +16,11 @@ export default {
     pointText:'',noteText:'',pointH:0,noteTextH:0,ionization:'',electronegativity:'',
     meta:null
   },
-  appState: function () {return this.$app && this.$app.$def ? this.$app.$def : null;},
+  appState: function () {
+    try{var a=getApp();if(a)return a;}catch(e){}
+    try{if($app)return $app.$def||$app;}catch(e){}
+    return this.$app && this.$app.$def ? this.$app.$def : null;
+  },
   onInit: function () {
     this.alive=true;this.active=true;var a=this.appState();var z=a?a.selectedElement:0;
     if(typeof z!=='number' || z<1 || z>118 || Math.floor(z)!==z){this.error='\u8bf7\u4ece\u5468\u671f\u8868\u9009\u62e9\u5143\u7d20';console.error('PT:no_selection');return;}

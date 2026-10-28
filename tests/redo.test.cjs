@@ -164,13 +164,14 @@ test('source no fabricated dimension fallback, unsupported modern syntax or full
 });
 test('canvas table draws nine rows and click mapping selects chlorine after horizontal pan', () => {
   const jobs=new Map();let next=0;const routes=[],texts=[];
+  const appGlobal={selectedElement:0,tableZoom:1,tableColumn:0};
   function context(){return {fillRect(){},fillText(v){texts.push(String(v));},beginPath(){},arc(){},fill(){}};}
   const page=load('pages/index/index.js',{
     model:model(),grid:grid(),device:{getInfo(o){o.success({windowWidth:412,windowHeight:484});}},
-    router:{replace(o){routes.push(o.uri);}},
+    router:{replace(o){routes.push(o.uri);}},getApp(){return appGlobal;},
     setTimeout(f){const id=++next;jobs.set(id,f);return id;},clearTimeout(id){jobs.delete(id);}
   });
-  const p=Object.assign({},page.data,page);p.$app={$def:{selectedElement:0,tableZoom:1,tableColumn:0}};
+  const p=Object.assign({},page.data,page);
   p.$refs={tableList:{rotation(){},scrollTo(){}}};for(let r=0;r<9;r++)p.$refs['c'+r]={getContext(){return context();}};
   function drain(){while(jobs.size){const first=[...jobs.entries()].sort((a,b)=>a[0]-b[0])[0];jobs.delete(first[0]);first[1]();}}
   p.onInit();
@@ -181,7 +182,7 @@ test('canvas table draws nine rows and click mapping selects chlorine after hori
   p.reset();assert.equal(p.listOn,false);drain();assert.equal(p.tileH,baseH);assert.equal(p.listOn,true);
   p.colStart=12;p.layout();p.scheduleCanvas();p.lastSwipeAt=0;p.lastMoveAt=0;p.moved=true;
   p.openRow2({globalX:p.margin+p.tileW*4.5,globalY:200});
-  assert.equal(p.$app.$def.selectedElement,17);assert.equal(routes.at(-1),'pages/detail/detail');
+  assert.equal(appGlobal.selectedElement,17);assert.equal(routes.at(-1),'pages/detail/detail');
   p.onDestroy();assert.equal(jobs.size,0);
 });
 test('catalog is owned once by app state so detail page stays below Lite page budget', () => {
@@ -192,14 +193,15 @@ test('catalog is owned once by app state so detail page stays below Lite page bu
 });
 test('detail integrates selected chlorine, isotope switch and back route', () => {
   const jobs=new Map();let next=0;const routes=[];
+  const appGlobal={selectedElement:17,getElement(z){return catalog().get(z);}};
   const page=load('pages/detail/detail.js',{
-    model:model(),
+    model:model(),getApp(){return appGlobal;},
     device:{getInfo(o){o.success({windowWidth:412,windowHeight:484});}},
     router:{replace(o){routes.push(o.uri);}},
     setTimeout(f){const id=++next;jobs.set(id,f);return id;},clearTimeout(id){jobs.delete(id);}
   });
   const p=Object.assign({},page.data,page);
-  p.$app={$def:{selectedElement:17,getElement(z){return catalog().get(z);}}};p.$refs={detailList:{rotation(){}}};
+  p.$refs={detailList:{rotation(){}}};
   p.onInit();
   assert.equal(p.ready,true);assert.equal(p.z,17);assert.equal(p.nameCN,'氯');
   assert.equal(p.isoLabel,'Cl-35');assert.equal(p.protonCount,17);assert.equal(p.neutronCount,18);

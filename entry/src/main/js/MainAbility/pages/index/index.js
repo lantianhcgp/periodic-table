@@ -12,7 +12,11 @@ export default {
     active:false,alive:true,leaving:false,focusTimer:0,renderTimer:0,drawTimer:0,layoutTicket:0,renderTicket:0,
     moved:false,touchX:0,touchY:0,lastSwipeAt:0,lastMoveAt:0
   },
-  appState: function () { return this.$app && this.$app.$def ? this.$app.$def : null; },
+  appState: function () {
+    try{var a=getApp();if(a)return a;}catch(e){}
+    try{if($app)return $app.$def||$app;}catch(e){}
+    return this.$app && this.$app.$def ? this.$app.$def : null;
+  },
   onInit: function () { this.active=true;this.alive=true;this.restore();this.measure(); },
   onShow: function () { this.active=true;this.alive=true;this.leaving=false;this.restore();this.measure(); },
   restore: function () {
