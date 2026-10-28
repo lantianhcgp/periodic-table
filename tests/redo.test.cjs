@@ -73,6 +73,7 @@ test('horizontal swipes move bounded viewport without arrow controls', () => {
   const hml=fs.readFileSync(path.join(MAIN,'pages/index/index.hml'),'utf8');
   assert(hml.includes('onSwipe') && hml.includes('onscrollend="onScrollEnd"'));
   assert(hml.includes('<canvas') && hml.includes('openRow'));
+  for(let row=0;row<9;row++) assert(hml.includes('@click="openRow'+row+'"'),'row click '+row);
   assert(!hml.includes('panLeft') && !hml.includes('panRight'));
 });
 test('compact canvas labels cover all elements without packaged tile bitmaps', () => {
@@ -171,11 +172,15 @@ test('canvas table draws nine rows and click mapping selects chlorine after hori
   });
   const p=Object.assign({},page.data,page);p.$app={$def:{selectedElement:0,tableZoom:1,tableColumn:0}};
   p.$refs={tableList:{rotation(){},scrollTo(){}}};for(let r=0;r<9;r++)p.$refs['c'+r]={getContext(){return context();}};
+  function drain(){while(jobs.size){const first=[...jobs.entries()].sort((a,b)=>a[0]-b[0])[0];jobs.delete(first[0]);first[1]();}}
   p.onInit();
-  while(jobs.size){const first=[...jobs.entries()].sort((a,b)=>a[0]-b[0])[0];jobs.delete(first[0]);first[1]();}
+  drain();
   assert(texts.includes('H') && texts.includes('氢') && texts.includes('Li'),'texts='+JSON.stringify(texts.slice(0,20)));
-  p.colStart=12;p.layout();p.scheduleCanvas();p.lastSwipeAt=0;p.moved=false;
-  p.touchStart({globalX:p.margin+p.tileW*4.5,globalY:200});p.openRow(2);
+  assert.equal(p.listOn,true);assert.equal(p.canvasOn,true);
+  const baseH=p.tileH;p.zoomIn();assert.equal(p.listOn,false);drain();assert.equal(p.tileH,baseH*2);assert.equal(p.listOn,true);
+  p.reset();assert.equal(p.listOn,false);drain();assert.equal(p.tileH,baseH);assert.equal(p.listOn,true);
+  p.colStart=12;p.layout();p.scheduleCanvas();p.lastSwipeAt=0;p.lastMoveAt=0;p.moved=true;
+  p.openRow2({globalX:p.margin+p.tileW*4.5,globalY:200});
   assert.equal(p.$app.$def.selectedElement,17);assert.equal(routes.at(-1),'pages/detail/detail');
   p.onDestroy();assert.equal(jobs.size,0);
 });

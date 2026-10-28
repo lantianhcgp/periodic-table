@@ -61,6 +61,7 @@ jobs:
       - name: functional + stress gate (official simulator)
         working-directory: _sim
         run: |
+          set -o pipefail
           python3 -m pip install --quiet --require-hashes -r ../_app/qa/requirements-sim.txt 2>/dev/null || \
             python3 -m pip install --quiet --user --require-hashes -r ../_app/qa/requirements-sim.txt 2>/dev/null || \
             python3 -m pip install --quiet --break-system-packages --require-hashes -r ../_app/qa/requirements-sim.txt

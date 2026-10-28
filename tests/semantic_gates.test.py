@@ -22,9 +22,19 @@ def stress_result():
 
 
 class SemanticGateTest(unittest.TestCase):
+    def test_workflow_preserves_gate_exit_code_through_tee(self):
+        workflow=(ROOT/'.github/workflows/sim-preview.yml').read_text()
+        self.assertIn('set -o pipefail',workflow)
+        self.assertIn('official_capture.py 2>&1 | tee spawn.txt',workflow)
+
     def test_functional_requires_complete_ordered_live_run(self):
         text='\n'.join(g.FUNCTIONAL_REQUIRED)
         self.assertTrue(g.gate_functional(functional_result(),text)['ok'])
+        known=text+'\n[ACELite][ERROR]:current state(2) is invalid when changing ready state to show state.'
+        self.assertTrue(g.gate_functional(functional_result(),known)['ok'])
+        self.assertEqual(len(g.gate_functional(functional_result(),known)['ignored_simulator_warnings']),1)
+        combined=known+' FATAL out of memory'
+        self.assertFalse(g.gate_functional(functional_result(),combined)['ok'])
         self.assertFalse(g.gate_functional(functional_result(),'\n'.join(reversed(g.FUNCTIONAL_REQUIRED)))['ok'])
         dead=functional_result();dead['rc']=-11
         self.assertFalse(g.gate_functional(dead,text)['ok'])
