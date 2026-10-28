@@ -1,4 +1,5 @@
 // detail page — element info, prev/next in-place (no reload)
+// 100% 自适应：宽度由 @system.device 实测窗口算 px 内联绑定，不写死分辨率（用户拍板）
 import FULL from '../../common/elements-full.js';
 
 var CAT = {
@@ -8,7 +9,7 @@ var CAT = {
   post: { label: '\u540e\u8fc7\u6e21\u91d1\u5c5e', c: '#4dabf7' },
   met: { label: '\u7c7b\u91d1\u5c5e', c: '#69db7c' },
   nm: { label: '\u975e\u91d1\u5c5e', c: '#ffd43b' },
-  hal: { label: '\u5318\u7d20', c: '#f783ac' },
+  hal: { label: '\u5316\u7d20', c: '#f783ac' },
   nob: { label: '\u7a00\u6709\u6c14\u4f53', c: '#b197fc' },
   lan: { label: '\u956d\u7cfb', c: '#22d3ee' },
   act: { label: '\u9551\u7cfb', c: '#818cf8' }
@@ -19,6 +20,18 @@ function byZ(z) {
   return r ? r : null;
 }
 // FULL row: [z,sym,cn,en,w,cat,conf,ox[],core,notes[],'period|group',shells]
+
+// 原子量字符串去括号/方括号：纯字符循环，**不用正则**
+// （Lite JSB 老引擎 eval 正则字面量会让整文件 "Eval JS file failed" → 全黑，实测坑）
+function stripParen(s) {
+  s = String(s);
+  var out = "";
+  for (var i = 0; i < s.length; i++) {
+    var c = s[i];
+    if (c !== "(" && c !== ")" && c !== "[" && c !== "]") { out += c; }
+  }
+  return out;
+}
 
 function fill(page) {
   var el = byZ(page.z);
@@ -67,12 +80,11 @@ function fill(page) {
   page.total = 118;
   page.barPct = Math.round(el[0] / 118 * 100);
   // 核结构（高考：原子序数=质子数=核外电子数；中子数=质量数-质子数）
-  var massStr = String(el[4]).replace(/[()\[\]]/g, "");
-  var massNum = Math.round(parseFloat(massStr));
+  var massNum = Math.round(parseFloat(stripParen(el[4])));
   if (isNaN(massNum)) { massNum = 0; }
   page.massNum = massNum;
   page.neutrons = massNum - el[0];
-  // 最外层电子数 = 电子层末位（高考：最高正价=最外层电子数，最低负价=最外层-8）
+  // 最外层电子数 = 电子层末位（高考：最高正价=最外层；最低负价=最外层-8）
   var outerV = "";
   var shAll = (el[11] || "").split(",");
   for (var t = shAll.length - 1; t >= 0; t--) { if (shAll[t]) { outerV = shAll[t]; break; } }
@@ -90,6 +102,9 @@ export default {
   data: {
     z: 1,
     hasData: 0,
+    // 几何（measure() 按 device 实测窗口重算；初值 396 兜底，不同分辨率自动通吃）
+    dW: 340, heroW: 340, midW: 340, statsW: 340, nucW: 340, notesW: 340, backW: 340, footW: 340,
+    shellW: 110, confW: 210, statW: 104, navW: 90, progW: 110,
     sym: '', cn: '', en: '', w: '',
     catLabel: '', catColor: '#888',
     conf: '', oxText: '', hasOx: 0,
@@ -99,9 +114,9 @@ export default {
     kProton: '\u8d28\u5b50\u6570', kNeutron: '\u4e2d\u5b50\u6570', kOuter: '\u6700\u5916\u5c42\u7535\u5b50',
     idx: 0, total: 118, barPct: 0,
     prevSym: '', nextSym: '', canPrev: 0, canNext: 0,
-    headTtl: '\u5143 \u7d20 \u8be6 \u60c5',
+    headTtl: '\u5143\u7d20\u8be6\u60c5',
     kPeriod: '\u5468\u671f \u00b7 \u65cf',
-    kAtomic: '\u539f\u5b50\u5e8f\u6570',
+    kAtomic: '\u539f\u5b50\u5e8f\u53f7',
     kMass: '\u76f8\u5bf9\u539f\u5b50\u8d28\u91cf',
     kConf: '\u7535\u5b50\u6392\u5e03',
     kShell: '\u7535\u5b50\u5c42',
@@ -113,8 +128,28 @@ export default {
     coreWord: '\u9ad8\u8003\u6838\u5fc3',
     progLab: '\u7ffb\u9605'
   },
+  // 宽度自适应：device 实测窗口 → 各容器 px（内联绑定），CSS 只定高度/视觉
+  measure: function () {
+    var that = this;
+    var apply = function (W) {
+      var cW = Math.floor(W * 0.86);
+      that.dW = cW; that.heroW = cW; that.midW = cW; that.statsW = cW; that.nucW = cW; that.notesW = cW; that.backW = cW; that.footW = cW;
+      that.shellW = Math.floor(cW * 0.34);
+      that.confW = Math.max(70, cW - that.shellW - 10);
+      that.statW = Math.floor(cW / 3) - 4;
+      that.navW = Math.floor(cW * 0.27);
+      that.progW = Math.max(80, cW - 2 * that.navW - 20);
+    };
+    apply(396);
+    try {
+      require('@system.device').getInfo({
+        success: function (d) { if (d && d.windowWidth) { that._W = d.windowWidth; apply(d.windowWidth); } }
+      });
+    } catch (e) {}
+  },
   onInit: function () {
     var self = this;
+    self.measure();
     var storage = require('@system.storage');
     storage.get({
       key: 'pt_z', default: '1',

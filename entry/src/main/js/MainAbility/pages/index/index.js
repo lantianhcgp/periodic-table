@@ -23,7 +23,7 @@ function rowOf(r, start, cols, fs, fsph) {
 export default {
   data: {
     title: L.title, badge: L.badge, hint: L.hint,
-    pageW: 370,
+    pageW: 370, headTW: 166, headBW: 182, legendTW: 340, zbW: 67, zbLW: 79,
     zoom: 0, start: 0, cols: 5,
     cw: 74, ch: 49, fs: 31, fsph: 9, listW: 370, listH: 300,
     zoomLabel: '1×', canPrev: 0, canNext: 1,
@@ -66,7 +66,11 @@ export default {
     var ch = Math.max(20, Math.round(cw * 0.66));
     var fs = Math.max(9, Math.round(cw * 0.42));
     this.cols = cols; this.cw = cw; this.ch = ch; this.fs = fs;
-    this.fsph = Math.max(6, fs - 4); this.listW = listW;
+    // 占位符（57~71 / 89~103）字号按列宽比例收紧：旧版 fs-4 在 2x/3x 下 5-6 字符撑爆格宽 → 字母被裁（用户报 2x 遮挡）
+    this.fsph = Math.max(7, Math.round(cw * 0.14)); this.listW = listW;
+    // 其余容器/文字宽度全部随窗口实测算（用户拍板：不按分辨率写死，全 100% 自适应）
+    this.headTW = Math.floor(W * 0.42); this.headBW = Math.floor(W * 0.46);
+    this.legendTW = Math.floor(W * 0.92); this.zbW = Math.floor(W * 0.17); this.zbLW = Math.floor(W * 0.20);
     this.listH = Math.min(ch * 9 + 30, Math.floor(H * 0.64));
     this.rebuild();
   },

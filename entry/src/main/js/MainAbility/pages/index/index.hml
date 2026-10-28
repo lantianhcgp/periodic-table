@@ -1,7 +1,7 @@
 <div class="page">
   <div class="head" style="width: {{ pageW }}px;">
-    <text class="head-t" style="width: 150px;">{{ title }}</text>
-    <text class="head-b" style="width: 180px;">{{ badge }} · {{ zoomLabel }}</text>
+    <text class="head-t" style="width: {{ headTW }}px;">{{ title }}</text>
+    <text class="head-b" style="width: {{ headBW }}px;">{{ badge }} · {{ zoomLabel }}</text>
   </div>
 
   <!-- 表冠纵向滚 + onswipe 横向滑动手势（skill：div 的 swipe 真机不触发，list 的 onswipe 可用） -->
@@ -54,13 +54,13 @@
   </list>
 
   <div class="legend" style="width: {{ pageW }}px;">
-    <text class="legend-t" style="width: 370px;">{{ hint }}</text>
+    <text class="legend-t" style="width: {{ legendTW }}px;">{{ hint }}</text>
   </div>
 
   <!-- 底部工具条：固定尺寸，缩放不随之缩放。左侧 − / ＋ 只缩放元素格；右侧 ◀ ▶ 已删，横滑换列 -->
   <div class="zoombar" style="width: {{ pageW }}px;">
-    <div class="zb" onclick="zoomOut()"><text class="zb-t" style="width: 40px;">－</text></div>
-    <div class="zb zbl"><text class="zb-l" style="width: 60px;">{{ zoomLabel }}</text></div>
-    <div class="zb" onclick="zoomIn()"><text class="zb-t" style="width: 40px;">＋</text></div>
+    <div class="zb" style="width: {{ zbW }}px;" onclick="zoomOut()"><text class="zb-t" style="width: {{ zbW }}px;">－</text></div>
+    <div class="zb zbl" style="width: {{ zbLW }}px;"><text class="zb-l" style="width: {{ zbLW }}px;">{{ zoomLabel }}</text></div>
+    <div class="zb" style="width: {{ zbW }}px;" onclick="zoomIn()"><text class="zb-t" style="width: {{ zbW }}px;">＋</text></div>
   </div>
 </div>

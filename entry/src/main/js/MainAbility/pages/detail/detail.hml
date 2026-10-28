@@ -1,8 +1,8 @@
 <div class="page">
-  <text class="dttl">{{ headTtl }}</text>
+  <text class="dttl" style="width: {{ dW }}px;">{{ headTtl }}</text>
 
   <!-- hero: tile + names -->
-  <div class="hero">
+  <div class="hero" style="width: {{ heroW }}px;">
     <div class="tile" style="background-color: {{ catColor }};">
       <text class="tile-sym">{{ sym }}</text>
       <text class="tile-num">{{ idx }}</text>
@@ -17,13 +17,29 @@
     </div>
   </div>
 
+  <!-- 核结构（高考核心）：质子数 = 中子数 = 最外层电子数 -->
+  <div class="nuc" style="width: {{ nucW }}px;">
+    <div class="nuc-cell">
+      <text class="s-k">{{ kProton }}</text>
+      <text class="s-v">{{ idx }}</text>
+    </div>
+    <div class="nuc-cell">
+      <text class="s-k">{{ kNeutron }}</text>
+      <text class="s-v">{{ neutrons }}</text>
+    </div>
+    <div class="nuc-cell">
+      <text class="s-k">{{ kOuter }}</text>
+      <text class="s-v">{{ outer }}</text>
+    </div>
+  </div>
+
   <!-- electron shells (single line) + config -->
-  <div class="mid">
-    <div class="shellbox">
+  <div class="mid" style="width: {{ midW }}px;">
+    <div class="shellbox" style="width: {{ shellW }}px;">
       <text class="m-k">{{ kShell }}</text>
       <text class="shelltext">{{ shellText }}</text>
     </div>
-    <div class="confbox">
+    <div class="confbox" style="width: {{ confW }}px;">
       <text class="m-k">{{ kConf }}</text>
       <text class="conf">{{ conf }}</text>
       <text class="oxline" if="{{ hasOx }}">{{ kOx }}  {{ oxText }}</text>
@@ -31,44 +47,44 @@
   </div>
 
   <!-- stats strip -->
-  <div class="stats">
-    <div class="stat">
+  <div class="stats" style="width: {{ statsW }}px;">
+    <div class="stat" style="width: {{ statW }}px;">
       <text class="s-k">{{ kAtomic }}</text>
       <text class="s-v">{{ idx }}</text>
     </div>
-    <div class="stat">
+    <div class="stat" style="width: {{ statW }}px;">
       <text class="s-k">{{ kMass }}</text>
       <text class="s-v">{{ w }}</text>
     </div>
-    <div class="stat stat-l">
+    <div class="stat stat-l" style="width: {{ statW }}px;">
       <text class="s-k">{{ kPeriod }}</text>
       <text class="s-v">{{ period }} {{ group }}</text>
     </div>
   </div>
 
   <!-- gaokao notes -->
-  <div class="notes">
+  <div class="notes" style="width: {{ notesW }}px;">
     <text class="n-k">{{ notesK }}</text>
     <text class="n-line" for="{{ nt in notes }}">{{ nt }}</text>
   </div>
 
   <!-- back -->
-  <div class="backbtn" @click="onBack()">
+  <div class="backbtn" style="width: {{ backW }}px;" @click="onBack()">
     <text class="back-txt">{{ bBack }} · {{ headTtl }}</text>
   </div>
 
   <!-- foot: prev | progress | next -->
-  <div class="foot">
-    <div class="navb" @click="onPrev()" if="{{ canPrev }}">
+  <div class="foot" style="width: {{ footW }}px;">
+    <div class="navb" style="width: {{ navW }}px;" @click="onPrev()" if="{{ canPrev }}">
       <text class="navb-l">{{ bPrev }}</text>
       <text class="navb-s">{{ prevSym }}</text>
     </div>
-    <div class="prog">
+    <div class="prog" style="width: {{ progW }}px;">
       <text class="prog-idx">{{ idx }}/{{ total }}</text>
-      <div class="prog-bar"><div class="prog-fill" style="width: {{ barPct }}%;"></div></div>
+      <div class="prog-bar" style="width: {{ progW }}px;"><div class="prog-fill" style="width: {{ barPct }}%;"></div></div>
       <text class="prog-lab">{{ progLab }}</text>
     </div>
-    <div class="navb navb-next" @click="onNext()" if="{{ canNext }}">
+    <div class="navb navb-next" style="width: {{ navW }}px;" @click="onNext()" if="{{ canNext }}">
       <text class="navb-l">{{ bNext }}</text>
       <text class="navb-s">{{ nextSym }}</text>
     </div>
