@@ -1,0 +1,11 @@
+// Generated compact labels for the canvas table; no full element objects.
+var SYMBOLS="|H|He|Li|Be|B|C|N|O|F|Ne|Na|Mg|Al|Si|P|S|Cl|Ar|K|Ca|Sc|Ti|V|Cr|Mn|Fe|Co|Ni|Cu|Zn|Ga|Ge|As|Se|Br|Kr|Rb|Sr|Y|Zr|Nb|Mo|Tc|Ru|Rh|Pd|Ag|Cd|In|Sn|Sb|Te|I|Xe|Cs|Ba|La|Ce|Pr|Nd|Pm|Sm|Eu|Gd|Tb|Dy|Ho|Er|Tm|Yb|Lu|Hf|Ta|W|Re|Os|Ir|Pt|Au|Hg|Tl|Pb|Bi|Po|At|Rn|Fr|Ra|Ac|Th|Pa|U|Np|Pu|Am|Cm|Bk|Cf|Es|Fm|Md|No|Lr|Rf|Db|Sg|Bh|Hs|Mt|Ds|Rg|Cn|Nh|Fl|Mc|Lv|Ts|Og".split("|");
+var NAMES="|\u6c22|\u6c26|\u9502|\u94cd|\u787c|\u78b3|\u6c2e|\u6c27|\u6c1f|\u6c16|\u94a0|\u9541|\u94dd|\u7845|\u78f7|\u786b|\u6c2f|\u6c29|\u94be|\u9499|\u94aa|\u949b|\u9492|\u94ec|\u9530|\u94c1|\u94b4|\u954d|\u94dc|\u950c|\u9553|\u9517|\u7837|\u7852|\u6eb4|\u6c2a|\u94f7|\u9536|\u9487|\u9506|\u94cc|\u94bc|\u951d|\u948c|\u94d1|\u94af|\u94f6|\u9549|\u94df|\u9521|\u9511|\u78b2|\u7898|\u6c19|\u94ef|\u94a1|\u9567|\u94c8|\u9568|\u9495|\u94b7|\u9490|\u94d5|\u9486|\u94fd|\u955d|\u94ac|\u94d2|\u94e5|\u9571|\u9565|\u94ea|\u94bd|\u94a8|\u94fc|\u9507|\u94f1|\u94c2|\u91d1|\u6c5e|\u94ca|\u94c5|\u94cb|\u948b|\u7839|\u6c21|\u94ab|\u956d|\u9515|\u948d|\u9564|\u94c0|\u954e|\u949a|\u9545|\u9514|\u952b|\u950e|\u953f|\u9544|\u9494|\u9518|\u94f9|\ud872\udf3b|\ud872\udf4a|\ud872\udf73|\ud872\udf5b|\ud872\udf76|\u9fcf|\ud86d\udffc|\ud872\udf2d|\u9fd4|\u9fed|\ud86d\udce7|\u9546|\ud86d\udff7|\u9fec|\u9feb".split("|");
+var CATEGORIES=".ngabmnnnhgabpmnnhgabtttttttttppmmnhgabtttttttttpppmmhgablllllllllllllllttttttttppppphgabcccccccccccccccttttttttppppphg";
+var CORE="01111111111111111111111111111111111110000000000100100100100000000000000000100011101000000000000000000000000000000000000";
+var COLORS={"a":"#70433f","b":"#6b5136","t":"#2d5270","p":"#3f5963","m":"#4b536f","n":"#31595d","h":"#5a496f","g":"#365575","l":"#5e4c3c","c":"#554361"};
+function symbol(z){if(z===-1)return "57-71";if(z===-2)return "89-103";return z>0&&z<119?SYMBOLS[z]:"";}
+function name(z){if(z===-1)return "\u9567\u7cfb";if(z===-2)return "\u9515\u7cfb";return z>0&&z<119?NAMES[z]:"";}
+function color(z){if(z===-1)return COLORS.l;if(z===-2)return COLORS.c;return z>0&&z<119?COLORS[CATEGORIES.charAt(z)]:"#0c1119";}
+function isCore(z){return z>0&&z<119&&CORE.charAt(z)==="1";}
+export default {symbol:symbol,name:name,color:color,isCore:isCore};

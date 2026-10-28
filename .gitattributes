@@ -1,0 +1,2 @@
+# Preserve fetched NIST HTML byte-for-byte as an evidence snapshot.
+tools/nist-isotopes.html binary

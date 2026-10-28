@@ -1,0 +1,3439 @@
+[
+  {
+    "z": 1,
+    "symbol": "H",
+    "cn": "氢",
+    "en": "Hydrogen",
+    "weight": "1.0080",
+    "weightKind": "standard",
+    "category": "nm",
+    "period": 1,
+    "group": "第1族 / IA",
+    "shells": [
+      1
+    ],
+    "config": "1s1",
+    "isotopes": [
+      1,
+      2,
+      3
+    ],
+    "core": true,
+    "oxidation": "+1, -1",
+    "keyPoint": "氢是非金属；H-1、H-2、H-3的质子数都为1，中子数不同。氢不能机械套碱金属性质。",
+    "note": "氕、氘、氚是氢的三种核素。核素改变不改变元素种类。",
+    "electronegativity": "2.2",
+    "ionization": "1312.0"
+  },
+  {
+    "z": 2,
+    "symbol": "He",
+    "cn": "氦",
+    "en": "Helium",
+    "weight": "4.00260",
+    "weightKind": "standard",
+    "category": "nob",
+    "period": 1,
+    "group": "第18族 / 0族",
+    "shells": [
+      2
+    ],
+    "config": "1s2",
+    "isotopes": [
+      4,
+      3
+    ],
+    "core": true,
+    "oxidation": "0（单质；通常不活泼）",
+    "keyPoint": "He是例外：最外层2个电子已满，不能套八电子规则；通常化学性质很不活泼。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "—",
+    "ionization": "2372.3"
+  },
+  {
+    "z": 3,
+    "symbol": "Li",
+    "cn": "锂",
+    "en": "Lithium",
+    "weight": "7.0",
+    "weightKind": "standard",
+    "category": "alk",
+    "period": 2,
+    "group": "第1族 / IA",
+    "shells": [
+      2,
+      1
+    ],
+    "config": "[He]2s1",
+    "isotopes": [
+      7,
+      6
+    ],
+    "core": true,
+    "oxidation": "+1",
+    "keyPoint": "主族：最外层1个电子；位置、结构与性质相互联系。通常最高正价=1，最低负价=最外层电子数-8（非金属）。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "0.98",
+    "ionization": "520.2"
+  },
+  {
+    "z": 4,
+    "symbol": "Be",
+    "cn": "铍",
+    "en": "Beryllium",
+    "weight": "9.012183",
+    "weightKind": "standard",
+    "category": "alk2",
+    "period": 2,
+    "group": "第2族 / IIA",
+    "shells": [
+      2,
+      2
+    ],
+    "config": "[He]2s2",
+    "isotopes": [
+      9
+    ],
+    "core": true,
+    "oxidation": "+2",
+    "keyPoint": "主族：最外层2个电子；位置、结构与性质相互联系。通常最高正价=2，最低负价=最外层电子数-8（非金属）。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.57",
+    "ionization": "899.5"
+  },
+  {
+    "z": 5,
+    "symbol": "B",
+    "cn": "硼",
+    "en": "Boron",
+    "weight": "10.81",
+    "weightKind": "standard",
+    "category": "met",
+    "period": 2,
+    "group": "第13族 / IIIA",
+    "shells": [
+      2,
+      3
+    ],
+    "config": "[He]2s2 2p1",
+    "isotopes": [
+      11,
+      10
+    ],
+    "core": true,
+    "oxidation": "+3",
+    "keyPoint": "主族：最外层3个电子；位置、结构与性质相互联系。通常最高正价=3，最低负价=最外层电子数-8（非金属）。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "2.04",
+    "ionization": "800.6"
+  },
+  {
+    "z": 6,
+    "symbol": "C",
+    "cn": "碳",
+    "en": "Carbon",
+    "weight": "12.011",
+    "weightKind": "standard",
+    "category": "nm",
+    "period": 2,
+    "group": "第14族 / IVA",
+    "shells": [
+      2,
+      4
+    ],
+    "config": "[He]2s2 2p2",
+    "isotopes": [
+      12,
+      13,
+      14
+    ],
+    "core": true,
+    "oxidation": "+4, +2, -4",
+    "keyPoint": "主族：最外层4个电子；位置、结构与性质相互联系。通常最高正价=4，最低负价=最外层电子数-8（非金属）。",
+    "note": "C-12、C-13、C-14是同位素；C-14用于年代测定。金刚石、石墨、C60是同素异形体。",
+    "electronegativity": "2.55",
+    "ionization": "1086.4"
+  },
+  {
+    "z": 7,
+    "symbol": "N",
+    "cn": "氮",
+    "en": "Nitrogen",
+    "weight": "14.007",
+    "weightKind": "standard",
+    "category": "nm",
+    "period": 2,
+    "group": "第15族 / VA",
+    "shells": [
+      2,
+      5
+    ],
+    "config": "[He] 2s2 2p3",
+    "isotopes": [
+      14,
+      15
+    ],
+    "core": true,
+    "oxidation": "+5, +4, +3, +2, +1, -1, -2, -3",
+    "keyPoint": "主族：最外层5个电子；位置、结构与性质相互联系。通常最高正价=5，最低负价=最外层电子数-8（非金属）。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "3.04",
+    "ionization": "1402.3"
+  },
+  {
+    "z": 8,
+    "symbol": "O",
+    "cn": "氧",
+    "en": "Oxygen",
+    "weight": "15.999",
+    "weightKind": "standard",
+    "category": "nm",
+    "period": 2,
+    "group": "第16族 / VIA",
+    "shells": [
+      2,
+      6
+    ],
+    "config": "[He]2s2 2p4",
+    "isotopes": [
+      16,
+      18,
+      17
+    ],
+    "core": true,
+    "oxidation": "-2",
+    "keyPoint": "O是例外：常见-2，过氧化物中-1，OF2中+2；不能套最高正价等于最外层电子数。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "3.44",
+    "ionization": "1313.9"
+  },
+  {
+    "z": 9,
+    "symbol": "F",
+    "cn": "氟",
+    "en": "Fluorine",
+    "weight": "18.99840316",
+    "weightKind": "standard",
+    "category": "hal",
+    "period": 2,
+    "group": "第17族 / VIIA",
+    "shells": [
+      2,
+      7
+    ],
+    "config": "[He]2s2 2p5",
+    "isotopes": [
+      19
+    ],
+    "core": true,
+    "oxidation": "-1",
+    "keyPoint": "F是例外：化合物中仅-1，单质F2中为0；无正价，不能套最高正价规则。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "3.98",
+    "ionization": "1681.1"
+  },
+  {
+    "z": 10,
+    "symbol": "Ne",
+    "cn": "氖",
+    "en": "Neon",
+    "weight": "20.180",
+    "weightKind": "standard",
+    "category": "nob",
+    "period": 2,
+    "group": "第18族 / 0族",
+    "shells": [
+      2,
+      8
+    ],
+    "config": "[He]2s2 2p6",
+    "isotopes": [
+      20,
+      22,
+      21
+    ],
+    "core": true,
+    "oxidation": "0（单质；通常不活泼）",
+    "keyPoint": "稀有气体最外层通常为8电子；He为2电子。不能把“不活泼”理解为所有稀有气体绝无化合物。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "—",
+    "ionization": "2080.7"
+  },
+  {
+    "z": 11,
+    "symbol": "Na",
+    "cn": "钠",
+    "en": "Sodium",
+    "weight": "22.9897693",
+    "weightKind": "standard",
+    "category": "alk",
+    "period": 3,
+    "group": "第1族 / IA",
+    "shells": [
+      2,
+      8,
+      1
+    ],
+    "config": "[Ne]3s1",
+    "isotopes": [
+      23
+    ],
+    "core": true,
+    "oxidation": "+1",
+    "keyPoint": "主族：最外层1个电子；位置、结构与性质相互联系。通常最高正价=1，最低负价=最外层电子数-8（非金属）。",
+    "note": "Na通常形成Na+；Na2O2与水反应生成NaOH和O2。焰色为黄色。",
+    "electronegativity": "0.93",
+    "ionization": "495.8"
+  },
+  {
+    "z": 12,
+    "symbol": "Mg",
+    "cn": "镁",
+    "en": "Magnesium",
+    "weight": "24.305",
+    "weightKind": "standard",
+    "category": "alk2",
+    "period": 3,
+    "group": "第2族 / IIA",
+    "shells": [
+      2,
+      8,
+      2
+    ],
+    "config": "[Ne]3s2",
+    "isotopes": [
+      24,
+      26,
+      25
+    ],
+    "core": true,
+    "oxidation": "+2",
+    "keyPoint": "主族：最外层2个电子；位置、结构与性质相互联系。通常最高正价=2，最低负价=最外层电子数-8（非金属）。",
+    "note": "Mg通常形成Mg2+；镁燃烧发出耀眼白光，MgO可与酸反应。",
+    "electronegativity": "1.31",
+    "ionization": "737.7"
+  },
+  {
+    "z": 13,
+    "symbol": "Al",
+    "cn": "铝",
+    "en": "Aluminum",
+    "weight": "26.981538",
+    "weightKind": "standard",
+    "category": "post",
+    "period": 3,
+    "group": "第13族 / IIIA",
+    "shells": [
+      2,
+      8,
+      3
+    ],
+    "config": "[Ne]3s2 3p1",
+    "isotopes": [
+      27
+    ],
+    "core": true,
+    "oxidation": "+3",
+    "keyPoint": "主族：最外层3个电子；位置、结构与性质相互联系。通常最高正价=3，最低负价=最外层电子数-8（非金属）。",
+    "note": "Al2O3和Al(OH)3具有两性；金属Al能与酸及强碱溶液反应。",
+    "electronegativity": "1.61",
+    "ionization": "577.6"
+  },
+  {
+    "z": 14,
+    "symbol": "Si",
+    "cn": "硅",
+    "en": "Silicon",
+    "weight": "28.085",
+    "weightKind": "standard",
+    "category": "met",
+    "period": 3,
+    "group": "第14族 / IVA",
+    "shells": [
+      2,
+      8,
+      4
+    ],
+    "config": "[Ne]3s2 3p2",
+    "isotopes": [
+      28,
+      29,
+      30
+    ],
+    "core": true,
+    "oxidation": "+4, +2, -4",
+    "keyPoint": "主族：最外层4个电子；位置、结构与性质相互联系。通常最高正价=4，最低负价=最外层电子数-8（非金属）。",
+    "note": "Si为半导体；SiO2与HF反应。硅酸通常由可溶性硅酸盐酸化制取。",
+    "electronegativity": "1.9",
+    "ionization": "786.5"
+  },
+  {
+    "z": 15,
+    "symbol": "P",
+    "cn": "磷",
+    "en": "Phosphorus",
+    "weight": "30.97376200",
+    "weightKind": "standard",
+    "category": "nm",
+    "period": 3,
+    "group": "第15族 / VA",
+    "shells": [
+      2,
+      8,
+      5
+    ],
+    "config": "[Ne]3s2 3p3",
+    "isotopes": [
+      31
+    ],
+    "core": true,
+    "oxidation": "+5, +3, -3",
+    "keyPoint": "主族：最外层5个电子；位置、结构与性质相互联系。通常最高正价=5，最低负价=最外层电子数-8（非金属）。",
+    "note": "注意白磷、红磷的同素异形体区别；主族最高正价通常为+5。",
+    "electronegativity": "2.19",
+    "ionization": "1011.8"
+  },
+  {
+    "z": 16,
+    "symbol": "S",
+    "cn": "硫",
+    "en": "Sulfur",
+    "weight": "32.07",
+    "weightKind": "standard",
+    "category": "nm",
+    "period": 3,
+    "group": "第16族 / VIA",
+    "shells": [
+      2,
+      8,
+      6
+    ],
+    "config": "[Ne]3s2 3p4",
+    "isotopes": [
+      32,
+      34,
+      33
+    ],
+    "core": true,
+    "oxidation": "+6, +4, -2",
+    "keyPoint": "主族：最外层6个电子；位置、结构与性质相互联系。通常最高正价=6，最低负价=最外层电子数-8（非金属）。",
+    "note": "S常见-2、+4、+6；SO2具有还原性及暂时性漂白作用，须区分反应类型。",
+    "electronegativity": "2.58",
+    "ionization": "999.6"
+  },
+  {
+    "z": 17,
+    "symbol": "Cl",
+    "cn": "氯",
+    "en": "Chlorine",
+    "weight": "35.45",
+    "weightKind": "standard",
+    "category": "hal",
+    "period": 3,
+    "group": "第17族 / VIIA",
+    "shells": [
+      2,
+      8,
+      7
+    ],
+    "config": "[Ne]3s2 3p5",
+    "isotopes": [
+      35,
+      37
+    ],
+    "core": true,
+    "oxidation": "+7, +5, +1, -1",
+    "keyPoint": "主族：最外层7个电子；位置、结构与性质相互联系。通常最高正价=7，最低负价=最外层电子数-8（非金属）。",
+    "note": "Cl-35和Cl-37分别有18、20个中子。Cl2与水反应生成HCl和HClO；漂白性来自HClO。",
+    "electronegativity": "3.16",
+    "ionization": "1251.2"
+  },
+  {
+    "z": 18,
+    "symbol": "Ar",
+    "cn": "氩",
+    "en": "Argon",
+    "weight": "39.9",
+    "weightKind": "standard",
+    "category": "nob",
+    "period": 3,
+    "group": "第18族 / 0族",
+    "shells": [
+      2,
+      8,
+      8
+    ],
+    "config": "[Ne]3s2 3p6",
+    "isotopes": [
+      40,
+      36,
+      38
+    ],
+    "core": true,
+    "oxidation": "0（单质；通常不活泼）",
+    "keyPoint": "稀有气体最外层通常为8电子；He为2电子。不能把“不活泼”理解为所有稀有气体绝无化合物。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "—",
+    "ionization": "1520.6"
+  },
+  {
+    "z": 19,
+    "symbol": "K",
+    "cn": "钾",
+    "en": "Potassium",
+    "weight": "39.0983",
+    "weightKind": "standard",
+    "category": "alk",
+    "period": 4,
+    "group": "第1族 / IA",
+    "shells": [
+      2,
+      8,
+      8,
+      1
+    ],
+    "config": "[Ar]4s1",
+    "isotopes": [
+      39,
+      41,
+      40
+    ],
+    "core": true,
+    "oxidation": "+1",
+    "keyPoint": "主族：最外层1个电子；位置、结构与性质相互联系。通常最高正价=1，最低负价=最外层电子数-8（非金属）。",
+    "note": "K通常形成K+；焰色紫色，观察时可透过蓝色钴玻璃排除Na干扰。",
+    "electronegativity": "0.82",
+    "ionization": "418.8"
+  },
+  {
+    "z": 20,
+    "symbol": "Ca",
+    "cn": "钙",
+    "en": "Calcium",
+    "weight": "40.08",
+    "weightKind": "standard",
+    "category": "alk2",
+    "period": 4,
+    "group": "第2族 / IIA",
+    "shells": [
+      2,
+      8,
+      8,
+      2
+    ],
+    "config": "[Ar]4s2",
+    "isotopes": [
+      40,
+      44,
+      42
+    ],
+    "core": true,
+    "oxidation": "+2",
+    "keyPoint": "主族：最外层2个电子；位置、结构与性质相互联系。通常最高正价=2，最低负价=最外层电子数-8（非金属）。",
+    "note": "Ca通常形成Ca2+；CaCO3、CaO、Ca(OH)2之间的转化是常见考点。",
+    "electronegativity": "1",
+    "ionization": "589.8"
+  },
+  {
+    "z": 21,
+    "symbol": "Sc",
+    "cn": "钪",
+    "en": "Scandium",
+    "weight": "44.95591",
+    "weightKind": "standard",
+    "category": "tr",
+    "period": 4,
+    "group": "第3族 / IIIB",
+    "shells": [
+      2,
+      8,
+      9,
+      2
+    ],
+    "config": "[Ar]4s2 3d1",
+    "isotopes": [
+      45
+    ],
+    "core": true,
+    "oxidation": "+3",
+    "keyPoint": "过渡区：最外层电子数不等于价电子数；常有多种价态，不能套主族最高正价规则。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.36",
+    "ionization": "633.0"
+  },
+  {
+    "z": 22,
+    "symbol": "Ti",
+    "cn": "钛",
+    "en": "Titanium",
+    "weight": "47.867",
+    "weightKind": "standard",
+    "category": "tr",
+    "period": 4,
+    "group": "第4族 / IVB",
+    "shells": [
+      2,
+      8,
+      10,
+      2
+    ],
+    "config": "[Ar]4s2 3d2",
+    "isotopes": [
+      48,
+      46,
+      47
+    ],
+    "core": true,
+    "oxidation": "+4, +3, +2",
+    "keyPoint": "过渡区：最外层电子数不等于价电子数；常有多种价态，不能套主族最高正价规则。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.54",
+    "ionization": "658.8"
+  },
+  {
+    "z": 23,
+    "symbol": "V",
+    "cn": "钒",
+    "en": "Vanadium",
+    "weight": "50.9415",
+    "weightKind": "standard",
+    "category": "tr",
+    "period": 4,
+    "group": "第5族 / VB",
+    "shells": [
+      2,
+      8,
+      11,
+      2
+    ],
+    "config": "[Ar]4s2 3d3",
+    "isotopes": [
+      51,
+      50
+    ],
+    "core": true,
+    "oxidation": "+5, +4, +3, +2",
+    "keyPoint": "过渡区：最外层电子数不等于价电子数；常有多种价态，不能套主族最高正价规则。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.63",
+    "ionization": "650.9"
+  },
+  {
+    "z": 24,
+    "symbol": "Cr",
+    "cn": "铬",
+    "en": "Chromium",
+    "weight": "51.996",
+    "weightKind": "standard",
+    "category": "tr",
+    "period": 4,
+    "group": "第6族 / VIB",
+    "shells": [
+      2,
+      8,
+      13,
+      1
+    ],
+    "config": "[Ar]3d5 4s1",
+    "isotopes": [
+      52,
+      53,
+      50
+    ],
+    "core": true,
+    "oxidation": "+6, +3, +2",
+    "keyPoint": "Cr基态为[Ar]3d5 4s1，是构造原理简单填充的例外；过渡元素不套主族最高正价规律。",
+    "note": "注意Cr(III)与Cr(VI)的价态和颜色；重铬酸根与铬酸根平衡受酸碱条件影响。",
+    "electronegativity": "1.66",
+    "ionization": "652.9"
+  },
+  {
+    "z": 25,
+    "symbol": "Mn",
+    "cn": "锰",
+    "en": "Manganese",
+    "weight": "54.93804",
+    "weightKind": "standard",
+    "category": "tr",
+    "period": 4,
+    "group": "第7族 / VIIB",
+    "shells": [
+      2,
+      8,
+      13,
+      2
+    ],
+    "config": "[Ar]4s2 3d5",
+    "isotopes": [
+      55
+    ],
+    "core": true,
+    "oxidation": "+7, +4, +3, +2",
+    "keyPoint": "过渡区：最外层电子数不等于价电子数；常有多种价态，不能套主族最高正价规则。",
+    "note": "Mn常见+2、+4、+7；酸性KMnO4为强氧化剂，终产物取决于反应条件。",
+    "electronegativity": "1.55",
+    "ionization": "717.3"
+  },
+  {
+    "z": 26,
+    "symbol": "Fe",
+    "cn": "铁",
+    "en": "Iron",
+    "weight": "55.84",
+    "weightKind": "standard",
+    "category": "tr",
+    "period": 4,
+    "group": "第8族 / VIII",
+    "shells": [
+      2,
+      8,
+      14,
+      2
+    ],
+    "config": "[Ar]4s2 3d6",
+    "isotopes": [
+      56,
+      54,
+      57
+    ],
+    "core": true,
+    "oxidation": "+3, +2",
+    "keyPoint": "过渡区：最外层电子数不等于价电子数；常有多种价态，不能套主族最高正价规则。",
+    "note": "Fe常见+2、+3；Fe3+遇SCN-显红色，Fe2+的还原性和Fe3+的氧化性常用于转化推断。",
+    "electronegativity": "1.83",
+    "ionization": "762.4"
+  },
+  {
+    "z": 27,
+    "symbol": "Co",
+    "cn": "钴",
+    "en": "Cobalt",
+    "weight": "58.93319",
+    "weightKind": "standard",
+    "category": "tr",
+    "period": 4,
+    "group": "第9族 / VIII",
+    "shells": [
+      2,
+      8,
+      15,
+      2
+    ],
+    "config": "[Ar]4s2 3d7",
+    "isotopes": [
+      59
+    ],
+    "core": true,
+    "oxidation": "+3, +2",
+    "keyPoint": "过渡区：最外层电子数不等于价电子数；常有多种价态，不能套主族最高正价规则。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.88",
+    "ionization": "760.4"
+  },
+  {
+    "z": 28,
+    "symbol": "Ni",
+    "cn": "镍",
+    "en": "Nickel",
+    "weight": "58.693",
+    "weightKind": "standard",
+    "category": "tr",
+    "period": 4,
+    "group": "第10族 / VIII",
+    "shells": [
+      2,
+      8,
+      16,
+      2
+    ],
+    "config": "[Ar]4s2 3d8",
+    "isotopes": [
+      58,
+      60,
+      62
+    ],
+    "core": true,
+    "oxidation": "+3, +2",
+    "keyPoint": "过渡区：最外层电子数不等于价电子数；常有多种价态，不能套主族最高正价规则。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.91",
+    "ionization": "737.1"
+  },
+  {
+    "z": 29,
+    "symbol": "Cu",
+    "cn": "铜",
+    "en": "Copper",
+    "weight": "63.55",
+    "weightKind": "standard",
+    "category": "tr",
+    "period": 4,
+    "group": "第11族 / IB",
+    "shells": [
+      2,
+      8,
+      18,
+      1
+    ],
+    "config": "[Ar]4s1 3d10",
+    "isotopes": [
+      63,
+      65
+    ],
+    "core": true,
+    "oxidation": "+2, +1",
+    "keyPoint": "Cu基态为[Ar]3d10 4s1，是简单填充的例外；最外层电子数不等于所有价电子数。",
+    "note": "Cu常见+1、+2；Cu2+溶液常呈蓝色。Cu-63与Cu-65的中子数不同。",
+    "electronegativity": "1.9",
+    "ionization": "745.4"
+  },
+  {
+    "z": 30,
+    "symbol": "Zn",
+    "cn": "锌",
+    "en": "Zinc",
+    "weight": "65.4",
+    "weightKind": "standard",
+    "category": "post",
+    "period": 4,
+    "group": "第12族 / IIB",
+    "shells": [
+      2,
+      8,
+      18,
+      2
+    ],
+    "config": "[Ar]4s2 3d10",
+    "isotopes": [
+      64,
+      66,
+      68
+    ],
+    "core": true,
+    "oxidation": "+2",
+    "keyPoint": "过渡区：最外层电子数不等于价电子数；常有多种价态，不能套主族最高正价规则。",
+    "note": "Zn常见+2；Zn(OH)2具有两性。原电池中Zn常作负极失电子。",
+    "electronegativity": "1.65",
+    "ionization": "906.4"
+  },
+  {
+    "z": 31,
+    "symbol": "Ga",
+    "cn": "镓",
+    "en": "Gallium",
+    "weight": "69.723",
+    "weightKind": "standard",
+    "category": "post",
+    "period": 4,
+    "group": "第13族 / IIIA",
+    "shells": [
+      2,
+      8,
+      18,
+      3
+    ],
+    "config": "[Ar]4s2 3d10 4p1",
+    "isotopes": [
+      69,
+      71
+    ],
+    "core": true,
+    "oxidation": "+3",
+    "keyPoint": "主族：最外层3个电子；位置、结构与性质相互联系。通常最高正价=3，最低负价=最外层电子数-8（非金属）。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.81",
+    "ionization": "578.8"
+  },
+  {
+    "z": 32,
+    "symbol": "Ge",
+    "cn": "锗",
+    "en": "Germanium",
+    "weight": "72.63",
+    "weightKind": "standard",
+    "category": "met",
+    "period": 4,
+    "group": "第14族 / IVA",
+    "shells": [
+      2,
+      8,
+      18,
+      4
+    ],
+    "config": "[Ar]4s2 3d10 4p2",
+    "isotopes": [
+      74,
+      72,
+      70
+    ],
+    "core": true,
+    "oxidation": "+4, +2",
+    "keyPoint": "主族：最外层4个电子；位置、结构与性质相互联系。通常最高正价=4，最低负价=最外层电子数-8（非金属）。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "2.01",
+    "ionization": "762.2"
+  },
+  {
+    "z": 33,
+    "symbol": "As",
+    "cn": "砷",
+    "en": "Arsenic",
+    "weight": "74.92159",
+    "weightKind": "standard",
+    "category": "met",
+    "period": 4,
+    "group": "第15族 / VA",
+    "shells": [
+      2,
+      8,
+      18,
+      5
+    ],
+    "config": "[Ar]4s2 3d10 4p3",
+    "isotopes": [
+      75
+    ],
+    "core": true,
+    "oxidation": "+5, +3, -3",
+    "keyPoint": "主族：最外层5个电子；位置、结构与性质相互联系。通常最高正价=5，最低负价=最外层电子数-8（非金属）。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "2.18",
+    "ionization": "947.0"
+  },
+  {
+    "z": 34,
+    "symbol": "Se",
+    "cn": "硒",
+    "en": "Selenium",
+    "weight": "78.97",
+    "weightKind": "standard",
+    "category": "nm",
+    "period": 4,
+    "group": "第16族 / VIA",
+    "shells": [
+      2,
+      8,
+      18,
+      6
+    ],
+    "config": "[Ar]4s2 3d10 4p4",
+    "isotopes": [
+      80,
+      78,
+      76
+    ],
+    "core": true,
+    "oxidation": "+6, +4, -2",
+    "keyPoint": "主族：最外层6个电子；位置、结构与性质相互联系。通常最高正价=6，最低负价=最外层电子数-8（非金属）。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "2.55",
+    "ionization": "940.9"
+  },
+  {
+    "z": 35,
+    "symbol": "Br",
+    "cn": "溴",
+    "en": "Bromine",
+    "weight": "79.90",
+    "weightKind": "standard",
+    "category": "hal",
+    "period": 4,
+    "group": "第17族 / VIIA",
+    "shells": [
+      2,
+      8,
+      18,
+      7
+    ],
+    "config": "[Ar]4s2 3d10 4p5",
+    "isotopes": [
+      79,
+      81
+    ],
+    "core": true,
+    "oxidation": "+5, +1, -1",
+    "keyPoint": "主族：最外层7个电子；位置、结构与性质相互联系。通常最高正价=7，最低负价=最外层电子数-8（非金属）。",
+    "note": "Br-79和Br-81分别有44、46个中子；氧化性Cl2>Br2>I2，注意卤素置换反应。",
+    "electronegativity": "2.96",
+    "ionization": "1139.9"
+  },
+  {
+    "z": 36,
+    "symbol": "Kr",
+    "cn": "氪",
+    "en": "Krypton",
+    "weight": "83.80",
+    "weightKind": "standard",
+    "category": "nob",
+    "period": 4,
+    "group": "第18族 / 0族",
+    "shells": [
+      2,
+      8,
+      18,
+      8
+    ],
+    "config": "[Ar]4s2 3d10 4p6",
+    "isotopes": [
+      84,
+      86,
+      82
+    ],
+    "core": true,
+    "oxidation": "0（单质；通常不活泼）",
+    "keyPoint": "稀有气体最外层通常为8电子；He为2电子。不能把“不活泼”理解为所有稀有气体绝无化合物。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "3",
+    "ionization": "1350.8"
+  },
+  {
+    "z": 37,
+    "symbol": "Rb",
+    "cn": "铷",
+    "en": "Rubidium",
+    "weight": "85.468",
+    "weightKind": "standard",
+    "category": "alk",
+    "period": 5,
+    "group": "第1族 / IA",
+    "shells": [
+      2,
+      8,
+      18,
+      8,
+      1
+    ],
+    "config": "[Kr]5s1",
+    "isotopes": [
+      85,
+      87
+    ],
+    "core": false,
+    "oxidation": "+1",
+    "keyPoint": "主族：最外层1个电子；位置、结构与性质相互联系。通常最高正价=1，最低负价=最外层电子数-8（非金属）。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "0.82",
+    "ionization": "403.0"
+  },
+  {
+    "z": 38,
+    "symbol": "Sr",
+    "cn": "锶",
+    "en": "Strontium",
+    "weight": "87.62",
+    "weightKind": "standard",
+    "category": "alk2",
+    "period": 5,
+    "group": "第2族 / IIA",
+    "shells": [
+      2,
+      8,
+      18,
+      8,
+      2
+    ],
+    "config": "[Kr]5s2",
+    "isotopes": [
+      88,
+      86,
+      87
+    ],
+    "core": false,
+    "oxidation": "+2",
+    "keyPoint": "主族：最外层2个电子；位置、结构与性质相互联系。通常最高正价=2，最低负价=最外层电子数-8（非金属）。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "0.95",
+    "ionization": "549.5"
+  },
+  {
+    "z": 39,
+    "symbol": "Y",
+    "cn": "钇",
+    "en": "Yttrium",
+    "weight": "88.90584",
+    "weightKind": "standard",
+    "category": "tr",
+    "period": 5,
+    "group": "第3族 / IIIB",
+    "shells": [
+      2,
+      8,
+      18,
+      9,
+      2
+    ],
+    "config": "[Kr]5s2 4d1",
+    "isotopes": [
+      89
+    ],
+    "core": false,
+    "oxidation": "+3",
+    "keyPoint": "过渡区：最外层电子数不等于价电子数；常有多种价态，不能套主族最高正价规则。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.22",
+    "ionization": "599.8"
+  },
+  {
+    "z": 40,
+    "symbol": "Zr",
+    "cn": "锆",
+    "en": "Zirconium",
+    "weight": "91.22",
+    "weightKind": "standard",
+    "category": "tr",
+    "period": 5,
+    "group": "第4族 / IVB",
+    "shells": [
+      2,
+      8,
+      18,
+      10,
+      2
+    ],
+    "config": "[Kr]5s2 4d2",
+    "isotopes": [
+      90,
+      94,
+      92
+    ],
+    "core": false,
+    "oxidation": "+4",
+    "keyPoint": "过渡区：最外层电子数不等于价电子数；常有多种价态，不能套主族最高正价规则。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.33",
+    "ionization": "640.1"
+  },
+  {
+    "z": 41,
+    "symbol": "Nb",
+    "cn": "铌",
+    "en": "Niobium",
+    "weight": "92.90637",
+    "weightKind": "standard",
+    "category": "tr",
+    "period": 5,
+    "group": "第5族 / VB",
+    "shells": [
+      2,
+      8,
+      18,
+      12,
+      1
+    ],
+    "config": "[Kr]5s1 4d4",
+    "isotopes": [
+      93
+    ],
+    "core": false,
+    "oxidation": "+5, +3",
+    "keyPoint": "过渡区：最外层电子数不等于价电子数；常有多种价态，不能套主族最高正价规则。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.6",
+    "ionization": "652.1"
+  },
+  {
+    "z": 42,
+    "symbol": "Mo",
+    "cn": "钼",
+    "en": "Molybdenum",
+    "weight": "95.95",
+    "weightKind": "standard",
+    "category": "tr",
+    "period": 5,
+    "group": "第6族 / VIB",
+    "shells": [
+      2,
+      8,
+      18,
+      13,
+      1
+    ],
+    "config": "[Kr]5s1 4d5",
+    "isotopes": [
+      98,
+      96,
+      95
+    ],
+    "core": false,
+    "oxidation": "+6",
+    "keyPoint": "过渡区：最外层电子数不等于价电子数；常有多种价态，不能套主族最高正价规则。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "2.16",
+    "ionization": "684.3"
+  },
+  {
+    "z": 43,
+    "symbol": "Tc",
+    "cn": "锝",
+    "en": "Technetium",
+    "weight": "[98]",
+    "weightKind": "nuclide",
+    "category": "tr",
+    "period": 5,
+    "group": "第7族 / VIIB",
+    "shells": [
+      2,
+      8,
+      18,
+      13,
+      2
+    ],
+    "config": "[Kr]5s2 4d5",
+    "isotopes": [
+      98
+    ],
+    "core": false,
+    "oxidation": "+7, +6, +4",
+    "keyPoint": "过渡区：最外层电子数不等于价电子数；常有多种价态，不能套主族最高正价规则。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.9",
+    "ionization": "702.4"
+  },
+  {
+    "z": 44,
+    "symbol": "Ru",
+    "cn": "钌",
+    "en": "Ruthenium",
+    "weight": "101.1",
+    "weightKind": "standard",
+    "category": "tr",
+    "period": 5,
+    "group": "第8族 / VIII",
+    "shells": [
+      2,
+      8,
+      18,
+      15,
+      1
+    ],
+    "config": "[Kr]5s1 4d7",
+    "isotopes": [
+      102,
+      104,
+      101
+    ],
+    "core": false,
+    "oxidation": "+3",
+    "keyPoint": "过渡区：最外层电子数不等于价电子数；常有多种价态，不能套主族最高正价规则。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "2.2",
+    "ionization": "710.2"
+  },
+  {
+    "z": 45,
+    "symbol": "Rh",
+    "cn": "铑",
+    "en": "Rhodium",
+    "weight": "102.9055",
+    "weightKind": "standard",
+    "category": "tr",
+    "period": 5,
+    "group": "第9族 / VIII",
+    "shells": [
+      2,
+      8,
+      18,
+      16,
+      1
+    ],
+    "config": "[Kr]5s1 4d8",
+    "isotopes": [
+      103
+    ],
+    "core": false,
+    "oxidation": "+3",
+    "keyPoint": "过渡区：最外层电子数不等于价电子数；常有多种价态，不能套主族最高正价规则。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "2.28",
+    "ionization": "719.7"
+  },
+  {
+    "z": 46,
+    "symbol": "Pd",
+    "cn": "钯",
+    "en": "Palladium",
+    "weight": "106.42",
+    "weightKind": "standard",
+    "category": "tr",
+    "period": 5,
+    "group": "第10族 / VIII",
+    "shells": [
+      2,
+      8,
+      18,
+      18
+    ],
+    "config": "[Kr]4d10",
+    "isotopes": [
+      106,
+      108,
+      105
+    ],
+    "core": false,
+    "oxidation": "+3, +2",
+    "keyPoint": "过渡区：最外层电子数不等于价电子数；常有多种价态，不能套主族最高正价规则。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "2.2",
+    "ionization": "804.4"
+  },
+  {
+    "z": 47,
+    "symbol": "Ag",
+    "cn": "银",
+    "en": "Silver",
+    "weight": "107.868",
+    "weightKind": "standard",
+    "category": "tr",
+    "period": 5,
+    "group": "第11族 / IB",
+    "shells": [
+      2,
+      8,
+      18,
+      18,
+      1
+    ],
+    "config": "[Kr]5s1 4d10",
+    "isotopes": [
+      107,
+      109
+    ],
+    "core": true,
+    "oxidation": "+1",
+    "keyPoint": "过渡区：最外层电子数不等于价电子数；常有多种价态，不能套主族最高正价规则。",
+    "note": "AgCl、AgBr、AgI分别为白、淡黄、黄色沉淀；卤化银见光易分解。",
+    "electronegativity": "1.93",
+    "ionization": "731.0"
+  },
+  {
+    "z": 48,
+    "symbol": "Cd",
+    "cn": "镉",
+    "en": "Cadmium",
+    "weight": "112.41",
+    "weightKind": "standard",
+    "category": "post",
+    "period": 5,
+    "group": "第12族 / IIB",
+    "shells": [
+      2,
+      8,
+      18,
+      18,
+      2
+    ],
+    "config": "[Kr]5s2 4d10",
+    "isotopes": [
+      114,
+      112,
+      111
+    ],
+    "core": false,
+    "oxidation": "+2",
+    "keyPoint": "过渡区：最外层电子数不等于价电子数；常有多种价态，不能套主族最高正价规则。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.69",
+    "ionization": "867.8"
+  },
+  {
+    "z": 49,
+    "symbol": "In",
+    "cn": "铟",
+    "en": "Indium",
+    "weight": "114.818",
+    "weightKind": "standard",
+    "category": "post",
+    "period": 5,
+    "group": "第13族 / IIIA",
+    "shells": [
+      2,
+      8,
+      18,
+      18,
+      3
+    ],
+    "config": "[Kr]5s2 4d10 5p1",
+    "isotopes": [
+      115,
+      113
+    ],
+    "core": false,
+    "oxidation": "+3",
+    "keyPoint": "主族：最外层3个电子；位置、结构与性质相互联系。通常最高正价=3，最低负价=最外层电子数-8（非金属）。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.78",
+    "ionization": "558.3"
+  },
+  {
+    "z": 50,
+    "symbol": "Sn",
+    "cn": "锡",
+    "en": "Tin",
+    "weight": "118.71",
+    "weightKind": "standard",
+    "category": "post",
+    "period": 5,
+    "group": "第14族 / IVA",
+    "shells": [
+      2,
+      8,
+      18,
+      18,
+      4
+    ],
+    "config": "[Kr]5s2 4d10 5p2",
+    "isotopes": [
+      120,
+      118,
+      116
+    ],
+    "core": true,
+    "oxidation": "+4, +2",
+    "keyPoint": "主族：最外层4个电子；位置、结构与性质相互联系。通常最高正价=4，最低负价=最外层电子数-8（非金属）。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.96",
+    "ionization": "708.6"
+  },
+  {
+    "z": 51,
+    "symbol": "Sb",
+    "cn": "锑",
+    "en": "Antimony",
+    "weight": "121.760",
+    "weightKind": "standard",
+    "category": "met",
+    "period": 5,
+    "group": "第15族 / VA",
+    "shells": [
+      2,
+      8,
+      18,
+      18,
+      5
+    ],
+    "config": "[Kr]5s2 4d10 5p3",
+    "isotopes": [
+      121,
+      123
+    ],
+    "core": false,
+    "oxidation": "+5, +3, -3",
+    "keyPoint": "主族：最外层5个电子；位置、结构与性质相互联系。通常最高正价=5，最低负价=最外层电子数-8（非金属）。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "2.05",
+    "ionization": "833.6"
+  },
+  {
+    "z": 52,
+    "symbol": "Te",
+    "cn": "碲",
+    "en": "Tellurium",
+    "weight": "127.6",
+    "weightKind": "standard",
+    "category": "met",
+    "period": 5,
+    "group": "第16族 / VIA",
+    "shells": [
+      2,
+      8,
+      18,
+      18,
+      6
+    ],
+    "config": "[Kr]5s2 4d10 5p4",
+    "isotopes": [
+      130,
+      128,
+      126
+    ],
+    "core": false,
+    "oxidation": "+6, +4, -2",
+    "keyPoint": "主族：最外层6个电子；位置、结构与性质相互联系。通常最高正价=6，最低负价=最外层电子数-8（非金属）。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "2.1",
+    "ionization": "869.3"
+  },
+  {
+    "z": 53,
+    "symbol": "I",
+    "cn": "碘",
+    "en": "Iodine",
+    "weight": "126.9045",
+    "weightKind": "standard",
+    "category": "hal",
+    "period": 5,
+    "group": "第17族 / VIIA",
+    "shells": [
+      2,
+      8,
+      18,
+      18,
+      7
+    ],
+    "config": "[Kr]5s2 4d10 5p5",
+    "isotopes": [
+      127
+    ],
+    "core": true,
+    "oxidation": "+7, +5, +1, -1",
+    "keyPoint": "主族：最外层7个电子；位置、结构与性质相互联系。通常最高正价=7，最低负价=最外层电子数-8（非金属）。",
+    "note": "淀粉遇I2显蓝色；I-可被强氧化剂氧化为I2。I-127是核素示例。",
+    "electronegativity": "2.66",
+    "ionization": "1008.4"
+  },
+  {
+    "z": 54,
+    "symbol": "Xe",
+    "cn": "氙",
+    "en": "Xenon",
+    "weight": "131.29",
+    "weightKind": "standard",
+    "category": "nob",
+    "period": 5,
+    "group": "第18族 / 0族",
+    "shells": [
+      2,
+      8,
+      18,
+      18,
+      8
+    ],
+    "config": "[Kr]5s2 4d10 5p6",
+    "isotopes": [
+      132,
+      129,
+      131
+    ],
+    "core": false,
+    "oxidation": "0",
+    "keyPoint": "稀有气体最外层通常为8电子；He为2电子。不能把“不活泼”理解为所有稀有气体绝无化合物。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "2.6",
+    "ionization": "1170.4"
+  },
+  {
+    "z": 55,
+    "symbol": "Cs",
+    "cn": "铯",
+    "en": "Cesium",
+    "weight": "132.9054520",
+    "weightKind": "standard",
+    "category": "alk",
+    "period": 6,
+    "group": "第1族 / IA",
+    "shells": [
+      2,
+      8,
+      18,
+      18,
+      8,
+      1
+    ],
+    "config": "[Xe]6s1",
+    "isotopes": [
+      133
+    ],
+    "core": false,
+    "oxidation": "+1",
+    "keyPoint": "主族：最外层1个电子；位置、结构与性质相互联系。通常最高正价=1，最低负价=最外层电子数-8（非金属）。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "0.79",
+    "ionization": "375.7"
+  },
+  {
+    "z": 56,
+    "symbol": "Ba",
+    "cn": "钡",
+    "en": "Barium",
+    "weight": "137.33",
+    "weightKind": "standard",
+    "category": "alk2",
+    "period": 6,
+    "group": "第2族 / IIA",
+    "shells": [
+      2,
+      8,
+      18,
+      18,
+      8,
+      2
+    ],
+    "config": "[Xe]6s2",
+    "isotopes": [
+      138,
+      137,
+      136
+    ],
+    "core": true,
+    "oxidation": "+2",
+    "keyPoint": "主族：最外层2个电子；位置、结构与性质相互联系。通常最高正价=2，最低负价=最外层电子数-8（非金属）。",
+    "note": "BaSO4不溶于水和常见酸；检验SO4(2-)须排除CO3(2-)、SO3(2-)等干扰。",
+    "electronegativity": "0.89",
+    "ionization": "502.9"
+  },
+  {
+    "z": 57,
+    "symbol": "La",
+    "cn": "镧",
+    "en": "Lanthanum",
+    "weight": "138.9055",
+    "weightKind": "standard",
+    "category": "lan",
+    "period": 6,
+    "group": "镧系（附列）",
+    "shells": [
+      2,
+      8,
+      18,
+      18,
+      9,
+      2
+    ],
+    "config": "[Xe]6s2 5d1",
+    "isotopes": [
+      139,
+      138
+    ],
+    "core": false,
+    "oxidation": "+3",
+    "keyPoint": "内过渡元素位于周期表附列；中子数须针对具体核素计算，不能从平均原子质量取整。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.1",
+    "ionization": "538.1"
+  },
+  {
+    "z": 58,
+    "symbol": "Ce",
+    "cn": "铈",
+    "en": "Cerium",
+    "weight": "140.116",
+    "weightKind": "standard",
+    "category": "lan",
+    "period": 6,
+    "group": "镧系（附列）",
+    "shells": [
+      2,
+      8,
+      18,
+      19,
+      9,
+      2
+    ],
+    "config": "[Xe]6s2 4f1 5d1",
+    "isotopes": [
+      140,
+      142,
+      138
+    ],
+    "core": false,
+    "oxidation": "+4, +3",
+    "keyPoint": "内过渡元素位于周期表附列；中子数须针对具体核素计算，不能从平均原子质量取整。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.12",
+    "ionization": "534.4"
+  },
+  {
+    "z": 59,
+    "symbol": "Pr",
+    "cn": "镨",
+    "en": "Praseodymium",
+    "weight": "140.90766",
+    "weightKind": "standard",
+    "category": "lan",
+    "period": 6,
+    "group": "镧系（附列）",
+    "shells": [
+      2,
+      8,
+      18,
+      21,
+      8,
+      2
+    ],
+    "config": "[Xe]6s2 4f3",
+    "isotopes": [
+      141
+    ],
+    "core": false,
+    "oxidation": "+3",
+    "keyPoint": "内过渡元素位于周期表附列；中子数须针对具体核素计算，不能从平均原子质量取整。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.13",
+    "ionization": "527.2"
+  },
+  {
+    "z": 60,
+    "symbol": "Nd",
+    "cn": "钕",
+    "en": "Neodymium",
+    "weight": "144.24",
+    "weightKind": "standard",
+    "category": "lan",
+    "period": 6,
+    "group": "镧系（附列）",
+    "shells": [
+      2,
+      8,
+      18,
+      22,
+      8,
+      2
+    ],
+    "config": "[Xe]6s2 4f4",
+    "isotopes": [
+      142,
+      144,
+      146
+    ],
+    "core": false,
+    "oxidation": "+3",
+    "keyPoint": "内过渡元素位于周期表附列；中子数须针对具体核素计算，不能从平均原子质量取整。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.14",
+    "ionization": "533.1"
+  },
+  {
+    "z": 61,
+    "symbol": "Pm",
+    "cn": "钷",
+    "en": "Promethium",
+    "weight": "[145]",
+    "weightKind": "nuclide",
+    "category": "lan",
+    "period": 6,
+    "group": "镧系（附列）",
+    "shells": [
+      2,
+      8,
+      18,
+      23,
+      8,
+      2
+    ],
+    "config": "[Xe]6s2 4f5",
+    "isotopes": [
+      145
+    ],
+    "core": false,
+    "oxidation": "+3",
+    "keyPoint": "内过渡元素位于周期表附列；中子数须针对具体核素计算，不能从平均原子质量取整。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "—",
+    "ionization": "535.5"
+  },
+  {
+    "z": 62,
+    "symbol": "Sm",
+    "cn": "钐",
+    "en": "Samarium",
+    "weight": "150.4",
+    "weightKind": "standard",
+    "category": "lan",
+    "period": 6,
+    "group": "镧系（附列）",
+    "shells": [
+      2,
+      8,
+      18,
+      24,
+      8,
+      2
+    ],
+    "config": "[Xe]6s2 4f6",
+    "isotopes": [
+      152,
+      154,
+      147
+    ],
+    "core": false,
+    "oxidation": "+3, +2",
+    "keyPoint": "内过渡元素位于周期表附列；中子数须针对具体核素计算，不能从平均原子质量取整。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.17",
+    "ionization": "544.6"
+  },
+  {
+    "z": 63,
+    "symbol": "Eu",
+    "cn": "铕",
+    "en": "Europium",
+    "weight": "151.964",
+    "weightKind": "standard",
+    "category": "lan",
+    "period": 6,
+    "group": "镧系（附列）",
+    "shells": [
+      2,
+      8,
+      18,
+      25,
+      8,
+      2
+    ],
+    "config": "[Xe]6s2 4f7",
+    "isotopes": [
+      153,
+      151
+    ],
+    "core": false,
+    "oxidation": "+3, +2",
+    "keyPoint": "内过渡元素位于周期表附列；中子数须针对具体核素计算，不能从平均原子质量取整。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "—",
+    "ionization": "547.1"
+  },
+  {
+    "z": 64,
+    "symbol": "Gd",
+    "cn": "钆",
+    "en": "Gadolinium",
+    "weight": "157.25",
+    "weightKind": "standard",
+    "category": "lan",
+    "period": 6,
+    "group": "镧系（附列）",
+    "shells": [
+      2,
+      8,
+      18,
+      25,
+      9,
+      2
+    ],
+    "config": "[Xe]6s2 4f7 5d1",
+    "isotopes": [
+      158,
+      160,
+      156
+    ],
+    "core": false,
+    "oxidation": "+3",
+    "keyPoint": "内过渡元素位于周期表附列；中子数须针对具体核素计算，不能从平均原子质量取整。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.2",
+    "ionization": "593.4"
+  },
+  {
+    "z": 65,
+    "symbol": "Tb",
+    "cn": "铽",
+    "en": "Terbium",
+    "weight": "158.92535",
+    "weightKind": "standard",
+    "category": "lan",
+    "period": 6,
+    "group": "镧系（附列）",
+    "shells": [
+      2,
+      8,
+      18,
+      27,
+      8,
+      2
+    ],
+    "config": "[Xe]6s2 4f9",
+    "isotopes": [
+      159
+    ],
+    "core": false,
+    "oxidation": "+3",
+    "keyPoint": "内过渡元素位于周期表附列；中子数须针对具体核素计算，不能从平均原子质量取整。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "—",
+    "ionization": "565.8"
+  },
+  {
+    "z": 66,
+    "symbol": "Dy",
+    "cn": "镝",
+    "en": "Dysprosium",
+    "weight": "162.500",
+    "weightKind": "standard",
+    "category": "lan",
+    "period": 6,
+    "group": "镧系（附列）",
+    "shells": [
+      2,
+      8,
+      18,
+      28,
+      8,
+      2
+    ],
+    "config": "[Xe]6s2 4f10",
+    "isotopes": [
+      164,
+      162,
+      163
+    ],
+    "core": false,
+    "oxidation": "+3",
+    "keyPoint": "内过渡元素位于周期表附列；中子数须针对具体核素计算，不能从平均原子质量取整。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.22",
+    "ionization": "573.0"
+  },
+  {
+    "z": 67,
+    "symbol": "Ho",
+    "cn": "钬",
+    "en": "Holmium",
+    "weight": "164.93033",
+    "weightKind": "standard",
+    "category": "lan",
+    "period": 6,
+    "group": "镧系（附列）",
+    "shells": [
+      2,
+      8,
+      18,
+      29,
+      8,
+      2
+    ],
+    "config": "[Xe]6s2 4f11",
+    "isotopes": [
+      165
+    ],
+    "core": false,
+    "oxidation": "+3",
+    "keyPoint": "内过渡元素位于周期表附列；中子数须针对具体核素计算，不能从平均原子质量取整。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.23",
+    "ionization": "581.0"
+  },
+  {
+    "z": 68,
+    "symbol": "Er",
+    "cn": "铒",
+    "en": "Erbium",
+    "weight": "167.26",
+    "weightKind": "standard",
+    "category": "lan",
+    "period": 6,
+    "group": "镧系（附列）",
+    "shells": [
+      2,
+      8,
+      18,
+      30,
+      8,
+      2
+    ],
+    "config": "[Xe]6s2 4f12",
+    "isotopes": [
+      166,
+      168,
+      167
+    ],
+    "core": false,
+    "oxidation": "+3",
+    "keyPoint": "内过渡元素位于周期表附列；中子数须针对具体核素计算，不能从平均原子质量取整。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.24",
+    "ionization": "589.3"
+  },
+  {
+    "z": 69,
+    "symbol": "Tm",
+    "cn": "铥",
+    "en": "Thulium",
+    "weight": "168.93422",
+    "weightKind": "standard",
+    "category": "lan",
+    "period": 6,
+    "group": "镧系（附列）",
+    "shells": [
+      2,
+      8,
+      18,
+      31,
+      8,
+      2
+    ],
+    "config": "[Xe]6s2 4f13",
+    "isotopes": [
+      169
+    ],
+    "core": false,
+    "oxidation": "+3",
+    "keyPoint": "内过渡元素位于周期表附列；中子数须针对具体核素计算，不能从平均原子质量取整。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.25",
+    "ionization": "596.7"
+  },
+  {
+    "z": 70,
+    "symbol": "Yb",
+    "cn": "镱",
+    "en": "Ytterbium",
+    "weight": "173.05",
+    "weightKind": "standard",
+    "category": "lan",
+    "period": 6,
+    "group": "镧系（附列）",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      8,
+      2
+    ],
+    "config": "[Xe]6s2 4f14",
+    "isotopes": [
+      174,
+      172,
+      173
+    ],
+    "core": false,
+    "oxidation": "+3, +2",
+    "keyPoint": "内过渡元素位于周期表附列；中子数须针对具体核素计算，不能从平均原子质量取整。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "—",
+    "ionization": "603.4"
+  },
+  {
+    "z": 71,
+    "symbol": "Lu",
+    "cn": "镥",
+    "en": "Lutetium",
+    "weight": "174.9667",
+    "weightKind": "standard",
+    "category": "lan",
+    "period": 6,
+    "group": "镧系（附列）",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      9,
+      2
+    ],
+    "config": "[Xe]6s2 4f14 5d1",
+    "isotopes": [
+      175,
+      176
+    ],
+    "core": false,
+    "oxidation": "+3",
+    "keyPoint": "稀有气体最外层通常为8电子；He为2电子。不能把“不活泼”理解为所有稀有气体绝无化合物。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.27",
+    "ionization": "523.5"
+  },
+  {
+    "z": 72,
+    "symbol": "Hf",
+    "cn": "铪",
+    "en": "Hafnium",
+    "weight": "178.49",
+    "weightKind": "standard",
+    "category": "tr",
+    "period": 6,
+    "group": "第4族 / IVB",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      10,
+      2
+    ],
+    "config": "[Xe]6s2 4f14 5d2",
+    "isotopes": [
+      180,
+      178,
+      177
+    ],
+    "core": false,
+    "oxidation": "+4",
+    "keyPoint": "过渡区：最外层电子数不等于价电子数；常有多种价态，不能套主族最高正价规则。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.3",
+    "ionization": "658.5"
+  },
+  {
+    "z": 73,
+    "symbol": "Ta",
+    "cn": "钽",
+    "en": "Tantalum",
+    "weight": "180.9479",
+    "weightKind": "standard",
+    "category": "tr",
+    "period": 6,
+    "group": "第5族 / VB",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      11,
+      2
+    ],
+    "config": "[Xe]6s2 4f14 5d3",
+    "isotopes": [
+      181,
+      180
+    ],
+    "core": false,
+    "oxidation": "+5",
+    "keyPoint": "过渡区：最外层电子数不等于价电子数；常有多种价态，不能套主族最高正价规则。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.5",
+    "ionization": "761.3"
+  },
+  {
+    "z": 74,
+    "symbol": "W",
+    "cn": "钨",
+    "en": "Tungsten",
+    "weight": "183.84",
+    "weightKind": "standard",
+    "category": "tr",
+    "period": 6,
+    "group": "第6族 / VIB",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      12,
+      2
+    ],
+    "config": "[Xe]6s2 4f14 5d4",
+    "isotopes": [
+      184,
+      186,
+      182
+    ],
+    "core": true,
+    "oxidation": "+6",
+    "keyPoint": "过渡区：最外层电子数不等于价电子数；常有多种价态，不能套主族最高正价规则。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "2.36",
+    "ionization": "770.0"
+  },
+  {
+    "z": 75,
+    "symbol": "Re",
+    "cn": "铼",
+    "en": "Rhenium",
+    "weight": "186.207",
+    "weightKind": "standard",
+    "category": "tr",
+    "period": 6,
+    "group": "第7族 / VIIB",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      13,
+      2
+    ],
+    "config": "[Xe]6s2 4f14 5d5",
+    "isotopes": [
+      187,
+      185
+    ],
+    "core": false,
+    "oxidation": "+7, +6, +4",
+    "keyPoint": "过渡区：最外层电子数不等于价电子数；常有多种价态，不能套主族最高正价规则。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.9",
+    "ionization": "760.3"
+  },
+  {
+    "z": 76,
+    "symbol": "Os",
+    "cn": "锇",
+    "en": "Osmium",
+    "weight": "190.2",
+    "weightKind": "standard",
+    "category": "tr",
+    "period": 6,
+    "group": "第8族 / VIII",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      14,
+      2
+    ],
+    "config": "[Xe]6s2 4f14 5d6",
+    "isotopes": [
+      192,
+      190,
+      189
+    ],
+    "core": false,
+    "oxidation": "+4, +3",
+    "keyPoint": "过渡区：最外层电子数不等于价电子数；常有多种价态，不能套主族最高正价规则。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "2.2",
+    "ionization": "839.4"
+  },
+  {
+    "z": 77,
+    "symbol": "Ir",
+    "cn": "铱",
+    "en": "Iridium",
+    "weight": "192.22",
+    "weightKind": "standard",
+    "category": "tr",
+    "period": 6,
+    "group": "第9族 / VIII",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      15,
+      2
+    ],
+    "config": "[Xe]6s2 4f14 5d7",
+    "isotopes": [
+      193,
+      191
+    ],
+    "core": false,
+    "oxidation": "+4, +3",
+    "keyPoint": "过渡区：最外层电子数不等于价电子数；常有多种价态，不能套主族最高正价规则。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "2.2",
+    "ionization": "878.0"
+  },
+  {
+    "z": 78,
+    "symbol": "Pt",
+    "cn": "铂",
+    "en": "Platinum",
+    "weight": "195.08",
+    "weightKind": "standard",
+    "category": "tr",
+    "period": 6,
+    "group": "第10族 / VIII",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      17,
+      1
+    ],
+    "config": "[Xe]6s1 4f14 5d9",
+    "isotopes": [
+      195,
+      194,
+      196
+    ],
+    "core": true,
+    "oxidation": "+4, +2",
+    "keyPoint": "过渡区：最外层电子数不等于价电子数；常有多种价态，不能套主族最高正价规则。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "2.28",
+    "ionization": "868.4"
+  },
+  {
+    "z": 79,
+    "symbol": "Au",
+    "cn": "金",
+    "en": "Gold",
+    "weight": "196.96657",
+    "weightKind": "standard",
+    "category": "tr",
+    "period": 6,
+    "group": "第11族 / IB",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      18,
+      1
+    ],
+    "config": "[Xe]6s1 4f14 5d10",
+    "isotopes": [
+      197
+    ],
+    "core": true,
+    "oxidation": "+3, +1",
+    "keyPoint": "过渡区：最外层电子数不等于价电子数；常有多种价态，不能套主族最高正价规则。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "2.54",
+    "ionization": "890.2"
+  },
+  {
+    "z": 80,
+    "symbol": "Hg",
+    "cn": "汞",
+    "en": "Mercury",
+    "weight": "200.59",
+    "weightKind": "standard",
+    "category": "post",
+    "period": 6,
+    "group": "第12族 / IIB",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      18,
+      2
+    ],
+    "config": "[Xe]6s2 4f14 5d10",
+    "isotopes": [
+      202,
+      200,
+      199
+    ],
+    "core": true,
+    "oxidation": "+2, +1",
+    "keyPoint": "过渡区：最外层电子数不等于价电子数；常有多种价态，不能套主族最高正价规则。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "2",
+    "ionization": "1007.1"
+  },
+  {
+    "z": 81,
+    "symbol": "Tl",
+    "cn": "铊",
+    "en": "Thallium",
+    "weight": "204.383",
+    "weightKind": "standard",
+    "category": "post",
+    "period": 6,
+    "group": "第13族 / IIIA",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      18,
+      3
+    ],
+    "config": "[Xe]6s2 4f14 5d10 6p1",
+    "isotopes": [
+      205,
+      203
+    ],
+    "core": false,
+    "oxidation": "+3, +1",
+    "keyPoint": "主族：最外层3个电子；位置、结构与性质相互联系。通常最高正价=3，最低负价=最外层电子数-8（非金属）。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.62",
+    "ionization": "589.3"
+  },
+  {
+    "z": 82,
+    "symbol": "Pb",
+    "cn": "铅",
+    "en": "Lead",
+    "weight": "207",
+    "weightKind": "standard",
+    "category": "post",
+    "period": 6,
+    "group": "第14族 / IVA",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      18,
+      4
+    ],
+    "config": "[Xe]6s2 4f14 5d10 6p2",
+    "isotopes": [
+      208,
+      206,
+      207
+    ],
+    "core": true,
+    "oxidation": "+4, +2",
+    "keyPoint": "主族：最外层4个电子；位置、结构与性质相互联系。通常最高正价=4，最低负价=最外层电子数-8（非金属）。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "2.33",
+    "ionization": "715.6"
+  },
+  {
+    "z": 83,
+    "symbol": "Bi",
+    "cn": "铋",
+    "en": "Bismuth",
+    "weight": "208.98040",
+    "weightKind": "standard",
+    "category": "post",
+    "period": 6,
+    "group": "第15族 / VA",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      18,
+      5
+    ],
+    "config": "[Xe]6s2 4f14 5d10 6p3",
+    "isotopes": [
+      209
+    ],
+    "core": false,
+    "oxidation": "+5, +3",
+    "keyPoint": "主族：最外层5个电子；位置、结构与性质相互联系。通常最高正价=5，最低负价=最外层电子数-8（非金属）。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "2.02",
+    "ionization": "703.3"
+  },
+  {
+    "z": 84,
+    "symbol": "Po",
+    "cn": "钋",
+    "en": "Polonium",
+    "weight": "[209]",
+    "weightKind": "nuclide",
+    "category": "post",
+    "period": 6,
+    "group": "第16族 / VIA",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      18,
+      6
+    ],
+    "config": "[Xe]6s2 4f14 5d10 6p4",
+    "isotopes": [
+      209
+    ],
+    "core": false,
+    "oxidation": "+4, +2",
+    "keyPoint": "主族：最外层6个电子；位置、结构与性质相互联系。通常最高正价=6，最低负价=最外层电子数-8（非金属）。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "2",
+    "ionization": "812.1"
+  },
+  {
+    "z": 85,
+    "symbol": "At",
+    "cn": "砹",
+    "en": "Astatine",
+    "weight": "[210]",
+    "weightKind": "nuclide",
+    "category": "hal",
+    "period": 6,
+    "group": "第17族 / VIIA",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      18,
+      7
+    ],
+    "config": "[Xe]6s2 4f14 5d10 6p5",
+    "isotopes": [
+      210
+    ],
+    "core": false,
+    "oxidation": "7, 5, 3, 1, -1",
+    "keyPoint": "主族：最外层7个电子；位置、结构与性质相互联系。通常最高正价=7，最低负价=最外层电子数-8（非金属）。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "2.2",
+    "ionization": "916.6"
+  },
+  {
+    "z": 86,
+    "symbol": "Rn",
+    "cn": "氡",
+    "en": "Radon",
+    "weight": "[222]",
+    "weightKind": "nuclide",
+    "category": "nob",
+    "period": 6,
+    "group": "第18族 / 0族",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      18,
+      8
+    ],
+    "config": "[Xe]6s2 4f14 5d10 6p6",
+    "isotopes": [
+      222
+    ],
+    "core": false,
+    "oxidation": "0",
+    "keyPoint": "稀有气体最外层通常为8电子；He为2电子。不能把“不活泼”理解为所有稀有气体绝无化合物。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "—",
+    "ionization": "1036.7"
+  },
+  {
+    "z": 87,
+    "symbol": "Fr",
+    "cn": "钫",
+    "en": "Francium",
+    "weight": "[223]",
+    "weightKind": "nuclide",
+    "category": "alk",
+    "period": 7,
+    "group": "第1族 / IA",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      18,
+      8,
+      1
+    ],
+    "config": "[Rn]7s1",
+    "isotopes": [
+      223
+    ],
+    "core": false,
+    "oxidation": "+1",
+    "keyPoint": "主族：最外层1个电子；位置、结构与性质相互联系。通常最高正价=1，最低负价=最外层电子数-8（非金属）。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "0.7",
+    "ionization": "376.3"
+  },
+  {
+    "z": 88,
+    "symbol": "Ra",
+    "cn": "镭",
+    "en": "Radium",
+    "weight": "[226]",
+    "weightKind": "nuclide",
+    "category": "alk2",
+    "period": 7,
+    "group": "第2族 / IIA",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      18,
+      8,
+      2
+    ],
+    "config": "[Rn]7s2",
+    "isotopes": [
+      226
+    ],
+    "core": false,
+    "oxidation": "+2",
+    "keyPoint": "主族：最外层2个电子；位置、结构与性质相互联系。通常最高正价=2，最低负价=最外层电子数-8（非金属）。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "0.9",
+    "ionization": "509.3"
+  },
+  {
+    "z": 89,
+    "symbol": "Ac",
+    "cn": "锕",
+    "en": "Actinium",
+    "weight": "[227]",
+    "weightKind": "nuclide",
+    "category": "act",
+    "period": 7,
+    "group": "锕系（附列）",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      18,
+      9,
+      2
+    ],
+    "config": "[Rn]7s2 6d1",
+    "isotopes": [
+      227
+    ],
+    "core": false,
+    "oxidation": "+3",
+    "keyPoint": "内过渡元素位于周期表附列；中子数须针对具体核素计算，不能从平均原子质量取整。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.1",
+    "ionization": "498.8"
+  },
+  {
+    "z": 90,
+    "symbol": "Th",
+    "cn": "钍",
+    "en": "Thorium",
+    "weight": "232.038",
+    "weightKind": "standard",
+    "category": "act",
+    "period": 7,
+    "group": "锕系（附列）",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      18,
+      10,
+      2
+    ],
+    "config": "[Rn]7s2 6d2",
+    "isotopes": [
+      232
+    ],
+    "core": false,
+    "oxidation": "+4",
+    "keyPoint": "内过渡元素位于周期表附列；中子数须针对具体核素计算，不能从平均原子质量取整。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.3",
+    "ionization": "586.6"
+  },
+  {
+    "z": 91,
+    "symbol": "Pa",
+    "cn": "镤",
+    "en": "Protactinium",
+    "weight": "231.03588",
+    "weightKind": "standard",
+    "category": "act",
+    "period": 7,
+    "group": "锕系（附列）",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      20,
+      9,
+      2
+    ],
+    "config": "[Rn]7s2 5f2 6d1",
+    "isotopes": [
+      231
+    ],
+    "core": false,
+    "oxidation": "+5, +4",
+    "keyPoint": "内过渡元素位于周期表附列；中子数须针对具体核素计算，不能从平均原子质量取整。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.5",
+    "ionization": "568.3"
+  },
+  {
+    "z": 92,
+    "symbol": "U",
+    "cn": "铀",
+    "en": "Uranium",
+    "weight": "238.0289",
+    "weightKind": "standard",
+    "category": "act",
+    "period": 7,
+    "group": "锕系（附列）",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      21,
+      9,
+      2
+    ],
+    "config": "[Rn]7s2 5f3 6d1",
+    "isotopes": [
+      238,
+      235,
+      234
+    ],
+    "core": false,
+    "oxidation": "+6, +5, +4, +3",
+    "keyPoint": "内过渡元素位于周期表附列；中子数须针对具体核素计算，不能从平均原子质量取整。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.38",
+    "ionization": "597.6"
+  },
+  {
+    "z": 93,
+    "symbol": "Np",
+    "cn": "镎",
+    "en": "Neptunium",
+    "weight": "[237]",
+    "weightKind": "nuclide",
+    "category": "act",
+    "period": 7,
+    "group": "锕系（附列）",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      22,
+      9,
+      2
+    ],
+    "config": "[Rn]7s2 5f4 6d1",
+    "isotopes": [
+      237
+    ],
+    "core": false,
+    "oxidation": "+6, +5, +4, +3",
+    "keyPoint": "内过渡元素位于周期表附列；中子数须针对具体核素计算，不能从平均原子质量取整。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.36",
+    "ionization": "604.6"
+  },
+  {
+    "z": 94,
+    "symbol": "Pu",
+    "cn": "钚",
+    "en": "Plutonium",
+    "weight": "[244]",
+    "weightKind": "nuclide",
+    "category": "act",
+    "period": 7,
+    "group": "锕系（附列）",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      24,
+      8,
+      2
+    ],
+    "config": "[Rn]7s2 5f6",
+    "isotopes": [
+      244
+    ],
+    "core": false,
+    "oxidation": "+6, +5, +4, +3",
+    "keyPoint": "内过渡元素位于周期表附列；中子数须针对具体核素计算，不能从平均原子质量取整。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.28",
+    "ionization": "584.7"
+  },
+  {
+    "z": 95,
+    "symbol": "Am",
+    "cn": "镅",
+    "en": "Americium",
+    "weight": "[249]",
+    "weightKind": "nuclide",
+    "category": "act",
+    "period": 7,
+    "group": "锕系（附列）",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      25,
+      8,
+      2
+    ],
+    "config": "[Rn]7s2 5f7",
+    "isotopes": [
+      249
+    ],
+    "core": false,
+    "oxidation": "+6, +5, +4, +3",
+    "keyPoint": "内过渡元素位于周期表附列；中子数须针对具体核素计算，不能从平均原子质量取整。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.3",
+    "ionization": "578.2"
+  },
+  {
+    "z": 96,
+    "symbol": "Cm",
+    "cn": "锔",
+    "en": "Curium",
+    "weight": "[252]",
+    "weightKind": "nuclide",
+    "category": "act",
+    "period": 7,
+    "group": "锕系（附列）",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      25,
+      9,
+      2
+    ],
+    "config": "[Rn]7s2 5f7 6d1",
+    "isotopes": [
+      252
+    ],
+    "core": false,
+    "oxidation": "+3",
+    "keyPoint": "内过渡元素位于周期表附列；中子数须针对具体核素计算，不能从平均原子质量取整。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.3",
+    "ionization": "580.8"
+  },
+  {
+    "z": 97,
+    "symbol": "Bk",
+    "cn": "锫",
+    "en": "Berkelium",
+    "weight": "[254]",
+    "weightKind": "nuclide",
+    "category": "act",
+    "period": 7,
+    "group": "锕系（附列）",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      27,
+      8,
+      2
+    ],
+    "config": "[Rn]7s2 5f9",
+    "isotopes": [
+      254
+    ],
+    "core": false,
+    "oxidation": "+4, +3",
+    "keyPoint": "内过渡元素位于周期表附列；中子数须针对具体核素计算，不能从平均原子质量取整。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.3",
+    "ionization": "601.1"
+  },
+  {
+    "z": 98,
+    "symbol": "Cf",
+    "cn": "锎",
+    "en": "Californium",
+    "weight": "[256]",
+    "weightKind": "nuclide",
+    "category": "act",
+    "period": 7,
+    "group": "锕系（附列）",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      28,
+      8,
+      2
+    ],
+    "config": "[Rn]7s2 5f10",
+    "isotopes": [
+      256
+    ],
+    "core": false,
+    "oxidation": "+3",
+    "keyPoint": "内过渡元素位于周期表附列；中子数须针对具体核素计算，不能从平均原子质量取整。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.3",
+    "ionization": "607.9"
+  },
+  {
+    "z": 99,
+    "symbol": "Es",
+    "cn": "锿",
+    "en": "Einsteinium",
+    "weight": "[258]",
+    "weightKind": "nuclide",
+    "category": "act",
+    "period": 7,
+    "group": "锕系（附列）",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      29,
+      8,
+      2
+    ],
+    "config": "[Rn]7s2 5f11",
+    "isotopes": [
+      258
+    ],
+    "core": false,
+    "oxidation": "+3",
+    "keyPoint": "内过渡元素位于周期表附列；中子数须针对具体核素计算，不能从平均原子质量取整。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.3",
+    "ionization": "619.4"
+  },
+  {
+    "z": 100,
+    "symbol": "Fm",
+    "cn": "镄",
+    "en": "Fermium",
+    "weight": "[260]",
+    "weightKind": "nuclide",
+    "category": "act",
+    "period": 7,
+    "group": "锕系（附列）",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      30,
+      8,
+      2
+    ],
+    "config": "[Rn] 5f12 7s2",
+    "isotopes": [
+      260
+    ],
+    "core": false,
+    "oxidation": "+3",
+    "keyPoint": "内过渡元素位于周期表附列；中子数须针对具体核素计算，不能从平均原子质量取整。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.3",
+    "ionization": "627.2"
+  },
+  {
+    "z": 101,
+    "symbol": "Md",
+    "cn": "钔",
+    "en": "Mendelevium",
+    "weight": "[262]",
+    "weightKind": "nuclide",
+    "category": "act",
+    "period": 7,
+    "group": "锕系（附列）",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      31,
+      8,
+      2
+    ],
+    "config": "[Rn]7s2 5f13",
+    "isotopes": [
+      262
+    ],
+    "core": false,
+    "oxidation": "+3, +2",
+    "keyPoint": "内过渡元素位于周期表附列；中子数须针对具体核素计算，不能从平均原子质量取整。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.3",
+    "ionization": "634.9"
+  },
+  {
+    "z": 102,
+    "symbol": "No",
+    "cn": "锘",
+    "en": "Nobelium",
+    "weight": "[264]",
+    "weightKind": "nuclide",
+    "category": "act",
+    "period": 7,
+    "group": "锕系（附列）",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      32,
+      8,
+      2
+    ],
+    "config": "[Rn]7s2 5f14",
+    "isotopes": [
+      264
+    ],
+    "core": false,
+    "oxidation": "+3, +2",
+    "keyPoint": "内过渡元素位于周期表附列；中子数须针对具体核素计算，不能从平均原子质量取整。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.3",
+    "ionization": "641.6"
+  },
+  {
+    "z": 103,
+    "symbol": "Lr",
+    "cn": "铹",
+    "en": "Lawrencium",
+    "weight": "[266]",
+    "weightKind": "nuclide",
+    "category": "act",
+    "period": 7,
+    "group": "锕系（附列）",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      32,
+      8,
+      3
+    ],
+    "config": "[Rn]5f14 7s2 7p1",
+    "isotopes": [
+      266
+    ],
+    "core": false,
+    "oxidation": "+3",
+    "keyPoint": "稀有气体最外层通常为8电子；He为2电子。不能把“不活泼”理解为所有稀有气体绝无化合物。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "1.3",
+    "ionization": "—"
+  },
+  {
+    "z": 104,
+    "symbol": "Rf",
+    "cn": "𬬻",
+    "en": "Rutherfordium",
+    "weight": "[268]",
+    "weightKind": "nuclide",
+    "category": "tr",
+    "period": 7,
+    "group": "第4族 / IVB",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      32,
+      10,
+      2
+    ],
+    "config": "[Rn]7s2 5f14 6d2",
+    "isotopes": [
+      268
+    ],
+    "core": false,
+    "oxidation": "+4",
+    "keyPoint": "过渡区：最外层电子数不等于价电子数；常有多种价态，不能套主族最高正价规则。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "—",
+    "ionization": "—"
+  },
+  {
+    "z": 105,
+    "symbol": "Db",
+    "cn": "𬭊",
+    "en": "Dubnium",
+    "weight": "[270]",
+    "weightKind": "nuclide",
+    "category": "tr",
+    "period": 7,
+    "group": "第5族 / VB",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      32,
+      11,
+      2
+    ],
+    "config": "[Rn]7s2 5f14 6d3",
+    "isotopes": [
+      270
+    ],
+    "core": false,
+    "oxidation": "5, 4, 3",
+    "keyPoint": "过渡区：最外层电子数不等于价电子数；常有多种价态，不能套主族最高正价规则。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "—",
+    "ionization": "—"
+  },
+  {
+    "z": 106,
+    "symbol": "Sg",
+    "cn": "𬭳",
+    "en": "Seaborgium",
+    "weight": "[273]",
+    "weightKind": "nuclide",
+    "category": "tr",
+    "period": 7,
+    "group": "第6族 / VIB",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      32,
+      12,
+      2
+    ],
+    "config": "[Rn]7s2 5f14 6d4",
+    "isotopes": [
+      273
+    ],
+    "core": false,
+    "oxidation": "6, 5, 4, 3, 0",
+    "keyPoint": "过渡区：最外层电子数不等于价电子数；常有多种价态，不能套主族最高正价规则。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "—",
+    "ionization": "—"
+  },
+  {
+    "z": 107,
+    "symbol": "Bh",
+    "cn": "𬭛",
+    "en": "Bohrium",
+    "weight": "[275]",
+    "weightKind": "nuclide",
+    "category": "tr",
+    "period": 7,
+    "group": "第7族 / VIIB",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      32,
+      13,
+      2
+    ],
+    "config": "[Rn]7s2 5f14 6d5",
+    "isotopes": [
+      275
+    ],
+    "core": false,
+    "oxidation": "7, 5, 4, 3",
+    "keyPoint": "过渡区：最外层电子数不等于价电子数；常有多种价态，不能套主族最高正价规则。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "—",
+    "ionization": "—"
+  },
+  {
+    "z": 108,
+    "symbol": "Hs",
+    "cn": "𬭶",
+    "en": "Hassium",
+    "weight": "[277]",
+    "weightKind": "nuclide",
+    "category": "tr",
+    "period": 7,
+    "group": "第8族 / VIII",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      32,
+      14,
+      2
+    ],
+    "config": "[Rn]7s2 5f14 6d6",
+    "isotopes": [
+      277
+    ],
+    "core": false,
+    "oxidation": "8, 6, 5, 4, 3, 2",
+    "keyPoint": "过渡区：最外层电子数不等于价电子数；常有多种价态，不能套主族最高正价规则。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "—",
+    "ionization": "—"
+  },
+  {
+    "z": 109,
+    "symbol": "Mt",
+    "cn": "鿏",
+    "en": "Meitnerium",
+    "weight": "[279]",
+    "weightKind": "nuclide",
+    "category": "tr",
+    "period": 7,
+    "group": "第9族 / VIII",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      32,
+      15,
+      2
+    ],
+    "config": "[Rn]7s2 5f14 6d7 (calculated)",
+    "isotopes": [
+      279
+    ],
+    "core": false,
+    "oxidation": "9, 8, 6, 4, 3, 1",
+    "keyPoint": "过渡区：最外层电子数不等于价电子数；常有多种价态，不能套主族最高正价规则。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "—",
+    "ionization": "—"
+  },
+  {
+    "z": 110,
+    "symbol": "Ds",
+    "cn": "𫟼",
+    "en": "Darmstadtium",
+    "weight": "[281]",
+    "weightKind": "nuclide",
+    "category": "tr",
+    "period": 7,
+    "group": "第10族 / VIII",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      32,
+      16,
+      2
+    ],
+    "config": "[Rn]7s2 5f14 6d8 （预测）",
+    "isotopes": [
+      281
+    ],
+    "core": false,
+    "oxidation": "8, 6, 4, 2, 0",
+    "keyPoint": "过渡区：最外层电子数不等于价电子数；常有多种价态，不能套主族最高正价规则。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "—",
+    "ionization": "—"
+  },
+  {
+    "z": 111,
+    "symbol": "Rg",
+    "cn": "𬬭",
+    "en": "Roentgenium",
+    "weight": "[283]",
+    "weightKind": "nuclide",
+    "category": "tr",
+    "period": 7,
+    "group": "第11族 / IB",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      32,
+      17,
+      2
+    ],
+    "config": "[Rn]7s2 5f14 6d9 （预测）",
+    "isotopes": [
+      283
+    ],
+    "core": false,
+    "oxidation": "5, 3, 1, -1",
+    "keyPoint": "过渡区：最外层电子数不等于价电子数；常有多种价态，不能套主族最高正价规则。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "—",
+    "ionization": "—"
+  },
+  {
+    "z": 112,
+    "symbol": "Cn",
+    "cn": "鿔",
+    "en": "Copernicium",
+    "weight": "[285]",
+    "weightKind": "nuclide",
+    "category": "post",
+    "period": 7,
+    "group": "第12族 / IIB",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      32,
+      18,
+      2
+    ],
+    "config": "[Rn]7s2 5f14 6d10 （预测）",
+    "isotopes": [
+      285
+    ],
+    "core": false,
+    "oxidation": "2, 1, 0",
+    "keyPoint": "过渡区：最外层电子数不等于价电子数；常有多种价态，不能套主族最高正价规则。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "—",
+    "ionization": "—"
+  },
+  {
+    "z": 113,
+    "symbol": "Nh",
+    "cn": "鿭",
+    "en": "Nihonium",
+    "weight": "[287]",
+    "weightKind": "nuclide",
+    "category": "post",
+    "period": 7,
+    "group": "第13族 / IIIA",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      32,
+      18,
+      3
+    ],
+    "config": "[Rn]5f14 6d10 7s2 7p1 （预测）",
+    "isotopes": [
+      287
+    ],
+    "core": false,
+    "oxidation": "暂无可靠常见价态数据",
+    "keyPoint": "主族：最外层3个电子；位置、结构与性质相互联系。通常最高正价=3，最低负价=最外层电子数-8（非金属）。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "—",
+    "ionization": "—"
+  },
+  {
+    "z": 114,
+    "symbol": "Fl",
+    "cn": "𫓧",
+    "en": "Flerovium",
+    "weight": "[289]",
+    "weightKind": "nuclide",
+    "category": "post",
+    "period": 7,
+    "group": "第14族 / IVA",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      32,
+      18,
+      4
+    ],
+    "config": "[Rn]7s2 7p2 5f14 6d10 （预测）",
+    "isotopes": [
+      289
+    ],
+    "core": false,
+    "oxidation": "6, 4,2, 1, 0",
+    "keyPoint": "主族：最外层4个电子；位置、结构与性质相互联系。通常最高正价=4，最低负价=最外层电子数-8（非金属）。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "—",
+    "ionization": "—"
+  },
+  {
+    "z": 115,
+    "symbol": "Mc",
+    "cn": "镆",
+    "en": "Moscovium",
+    "weight": "[291]",
+    "weightKind": "nuclide",
+    "category": "post",
+    "period": 7,
+    "group": "第15族 / VA",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      32,
+      18,
+      5
+    ],
+    "config": "[Rn]7s2 7p3 5f14 6d10 （预测）",
+    "isotopes": [
+      291
+    ],
+    "core": false,
+    "oxidation": "3, 1",
+    "keyPoint": "主族：最外层5个电子；位置、结构与性质相互联系。通常最高正价=5，最低负价=最外层电子数-8（非金属）。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "—",
+    "ionization": "—"
+  },
+  {
+    "z": 116,
+    "symbol": "Lv",
+    "cn": "𫟷",
+    "en": "Livermorium",
+    "weight": "[293]",
+    "weightKind": "nuclide",
+    "category": "post",
+    "period": 7,
+    "group": "第16族 / VIA",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      32,
+      18,
+      6
+    ],
+    "config": "[Rn]7s2 7p4 5f14 6d10 （预测）",
+    "isotopes": [
+      293
+    ],
+    "core": false,
+    "oxidation": "+4, +2, -2",
+    "keyPoint": "主族：最外层6个电子；位置、结构与性质相互联系。通常最高正价=6，最低负价=最外层电子数-8（非金属）。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "—",
+    "ionization": "—"
+  },
+  {
+    "z": 117,
+    "symbol": "Ts",
+    "cn": "鿬",
+    "en": "Tennessine",
+    "weight": "[294]",
+    "weightKind": "nuclide",
+    "category": "hal",
+    "period": 7,
+    "group": "第17族 / VIIA",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      32,
+      18,
+      7
+    ],
+    "config": "[Rn]7s2 7p5 5f14 6d10 （预测）",
+    "isotopes": [
+      294
+    ],
+    "core": false,
+    "oxidation": "+5, +3, +1, -1",
+    "keyPoint": "主族：最外层7个电子；位置、结构与性质相互联系。通常最高正价=7，最低负价=最外层电子数-8（非金属）。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "—",
+    "ionization": "—"
+  },
+  {
+    "z": 118,
+    "symbol": "Og",
+    "cn": "鿫",
+    "en": "Oganesson",
+    "weight": "[295]",
+    "weightKind": "nuclide",
+    "category": "nob",
+    "period": 7,
+    "group": "第18族 / 0族",
+    "shells": [
+      2,
+      8,
+      18,
+      32,
+      32,
+      18,
+      8
+    ],
+    "config": "[Rn]7s2 7p6 5f14 6d10 （预测）",
+    "isotopes": [
+      295
+    ],
+    "core": false,
+    "oxidation": "+6, +4, +2, +1, 0, -1",
+    "keyPoint": "稀有气体最外层通常为8电子；He为2电子。不能把“不活泼”理解为所有稀有气体绝无化合物。",
+    "note": "同周期（主族）从左到右通常原子半径减小，金属性减弱、非金属性增强；同主族向下通常相反。趋势须结合结构与例外判断。",
+    "electronegativity": "—",
+    "ionization": "—"
+  }
+]

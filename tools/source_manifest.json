@@ -1,0 +1,14 @@
+{
+  "pubchem": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/periodictable/JSON",
+  "nist": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=&all=all&isotype=all",
+  "curriculum": "https://www.ictr.edu.cn/Uploads/File/2025/02/07/9.%E6%99%AE%E9%80%9A%E9%AB%98%E4%B8%AD%E5%8C%96%E5%AD%A6%E8%AF%BE%E7%A8%8B%E6%A0%87%E5%87%86%EF%BC%882017%E5%B9%B4%E7%89%882020%E5%B9%B4%E4%BF%AE%E8%AE%A2%EF%BC%89.20250207215712.pdf",
+  "cn_names": "https://www.chemsoc.org.cn/a2613.html",
+  "cn_table": "https://img.chemsoc.org.cn/web/2019/01/%E5%85%83%E7%B4%A0%E5%91%A8%E6%9C%9F%E8%A1%A8%E4%B8%AD%E6%96%87%E7%89%8820190123%E6%9C%80%E6%96%B0(1).pdf",
+  "nist_isotopes": 3352,
+  "elements": 118,
+  "generator_font_sha256": "2c76254f6fc379fddfce0a7e84fb5385bb135d3e399294f6eeb6680d0365b74b",
+  "pillow_version": "12.3.0",
+  "notes": "NIST representative bracket is a nuclear mass number, not standard atomic weight. Standard abbreviated values follow PubChem. Lr configuration uses modern 7p1 assignment; synthetic element configurations are not Gaokao memorization targets.",
+  "pubchem-periodic.json_sha256": "ff0f75976583b8a6493b18d0b42e83e1b68bd6e112b45d33578d98494ed5d321",
+  "nist-isotopes.html_sha256": "27c164434f8b53cdaef953a94d154ac7059ea15f22fca4a3e260194394575bca"
+}

@@ -1,0 +1,828 @@
+[
+  {
+    "z": 1,
+    "symbol": "H",
+    "cn": "氢",
+    "category": "nm",
+    "core": true
+  },
+  {
+    "z": 2,
+    "symbol": "He",
+    "cn": "氦",
+    "category": "nob",
+    "core": true
+  },
+  {
+    "z": 3,
+    "symbol": "Li",
+    "cn": "锂",
+    "category": "alk",
+    "core": true
+  },
+  {
+    "z": 4,
+    "symbol": "Be",
+    "cn": "铍",
+    "category": "alk2",
+    "core": true
+  },
+  {
+    "z": 5,
+    "symbol": "B",
+    "cn": "硼",
+    "category": "met",
+    "core": true
+  },
+  {
+    "z": 6,
+    "symbol": "C",
+    "cn": "碳",
+    "category": "nm",
+    "core": true
+  },
+  {
+    "z": 7,
+    "symbol": "N",
+    "cn": "氮",
+    "category": "nm",
+    "core": true
+  },
+  {
+    "z": 8,
+    "symbol": "O",
+    "cn": "氧",
+    "category": "nm",
+    "core": true
+  },
+  {
+    "z": 9,
+    "symbol": "F",
+    "cn": "氟",
+    "category": "hal",
+    "core": true
+  },
+  {
+    "z": 10,
+    "symbol": "Ne",
+    "cn": "氖",
+    "category": "nob",
+    "core": true
+  },
+  {
+    "z": 11,
+    "symbol": "Na",
+    "cn": "钠",
+    "category": "alk",
+    "core": true
+  },
+  {
+    "z": 12,
+    "symbol": "Mg",
+    "cn": "镁",
+    "category": "alk2",
+    "core": true
+  },
+  {
+    "z": 13,
+    "symbol": "Al",
+    "cn": "铝",
+    "category": "post",
+    "core": true
+  },
+  {
+    "z": 14,
+    "symbol": "Si",
+    "cn": "硅",
+    "category": "met",
+    "core": true
+  },
+  {
+    "z": 15,
+    "symbol": "P",
+    "cn": "磷",
+    "category": "nm",
+    "core": true
+  },
+  {
+    "z": 16,
+    "symbol": "S",
+    "cn": "硫",
+    "category": "nm",
+    "core": true
+  },
+  {
+    "z": 17,
+    "symbol": "Cl",
+    "cn": "氯",
+    "category": "hal",
+    "core": true
+  },
+  {
+    "z": 18,
+    "symbol": "Ar",
+    "cn": "氩",
+    "category": "nob",
+    "core": true
+  },
+  {
+    "z": 19,
+    "symbol": "K",
+    "cn": "钾",
+    "category": "alk",
+    "core": true
+  },
+  {
+    "z": 20,
+    "symbol": "Ca",
+    "cn": "钙",
+    "category": "alk2",
+    "core": true
+  },
+  {
+    "z": 21,
+    "symbol": "Sc",
+    "cn": "钪",
+    "category": "tr",
+    "core": true
+  },
+  {
+    "z": 22,
+    "symbol": "Ti",
+    "cn": "钛",
+    "category": "tr",
+    "core": true
+  },
+  {
+    "z": 23,
+    "symbol": "V",
+    "cn": "钒",
+    "category": "tr",
+    "core": true
+  },
+  {
+    "z": 24,
+    "symbol": "Cr",
+    "cn": "铬",
+    "category": "tr",
+    "core": true
+  },
+  {
+    "z": 25,
+    "symbol": "Mn",
+    "cn": "锰",
+    "category": "tr",
+    "core": true
+  },
+  {
+    "z": 26,
+    "symbol": "Fe",
+    "cn": "铁",
+    "category": "tr",
+    "core": true
+  },
+  {
+    "z": 27,
+    "symbol": "Co",
+    "cn": "钴",
+    "category": "tr",
+    "core": true
+  },
+  {
+    "z": 28,
+    "symbol": "Ni",
+    "cn": "镍",
+    "category": "tr",
+    "core": true
+  },
+  {
+    "z": 29,
+    "symbol": "Cu",
+    "cn": "铜",
+    "category": "tr",
+    "core": true
+  },
+  {
+    "z": 30,
+    "symbol": "Zn",
+    "cn": "锌",
+    "category": "post",
+    "core": true
+  },
+  {
+    "z": 31,
+    "symbol": "Ga",
+    "cn": "镓",
+    "category": "post",
+    "core": true
+  },
+  {
+    "z": 32,
+    "symbol": "Ge",
+    "cn": "锗",
+    "category": "met",
+    "core": true
+  },
+  {
+    "z": 33,
+    "symbol": "As",
+    "cn": "砷",
+    "category": "met",
+    "core": true
+  },
+  {
+    "z": 34,
+    "symbol": "Se",
+    "cn": "硒",
+    "category": "nm",
+    "core": true
+  },
+  {
+    "z": 35,
+    "symbol": "Br",
+    "cn": "溴",
+    "category": "hal",
+    "core": true
+  },
+  {
+    "z": 36,
+    "symbol": "Kr",
+    "cn": "氪",
+    "category": "nob",
+    "core": true
+  },
+  {
+    "z": 37,
+    "symbol": "Rb",
+    "cn": "铷",
+    "category": "alk",
+    "core": false
+  },
+  {
+    "z": 38,
+    "symbol": "Sr",
+    "cn": "锶",
+    "category": "alk2",
+    "core": false
+  },
+  {
+    "z": 39,
+    "symbol": "Y",
+    "cn": "钇",
+    "category": "tr",
+    "core": false
+  },
+  {
+    "z": 40,
+    "symbol": "Zr",
+    "cn": "锆",
+    "category": "tr",
+    "core": false
+  },
+  {
+    "z": 41,
+    "symbol": "Nb",
+    "cn": "铌",
+    "category": "tr",
+    "core": false
+  },
+  {
+    "z": 42,
+    "symbol": "Mo",
+    "cn": "钼",
+    "category": "tr",
+    "core": false
+  },
+  {
+    "z": 43,
+    "symbol": "Tc",
+    "cn": "锝",
+    "category": "tr",
+    "core": false
+  },
+  {
+    "z": 44,
+    "symbol": "Ru",
+    "cn": "钌",
+    "category": "tr",
+    "core": false
+  },
+  {
+    "z": 45,
+    "symbol": "Rh",
+    "cn": "铑",
+    "category": "tr",
+    "core": false
+  },
+  {
+    "z": 46,
+    "symbol": "Pd",
+    "cn": "钯",
+    "category": "tr",
+    "core": false
+  },
+  {
+    "z": 47,
+    "symbol": "Ag",
+    "cn": "银",
+    "category": "tr",
+    "core": true
+  },
+  {
+    "z": 48,
+    "symbol": "Cd",
+    "cn": "镉",
+    "category": "post",
+    "core": false
+  },
+  {
+    "z": 49,
+    "symbol": "In",
+    "cn": "铟",
+    "category": "post",
+    "core": false
+  },
+  {
+    "z": 50,
+    "symbol": "Sn",
+    "cn": "锡",
+    "category": "post",
+    "core": true
+  },
+  {
+    "z": 51,
+    "symbol": "Sb",
+    "cn": "锑",
+    "category": "met",
+    "core": false
+  },
+  {
+    "z": 52,
+    "symbol": "Te",
+    "cn": "碲",
+    "category": "met",
+    "core": false
+  },
+  {
+    "z": 53,
+    "symbol": "I",
+    "cn": "碘",
+    "category": "hal",
+    "core": true
+  },
+  {
+    "z": 54,
+    "symbol": "Xe",
+    "cn": "氙",
+    "category": "nob",
+    "core": false
+  },
+  {
+    "z": 55,
+    "symbol": "Cs",
+    "cn": "铯",
+    "category": "alk",
+    "core": false
+  },
+  {
+    "z": 56,
+    "symbol": "Ba",
+    "cn": "钡",
+    "category": "alk2",
+    "core": true
+  },
+  {
+    "z": 57,
+    "symbol": "La",
+    "cn": "镧",
+    "category": "lan",
+    "core": false
+  },
+  {
+    "z": 58,
+    "symbol": "Ce",
+    "cn": "铈",
+    "category": "lan",
+    "core": false
+  },
+  {
+    "z": 59,
+    "symbol": "Pr",
+    "cn": "镨",
+    "category": "lan",
+    "core": false
+  },
+  {
+    "z": 60,
+    "symbol": "Nd",
+    "cn": "钕",
+    "category": "lan",
+    "core": false
+  },
+  {
+    "z": 61,
+    "symbol": "Pm",
+    "cn": "钷",
+    "category": "lan",
+    "core": false
+  },
+  {
+    "z": 62,
+    "symbol": "Sm",
+    "cn": "钐",
+    "category": "lan",
+    "core": false
+  },
+  {
+    "z": 63,
+    "symbol": "Eu",
+    "cn": "铕",
+    "category": "lan",
+    "core": false
+  },
+  {
+    "z": 64,
+    "symbol": "Gd",
+    "cn": "钆",
+    "category": "lan",
+    "core": false
+  },
+  {
+    "z": 65,
+    "symbol": "Tb",
+    "cn": "铽",
+    "category": "lan",
+    "core": false
+  },
+  {
+    "z": 66,
+    "symbol": "Dy",
+    "cn": "镝",
+    "category": "lan",
+    "core": false
+  },
+  {
+    "z": 67,
+    "symbol": "Ho",
+    "cn": "钬",
+    "category": "lan",
+    "core": false
+  },
+  {
+    "z": 68,
+    "symbol": "Er",
+    "cn": "铒",
+    "category": "lan",
+    "core": false
+  },
+  {
+    "z": 69,
+    "symbol": "Tm",
+    "cn": "铥",
+    "category": "lan",
+    "core": false
+  },
+  {
+    "z": 70,
+    "symbol": "Yb",
+    "cn": "镱",
+    "category": "lan",
+    "core": false
+  },
+  {
+    "z": 71,
+    "symbol": "Lu",
+    "cn": "镥",
+    "category": "lan",
+    "core": false
+  },
+  {
+    "z": 72,
+    "symbol": "Hf",
+    "cn": "铪",
+    "category": "tr",
+    "core": false
+  },
+  {
+    "z": 73,
+    "symbol": "Ta",
+    "cn": "钽",
+    "category": "tr",
+    "core": false
+  },
+  {
+    "z": 74,
+    "symbol": "W",
+    "cn": "钨",
+    "category": "tr",
+    "core": true
+  },
+  {
+    "z": 75,
+    "symbol": "Re",
+    "cn": "铼",
+    "category": "tr",
+    "core": false
+  },
+  {
+    "z": 76,
+    "symbol": "Os",
+    "cn": "锇",
+    "category": "tr",
+    "core": false
+  },
+  {
+    "z": 77,
+    "symbol": "Ir",
+    "cn": "铱",
+    "category": "tr",
+    "core": false
+  },
+  {
+    "z": 78,
+    "symbol": "Pt",
+    "cn": "铂",
+    "category": "tr",
+    "core": true
+  },
+  {
+    "z": 79,
+    "symbol": "Au",
+    "cn": "金",
+    "category": "tr",
+    "core": true
+  },
+  {
+    "z": 80,
+    "symbol": "Hg",
+    "cn": "汞",
+    "category": "post",
+    "core": true
+  },
+  {
+    "z": 81,
+    "symbol": "Tl",
+    "cn": "铊",
+    "category": "post",
+    "core": false
+  },
+  {
+    "z": 82,
+    "symbol": "Pb",
+    "cn": "铅",
+    "category": "post",
+    "core": true
+  },
+  {
+    "z": 83,
+    "symbol": "Bi",
+    "cn": "铋",
+    "category": "post",
+    "core": false
+  },
+  {
+    "z": 84,
+    "symbol": "Po",
+    "cn": "钋",
+    "category": "post",
+    "core": false
+  },
+  {
+    "z": 85,
+    "symbol": "At",
+    "cn": "砹",
+    "category": "hal",
+    "core": false
+  },
+  {
+    "z": 86,
+    "symbol": "Rn",
+    "cn": "氡",
+    "category": "nob",
+    "core": false
+  },
+  {
+    "z": 87,
+    "symbol": "Fr",
+    "cn": "钫",
+    "category": "alk",
+    "core": false
+  },
+  {
+    "z": 88,
+    "symbol": "Ra",
+    "cn": "镭",
+    "category": "alk2",
+    "core": false
+  },
+  {
+    "z": 89,
+    "symbol": "Ac",
+    "cn": "锕",
+    "category": "act",
+    "core": false
+  },
+  {
+    "z": 90,
+    "symbol": "Th",
+    "cn": "钍",
+    "category": "act",
+    "core": false
+  },
+  {
+    "z": 91,
+    "symbol": "Pa",
+    "cn": "镤",
+    "category": "act",
+    "core": false
+  },
+  {
+    "z": 92,
+    "symbol": "U",
+    "cn": "铀",
+    "category": "act",
+    "core": false
+  },
+  {
+    "z": 93,
+    "symbol": "Np",
+    "cn": "镎",
+    "category": "act",
+    "core": false
+  },
+  {
+    "z": 94,
+    "symbol": "Pu",
+    "cn": "钚",
+    "category": "act",
+    "core": false
+  },
+  {
+    "z": 95,
+    "symbol": "Am",
+    "cn": "镅",
+    "category": "act",
+    "core": false
+  },
+  {
+    "z": 96,
+    "symbol": "Cm",
+    "cn": "锔",
+    "category": "act",
+    "core": false
+  },
+  {
+    "z": 97,
+    "symbol": "Bk",
+    "cn": "锫",
+    "category": "act",
+    "core": false
+  },
+  {
+    "z": 98,
+    "symbol": "Cf",
+    "cn": "锎",
+    "category": "act",
+    "core": false
+  },
+  {
+    "z": 99,
+    "symbol": "Es",
+    "cn": "锿",
+    "category": "act",
+    "core": false
+  },
+  {
+    "z": 100,
+    "symbol": "Fm",
+    "cn": "镄",
+    "category": "act",
+    "core": false
+  },
+  {
+    "z": 101,
+    "symbol": "Md",
+    "cn": "钔",
+    "category": "act",
+    "core": false
+  },
+  {
+    "z": 102,
+    "symbol": "No",
+    "cn": "锘",
+    "category": "act",
+    "core": false
+  },
+  {
+    "z": 103,
+    "symbol": "Lr",
+    "cn": "铹",
+    "category": "act",
+    "core": false
+  },
+  {
+    "z": 104,
+    "symbol": "Rf",
+    "cn": "𬬻",
+    "category": "tr",
+    "core": false
+  },
+  {
+    "z": 105,
+    "symbol": "Db",
+    "cn": "𬭊",
+    "category": "tr",
+    "core": false
+  },
+  {
+    "z": 106,
+    "symbol": "Sg",
+    "cn": "𬭳",
+    "category": "tr",
+    "core": false
+  },
+  {
+    "z": 107,
+    "symbol": "Bh",
+    "cn": "𬭛",
+    "category": "tr",
+    "core": false
+  },
+  {
+    "z": 108,
+    "symbol": "Hs",
+    "cn": "𬭶",
+    "category": "tr",
+    "core": false
+  },
+  {
+    "z": 109,
+    "symbol": "Mt",
+    "cn": "鿏",
+    "category": "tr",
+    "core": false
+  },
+  {
+    "z": 110,
+    "symbol": "Ds",
+    "cn": "𫟼",
+    "category": "tr",
+    "core": false
+  },
+  {
+    "z": 111,
+    "symbol": "Rg",
+    "cn": "𬬭",
+    "category": "tr",
+    "core": false
+  },
+  {
+    "z": 112,
+    "symbol": "Cn",
+    "cn": "鿔",
+    "category": "post",
+    "core": false
+  },
+  {
+    "z": 113,
+    "symbol": "Nh",
+    "cn": "鿭",
+    "category": "post",
+    "core": false
+  },
+  {
+    "z": 114,
+    "symbol": "Fl",
+    "cn": "𫓧",
+    "category": "post",
+    "core": false
+  },
+  {
+    "z": 115,
+    "symbol": "Mc",
+    "cn": "镆",
+    "category": "post",
+    "core": false
+  },
+  {
+    "z": 116,
+    "symbol": "Lv",
+    "cn": "𫟷",
+    "category": "post",
+    "core": false
+  },
+  {
+    "z": 117,
+    "symbol": "Ts",
+    "cn": "鿬",
+    "category": "hal",
+    "core": false
+  },
+  {
+    "z": 118,
+    "symbol": "Og",
+    "cn": "鿫",
+    "category": "nob",
+    "core": false
+  }
+]
