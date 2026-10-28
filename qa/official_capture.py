@@ -56,8 +56,18 @@ def functional_sequence(w, h):
     seq = []
     seq += click("zoom2", plus_x, footer_y)
     seq += pause("wait.zoom2", 0.35)
+    seq.append(("zoom2.crown", {
+        "version": "1.0.0", "command": "CrownRotate", "type": "action",
+        "args": {"rotate": -24}
+    }))
+    seq += pause("wait.zoom2.crown", 0.40)
     seq += click("zoom3", plus_x, footer_y)
     seq += pause("wait.zoom3", 0.35)
+    seq.append(("zoom3.crown", {
+        "version": "1.0.0", "command": "CrownRotate", "type": "action",
+        "args": {"rotate": -24}
+    }))
+    seq += pause("wait.zoom3.crown", 0.40)
     seq += click("reset", reset_x, footer_y)
     seq += pause("wait.reset", 0.35)
     for i in range(3):
@@ -86,10 +96,12 @@ def stress_sequence(w, h):
         seq += click("stress.minus" + str(i), minus_x, footer_y)
     for i in range(4):
         seq += drag_left("stress.left" + str(i), 190)
-    seq.append(("stress.crown.down", {
-        "version": "1.0.0", "command": "CrownRotate", "type": "action",
-        "args": {"rotate": -12}
-    }))
+    for i in range(3):
+        seq.append(("stress.crown.down" + str(i + 1), {
+            "version": "1.0.0", "command": "CrownRotate", "type": "action",
+            "args": {"rotate": -24}
+        }))
+        seq += pause("wait.stress.crown" + str(i + 1), 0.20)
     seq.append(("stress.crown.up", {
         "version": "1.0.0", "command": "CrownRotate", "type": "action",
         "args": {"rotate": 12}

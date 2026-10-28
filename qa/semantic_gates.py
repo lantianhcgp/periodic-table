@@ -10,8 +10,10 @@ FUNCTIONAL_REQUIRED = [
     "PT:canvas_draw zoom=1 col=0 rows=9",
     "PT:zoom value=2 cols=3",
     "PT:canvas_draw zoom=2 col=0 rows=9",
+    "PT:scroll_end zoom=2 col=0",
     "PT:zoom value=3 cols=2",
     "PT:canvas_draw zoom=3 col=0 rows=9",
+    "PT:scroll_end zoom=3 col=0",
     "PT:reset",
     "PT:canvas_draw zoom=1 col=0 rows=9",
     "PT:swipe direction=left col=5 zoom=1",
@@ -94,7 +96,7 @@ def gate_functional(result,text):
     back=result.get("interaction",{}).get("back_frames",[])
     send_fail=failed_sends(result)
     crowns=receipts_for(result,"CrownRotate")
-    crown_ok=len(crowns)==3 and all(x.get("ok") is True for x in crowns)
+    crown_ok=len(crowns)==5 and all(x.get("ok") is True for x in crowns)
     return {
         "ok": (result.get("verdict")=="PASS" and result.get("rc")=="alive"
                and not send_fail and not missing and not errors and crown_ok
@@ -112,7 +114,7 @@ def gate_stress(result,text):
     missing=ordered_missing(text,STRESS_REQUIRED)
     send_fail=failed_sends(result)
     crowns=receipts_for(result,"CrownRotate")
-    crown_ok=len(crowns)==2 and all(x.get("ok") is True for x in crowns)
+    crown_ok=len(crowns)==4 and all(x.get("ok") is True for x in crowns)
     return {
         "ok": (result.get("verdict")=="PASS" and result.get("rc")=="alive"
                and not send_fail and not errors and not missing and crown_ok),
