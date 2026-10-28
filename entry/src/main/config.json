@@ -1,8 +1,8 @@
 {
   "app": {
-    "bundleName": "com.hcbiu.periodic",
+    "bundleName": "periodic.nexus.qu84q",
     "vendor": "hcbiu",
-    "version": { "code": 1000000, "name": "1.0.0" }
+    "version": { "code": 1001000, "name": "1.1.0" }
   },
   "deviceConfig": {},
   "module": {

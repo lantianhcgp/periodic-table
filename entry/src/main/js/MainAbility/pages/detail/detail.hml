@@ -1,92 +1,69 @@
 <div class="page">
-  <text class="dttl" style="width: {{ dW }}px;">{{ headTtl }}</text>
-
-  <!-- hero: tile + names -->
-  <div class="hero" style="width: {{ heroW }}px;">
-    <div class="tile" style="background-color: {{ catColor }};">
-      <text class="tile-sym">{{ sym }}</text>
-      <text class="tile-num">{{ idx }}</text>
-    </div>
-    <div class="names">
-      <text class="cn">{{ cn }}</text>
-      <text class="en">{{ en }}</text>
-      <div class="tags">
-        <text class="cat" style="color: {{ catColor }};">{{ catLabel }}</text>
-        <text class="coretag" if="{{ core }}">{{ star }} {{ coreWord }}</text>
-      </div>
-    </div>
-  </div>
-
-  <!-- 核结构（高考核心）：质子数 = 中子数 = 最外层电子数 -->
-  <div class="nuc" style="width: {{ nucW }}px;">
-    <div class="nuc-cell">
-      <text class="s-k">{{ kProton }}</text>
-      <text class="s-v">{{ idx }}</text>
-    </div>
-    <div class="nuc-cell">
-      <text class="s-k">{{ kNeutron }}</text>
-      <text class="s-v">{{ neutrons }}</text>
-    </div>
-    <div class="nuc-cell">
-      <text class="s-k">{{ kOuter }}</text>
-      <text class="s-v">{{ outer }}</text>
-    </div>
-  </div>
-
-  <!-- electron shells (single line) + config -->
-  <div class="mid" style="width: {{ midW }}px;">
-    <div class="shellbox" style="width: {{ shellW }}px;">
-      <text class="m-k">{{ kShell }}</text>
-      <text class="shelltext">{{ shellText }}</text>
-    </div>
-    <div class="confbox" style="width: {{ confW }}px;">
-      <text class="m-k">{{ kConf }}</text>
-      <text class="conf">{{ conf }}</text>
-      <text class="oxline" if="{{ hasOx }}">{{ kOx }}  {{ oxText }}</text>
-    </div>
-  </div>
-
-  <!-- stats strip -->
-  <div class="stats" style="width: {{ statsW }}px;">
-    <div class="stat" style="width: {{ statW }}px;">
-      <text class="s-k">{{ kAtomic }}</text>
-      <text class="s-v">{{ idx }}</text>
-    </div>
-    <div class="stat" style="width: {{ statW }}px;">
-      <text class="s-k">{{ kMass }}</text>
-      <text class="s-v">{{ w }}</text>
-    </div>
-    <div class="stat stat-l" style="width: {{ statW }}px;">
-      <text class="s-k">{{ kPeriod }}</text>
-      <text class="s-v">{{ period }} {{ group }}</text>
-    </div>
-  </div>
-
-  <!-- gaokao notes -->
-  <div class="notes" style="width: {{ notesW }}px;">
-    <text class="n-k">{{ notesK }}</text>
-    <text class="n-line" for="{{ nt in notes }}">{{ nt }}</text>
-  </div>
-
-  <!-- back -->
-  <div class="backbtn" style="width: {{ backW }}px;" @click="onBack()">
-    <text class="back-txt">{{ bBack }} · {{ headTtl }}</text>
-  </div>
-
-  <!-- foot: prev | progress | next -->
-  <div class="foot" style="width: {{ footW }}px;">
-    <div class="navb" style="width: {{ navW }}px;" @click="onPrev()" if="{{ canPrev }}">
-      <text class="navb-l">{{ bPrev }}</text>
-      <text class="navb-s">{{ prevSym }}</text>
-    </div>
-    <div class="prog" style="width: {{ progW }}px;">
-      <text class="prog-idx">{{ idx }}/{{ total }}</text>
-      <div class="prog-bar" style="width: {{ progW }}px;"><div class="prog-fill" style="width: {{ progFillW }}px;"></div></div>
-      <text class="prog-lab">{{ progLab }}</text>
-    </div>
-    <div class="navb navb-next" style="width: {{ navW }}px;" @click="onNext()" if="{{ canNext }}">
-      <text class="navb-l">{{ bNext }}</text>
-      <text class="navb-s">{{ nextSym }}</text>
-    </div>
+  <div class="loading" if="{{!ready}}" @click="retry"><text class="loading-t">{{error}}</text></div>
+  <div class="body" if="{{ready}}" style="width: {{w}}px; height: {{h}}px;">
+    <div class="head" style="width: {{headerW}}px; height: {{headerH}}px;"><text class="title" style="width: {{headerW}}px; height: {{captionH}}px; font-size: {{titleFont}}px;">&#x5143;&#x7D20;&#x8BE6;&#x60C5;</text></div>
+    <list ref="detailList" class="details" style="width: {{tableW}}px; height: {{listH}}px;" onscrollend="onScrollEnd">
+      <list-item class="hero" style="width: {{tableW}}px; height: {{heroH}}px; margin-bottom: {{gap}}px; padding: {{pad}}px;">
+        <div class="tile" style="width: {{iconW}}px; height: {{iconH}}px; background-color: {{tileColor}};">
+          <text class="tile-z" style="width: {{iconW}}px; height: {{textH}}px; font-size: {{smallFont}}px;">{{protonCount}}</text>
+          <text class="tile-symbol" style="width: {{iconW}}px; height: {{captionH}}px; font-size: {{nameFont}}px;">{{nameSymbol}}</text>
+          <text class="tile-cn" style="width: {{iconW}}px; height: {{textH}}px; font-size: {{font}}px;">{{nameCN}}</text>
+        </div>
+        <div class="names" style="width: {{nameW}}px; height: {{nameH+textH*2}}px; margin-left: {{gap}}px;">
+          <text class="cn" style="width: {{nameW}}px; height: {{nameH}}px; font-size: {{nameFont}}px;">{{nameCN}}</text>
+          <text class="primary" style="width: {{nameW}}px; height: {{textH}}px; font-size: {{font}}px;">{{nameEN}}</text>
+          <text class="muted" style="width: {{nameW}}px; height: {{textH}}px; font-size: {{smallFont}}px;">{{categoryText}}</text>
+        </div>
+      </list-item>
+      <list-item class="card" style="width: {{tableW}}px; height: {{structureH}}px; padding: {{pad}}px; margin-bottom: {{gap}}px;">
+        <text class="section" style="width: {{cardW}}px; height: {{captionH}}px; font-size: {{font}}px;">&#x539F;&#x5B50;&#x7ED3;&#x6784;&#xFF08;&#x4E2D;&#x6027;&#x539F;&#x5B50;&#xFF09;</text>
+        <div class="row" style="width: {{cardW}}px; height: {{textH*2}}px;">
+          <div class="metric" style="width: {{thirdW}}px; height: {{textH*2}}px;"><text class="muted" style="height: {{textH}}px; font-size: {{smallFont}}px;">&#x8D28;&#x5B50;&#x6570; Z</text><text class="number" style="height: {{textH}}px; font-size: {{titleFont}}px;">{{protonCount}}</text></div>
+          <div class="metric" style="width: {{thirdW}}px; height: {{textH*2}}px;"><text class="muted" style="height: {{textH}}px; font-size: {{smallFont}}px;">&#x7535;&#x5B50;&#x6570;</text><text class="number" style="height: {{textH}}px; font-size: {{titleFont}}px;">{{electronCount}}</text></div>
+          <div class="metric" style="width: {{thirdW}}px; height: {{textH*2}}px;"><text class="muted" style="height: {{textH}}px; font-size: {{smallFont}}px;">&#x6700;&#x5916;&#x5C42;</text><text class="number" style="height: {{textH}}px; font-size: {{titleFont}}px;">{{outerCount}}</text></div>
+        </div>
+      </list-item>
+      <list-item class="card" style="width: {{tableW}}px; height: {{nucleusH}}px; padding: {{pad}}px; margin-bottom: {{gap}}px;">
+        <text class="section" style="width: {{cardW}}px; height: {{captionH}}px; font-size: {{font}}px;">&#x6838;&#x7D20; · {{isoLabel}}</text>
+        <div class="row" style="width: {{cardW}}px; height: {{textH*2}}px;">
+          <div class="metric" style="width: {{halfW}}px; height: {{textH*2}}px;"><text class="muted" style="height: {{textH}}px; font-size: {{smallFont}}px;">&#x8D28;&#x91CF;&#x6570; A</text><text class="number" style="height: {{textH}}px; font-size: {{titleFont}}px;">{{massNumber}}</text></div>
+          <div class="metric" style="width: {{halfW}}px; height: {{textH*2}}px;"><text class="muted" style="height: {{textH}}px; font-size: {{smallFont}}px;">&#x4E2D;&#x5B50;&#x6570; N</text><text class="number" style="height: {{textH}}px; font-size: {{titleFont}}px;">{{neutronCount}}</text></div>
+        </div>
+        <div class="row isotopes" style="width: {{cardW}}px; height: {{isoH}}px; margin-top: {{gap}}px; margin-bottom: {{gap}}px;">
+          <div class="iso" style="width: {{isoW}}px; height: {{isoH}}px; background-color: {{iso1bg}};" @click="switchIsotope(0)"><text class="primary" style="height: {{textH}}px; font-size: {{smallFont}}px;">{{iso1}}</text></div>
+          <div class="iso" if="{{isoCount>1}}" style="width: {{isoW}}px; height: {{isoH}}px; background-color: {{iso2bg}}; margin-left: {{gap}}px;" @click="switchIsotope(1)"><text class="primary" style="height: {{textH}}px; font-size: {{smallFont}}px;">{{iso2}}</text></div>
+          <div class="iso" if="{{isoCount>2}}" style="width: {{isoW}}px; height: {{isoH}}px; background-color: {{iso3bg}}; margin-left: {{gap}}px;" @click="switchIsotope(2)"><text class="primary" style="height: {{textH}}px; font-size: {{smallFont}}px;">{{iso3}}</text></div>
+        </div>
+        <text class="muted" style="width: {{cardW}}px; height: {{textH}}px; font-size: {{smallFont}}px;">{{nucleusNote}}</text>
+      </list-item>
+      <list-item class="card" style="width: {{tableW}}px; height: {{electronH}}px; padding: {{pad}}px; margin-bottom: {{gap}}px;">
+        <text class="section" style="width: {{cardW}}px; height: {{captionH}}px; font-size: {{font}}px;">&#x6838;&#x5916;&#x7535;&#x5B50;</text>
+        <text class="muted" style="width: {{cardW}}px; height: {{textH}}px; font-size: {{smallFont}}px;">&#x5206;&#x5C42;&#x7535;&#x5B50;&#x6570;</text>
+        <text class="primary" style="width: {{cardW}}px; height: {{textH}}px; font-size: {{font}}px;">{{shellText}}</text>
+        <text class="muted" style="width: {{cardW}}px; height: {{textH}}px; font-size: {{smallFont}}px;">&#x57FA;&#x6001;&#x7535;&#x5B50;&#x6392;&#x5E03;</text>
+        <text class="primary" style="width: {{cardW}}px; height: {{textH}}px; font-size: {{font}}px;">{{configText}}</text>
+        <div class="row" style="width: {{cardW}}px; height: {{textH*2}}px;">
+          <div class="metric" style="width: {{halfW}}px; height: {{textH*2}}px;"><text class="muted" style="height: {{textH}}px; font-size: {{smallFont}}px;">&#x7535;&#x8D1F;&#x6027;</text><text class="primary" style="height: {{textH}}px; font-size: {{font}}px;">{{electronegativity}}</text></div>
+          <div class="metric" style="width: {{halfW}}px; height: {{textH*2}}px;"><text class="muted" style="height: {{textH}}px; font-size: {{smallFont}}px;">I1 / kJ·mol-1</text><text class="primary" style="height: {{textH}}px; font-size: {{font}}px;">{{ionization}}</text></div>
+        </div>
+      </list-item>
+      <list-item class="card" style="width: {{tableW}}px; height: {{positionH}}px; padding: {{pad}}px; margin-bottom: {{gap}}px;">
+        <div class="row" style="width: {{cardW}}px; height: {{textH*2}}px;">
+          <div class="metric" style="width: {{halfW}}px; height: {{textH*2}}px;"><text class="muted" style="height: {{textH}}px; font-size: {{smallFont}}px;">{{weightLabel}}</text><text class="number" style="height: {{textH}}px; font-size: {{titleFont}}px;">{{weight}}</text></div>
+          <div class="metric" style="width: {{halfW}}px; height: {{textH*2}}px;"><text class="primary" style="height: {{textH}}px; font-size: {{font}}px;">{{periodText}}</text><text class="primary" style="height: {{textH}}px; font-size: {{smallFont}}px;">{{groupText}}</text></div>
+        </div>
+        <text class="muted" style="width: {{cardW}}px; height: {{textH*2}}px; font-size: {{smallFont}}px;">{{weightNote}}</text>
+      </list-item>
+      <list-item class="card" style="width: {{tableW}}px; height: {{valenceH}}px; padding: {{pad}}px; margin-bottom: {{gap}}px;">
+        <text class="section" style="width: {{cardW}}px; height: {{captionH}}px; font-size: {{font}}px;">&#x4EF7;&#x6001;&#x4E0E;&#x4F4D;&#x6784;&#x6027;</text>
+        <text class="primary" style="width: {{cardW}}px; height: {{textH}}px; font-size: {{font}}px;">{{oxidationText}}</text>
+        <text class="primary" style="width: {{cardW}}px; height: {{pointH}}px; font-size: {{font}}px; margin-top: {{gap}}px;">{{pointText}}</text>
+      </list-item>
+      <list-item class="card" style="width: {{tableW}}px; height: {{noteH}}px; padding: {{pad}}px; margin-bottom: {{gap}}px;">
+        <text class="section" style="width: {{cardW}}px; height: {{captionH}}px; font-size: {{font}}px;">&#x9AD8;&#x8003;&#x5173;&#x8054;</text>
+        <text class="primary" style="width: {{cardW}}px; height: {{noteTextH}}px; font-size: {{font}}px;">{{noteText}}</text>
+      </list-item>
+    </list>
+    <div class="backbtn" style="width: {{footerW}}px; height: {{footerH}}px;" @click="back"><text class="back-t" style="height: {{captionH}}px; font-size: {{font}}px;">&#x8FD4;&#x56DE;&#x5468;&#x671F;&#x8868;</text></div>
   </div>
 </div>

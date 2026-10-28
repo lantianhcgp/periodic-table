@@ -1,178 +1,92 @@
-// detail page — element info, prev/next in-place (no reload)
-// 100% 自适应：宽度由 @system.device 实测窗口算 px 内联绑定，不写死分辨率（用户拍板）
-import FULL from '../../common/elements-full.js';
-
-var CAT = {
-  alk: { label: '\u78b1\u91d1\u5c5e', c: '#ff6b6b' },
-  alk2: { label: '\u78b1\u571f\u91d1\u5c5e', c: '#ffa94d' },
-  tr: { label: '\u8fc7\u6e21\u91d1\u5c5e', c: '#5c7cfa' },
-  post: { label: '\u540e\u8fc7\u6e21\u91d1\u5c5e', c: '#4dabf7' },
-  met: { label: '\u7c7b\u91d1\u5c5e', c: '#69db7c' },
-  nm: { label: '\u975e\u91d1\u5c5e', c: '#ffd43b' },
-  hal: { label: '\u5316\u7d20', c: '#f783ac' },
-  nob: { label: '\u7a00\u6709\u6c14\u4f53', c: '#b197fc' },
-  lan: { label: '\u956d\u7cfb', c: '#22d3ee' },
-  act: { label: '\u9551\u7cfb', c: '#818cf8' }
-};
-
-function byZ(z) {
-  var r = FULL[z - 1];
-  return r ? r : null;
-}
-// FULL row: [z,sym,cn,en,w,cat,conf,ox[],core,notes[],'period|group',shells]
-
-// 原子量字符串去括号/方括号：纯字符循环，**不用正则**
-// （Lite JSB 老引擎 eval 正则字面量会让整文件 "Eval JS file failed" → 全黑，实测坑）
-function stripParen(s) {
-  s = String(s);
-  var out = "";
-  for (var i = 0; i < s.length; i++) {
-    var c = s[i];
-    if (c !== "(" && c !== ")" && c !== "[" && c !== "]") { out += c; }
-  }
-  return out;
-}
-
-function fill(page) {
-  var el = byZ(page.z);
-  if (!el) { page.hasData = 0; return; }
-  page.hasData = 1;
-  page.sym = el[1];
-  page.cn = el[2];
-  page.en = el[3];
-  page.w = el[4];
-  var cat = CAT[el[5]] || { label: el[5], c: '#888' };
-  page.catLabel = cat.label;
-  page.catColor = cat.c;
-  page.conf = el[6];
-  // oxidation states
-  var ox = el[7] || [];
-  var oxText = '';
-  for (var i = 0; i < ox.length; i++) {
-    if (i) { oxText += ' '; }
-    oxText += (ox[i] > 0 ? '+' : '') + ox[i];
-  }
-  page.oxText = oxText;
-  page.hasOx = ox.length > 0 ? 1 : 0;
-  page.core = el[8] ? 1 : 0;
-  // notes (cap 3)
-  var notes = el[9] || [];
-  var shown = notes.slice(0, 3);
-  if (!shown.length) {
-    shown = (el[8]) ? [] : ['\u975e\u9ad8\u8003\u6838\u5fc3\u8003\u70b9\uff0c\u8bb0\u4f4f\u7b26\u53f7\u4e0e\u4f4d\u7f6e\u5373\u53ef'];
-  }
-  page.notes = shown;
-  page.notesK = el[8] ? '\u9ad8\u8003\u8981\u70b9' : '\u7b80\u4ecb';
-  // period | group
-  var pg = (el[10] || '').split('|');
-  page.period = pg[0] || '';
-  page.group = pg[1] || '';
-  // shells
-  var sh = (el[11] || '').split(',');
-  var shells = [];
-  for (var s = 0; s < sh.length; s++) {
-    if (sh[s]) { shells.push({ n: sh[s] }); }
-  }
-  page.shells = shells;
-  page.shellText = sh.join(' ');
-  // index / progress
-  page.idx = el[0];
-  page.total = 118;
-  page.barPct = Math.round(el[0] / 118 * 100);
-  page.progFillW = Math.round((page.progW || 90) * page.barPct / 100);
-  // 核结构（高考：原子序数=质子数=核外电子数；中子数=质量数-质子数）
-  var massNum = Math.round(parseFloat(stripParen(el[4])));
-  if (isNaN(massNum)) { massNum = 0; }
-  page.massNum = massNum;
-  page.neutrons = massNum - el[0];
-  // 最外层电子数 = 电子层末位（高考：最高正价=最外层；最低负价=最外层-8）
-  var outerV = "";
-  var shAll = (el[11] || "").split(",");
-  for (var t = shAll.length - 1; t >= 0; t--) { if (shAll[t]) { outerV = shAll[t]; break; } }
-  page.outer = outerV;
-  // prev / next
-  var prev = byZ(el[0] - 1);
-  var next = byZ(el[0] + 1);
-  page.prevSym = prev ? prev[1] : '';
-  page.nextSym = next ? next[1] : '';
-  page.canPrev = prev ? 1 : 0;
-  page.canNext = next ? 1 : 0;
-}
-
+import router from '@system.router';
+import device from '@system.device';
+import model from '../../common/model';
+var CATEGORY_COLORS={alk:'#70433f',alk2:'#6b5136',tr:'#2d5270',post:'#3f5963',met:'#4b536f',nm:'#31595d',hal:'#5a496f',nob:'#365575',lan:'#5e4c3c',act:'#554361'};
 export default {
   data: {
-    z: 1,
-    hasData: 0,
-    // 几何（measure() 按 device 实测窗口重算；初值 396 兜底，不同分辨率自动通吃）
-    dW: 340, heroW: 340, midW: 340, statsW: 340, nucW: 340, notesW: 340, backW: 340, footW: 340,
-    shellW: 110, confW: 210, statW: 104, navW: 90, progW: 110, progFillW: 0,
-    sym: '', cn: '', en: '', w: '',
-    catLabel: '', catColor: '#888',
-    conf: '', oxText: '', hasOx: 0,
-    core: 0, notes: [], notesK: '',
-    period: '', group: '', shells: [], shellText: '',
-    massNum: 0, neutrons: 0, outer: '',
-    kProton: '\u8d28\u5b50\u6570', kNeutron: '\u4e2d\u5b50\u6570', kOuter: '\u6700\u5916\u5c42\u7535\u5b50',
-    idx: 0, total: 118, barPct: 0,
-    prevSym: '', nextSym: '', canPrev: 0, canNext: 0,
-    headTtl: '\u5143\u7d20\u8be6\u60c5',
-    kPeriod: '\u5468\u671f \u00b7 \u65cf',
-    kAtomic: '\u539f\u5b50\u5e8f\u53f7',
-    kMass: '\u76f8\u5bf9\u539f\u5b50\u8d28\u91cf',
-    kConf: '\u7535\u5b50\u6392\u5e03',
-    kShell: '\u7535\u5b50\u5c42',
-    kOx: '\u5e38\u89c1\u5316\u5408\u4ef7',
-    bPrev: '\u4e0a\u4e00',
-    bNext: '\u4e0b\u4e00',
-    bBack: '\u8fd4\u56de',
-    star: '\u2605',
-    coreWord: '\u9ad8\u8003\u6838\u5fc3',
-    progLab: '\u7ffb\u9605'
+    ready:false,error:'\u6b63\u5728\u52a0\u8f7d\u5143\u7d20\u2026',active:false,alive:true,leaving:false,ticket:0,focusTimer:0,
+    z:0,w:0,h:0,tableW:0,headerW:0,headerH:0,listH:0,footerW:0,footerH:0,
+    font:20,smallFont:16,titleFont:22,textH:30,captionH:32,
+    heroH:0,structureH:0,nucleusH:0,electronH:0,positionH:0,valenceH:0,noteH:0,gap:0,pad:0,
+    cardW:0,thirdW:0,halfW:0,iconW:0,iconH:0,nameW:0,nameH:0,nameFont:32,
+    nameCN:'',nameEN:'',nameSymbol:'',categoryText:'',tileColor:'#24313f',protonCount:'',electronCount:'',outerCount:'',
+    shellText:'',configText:'',isoLabel:'',massNumber:'',neutronCount:'',nucleusNote:'N=A-Z\uff0c\u4e2d\u5b50\u6570\u968f\u6838\u7d20\u800c\u53d8\u3002',
+    isoCount:0,iso1:'',iso2:'',iso3:'',isoW:0,isoH:0,iso1bg:'#31595d',iso2bg:'#24313f',iso3bg:'#24313f',
+    weight:'',weightLabel:'',weightNote:'',periodText:'',groupText:'',oxidationText:'',
+    pointText:'',noteText:'',pointH:0,noteTextH:0,ionization:'',electronegativity:'',
+    meta:null
   },
-  // 宽度自适应：device 实测窗口 → 各容器 px（内联绑定），CSS 只定高度/视觉
-  measure: function () {
-    var that = this;
-    var apply = function (W) {
-      var cW = Math.floor(W * 0.86);
-      that.dW = cW; that.heroW = cW; that.midW = cW; that.statsW = cW; that.nucW = cW; that.notesW = cW; that.backW = cW; that.footW = cW;
-      that.shellW = Math.floor(cW * 0.34);
-      that.confW = Math.max(70, cW - that.shellW - 10);
-      that.statW = Math.floor(cW / 3) - 4;
-      that.navW = Math.floor(cW * 0.27);
-      that.progW = Math.max(80, cW - 2 * that.navW - 20);
-      that.progFillW = Math.round(that.progW * (that.barPct || 0) / 100);
-    };
-    apply(396);
-    try {
-      require('@system.device').getInfo({
-        success: function (d) { if (d && d.windowWidth) { that._W = d.windowWidth; apply(d.windowWidth); } }
-      });
-    } catch (e) {}
-  },
+  appState: function () {return this.$app && this.$app.$def ? this.$app.$def : null;},
   onInit: function () {
-    var self = this;
-    self.measure();
-    var storage = require('@system.storage');
-    storage.get({
-      key: 'pt_z', default: '1',
-      success: function (v) {
-        var z = parseInt(v, 10);
-        if (!z || z < 1 || z > 118) { z = 1; }
-        self.z = z;
-        fill(self);
-      }
-    });
+    this.alive=true;this.active=true;var a=this.appState();var z=a?a.selectedElement:0;
+    if(typeof z!=='number' || z<1 || z>118 || Math.floor(z)!==z){this.error='\u8bf7\u4ece\u5468\u671f\u8868\u9009\u62e9\u5143\u7d20';console.error('PT:no_selection');return;}
+    try{this.meta=a && a.getElement ? a.getElement(z) : null;}catch(e){this.error='\u5143\u7d20\u8d44\u6599\u52a0\u8f7d\u5931\u8d25';console.error('PT:catalog_error z='+z);return;}
+    if(!this.meta){this.error='\u5143\u7d20\u4e0d\u5b58\u5728';return;}this.z=z;this.populate();this.measure();
   },
-  go: function (d) {
-    var nz = this.z + d;
-    if (nz < 1 || nz > 118) { return; }
-    this.z = nz;
-    fill(this);
+  onShow: function () {this.active=true;this.alive=true;this.leaving=false;if(this.meta)this.measure();},
+  populate: function () {
+    var e=this.meta;
+    var names={alk:'\u78b1\u91d1\u5c5e',alk2:'\u78b1\u571f\u91d1\u5c5e',tr:'\u8fc7\u6e21\u91d1\u5c5e',post:'\u91d1\u5c5e',met:'\u7c7b\u91d1\u5c5e',nm:'\u975e\u91d1\u5c5e',hal:'\u5364\u7d20',nob:'\u7a00\u6709\u6c14\u4f53',lan:'\u9567\u7cfb',act:'\u9515\u7cfb'};
+    this.nameCN=e.cn;this.nameEN=e.en;this.nameSymbol=e.symbol;this.categoryText=names[e.category]||'';this.tileColor=CATEGORY_COLORS[e.category]||'#24313f';
+    this.protonCount=e.z;this.electronCount=e.z;this.outerCount=e.shells[e.shells.length-1];
+    this.shellText=e.shells.join(' \xb7 ');this.configText=e.config;
+    this.isoCount=e.isotopes.length;this.iso1=e.symbol+'-'+e.isotopes[0];
+    this.iso2=e.isotopes.length>1?e.symbol+'-'+e.isotopes[1]:'';
+    this.iso3=e.isotopes.length>2?e.symbol+'-'+e.isotopes[2]:'';
+    this.weight=e.weight;this.weightLabel=e.weightKind==='nuclide'?'\u4ee3\u8868\u6838\u7d20\u8d28\u91cf\u6570':'\u76f8\u5bf9\u539f\u5b50\u8d28\u91cf';
+    this.weightNote=e.weightKind==='nuclide'?'\u65e0\u6807\u51c6\u539f\u5b50\u91cf\uff1b\u65b9\u62ec\u53f7\u5185\u4e3a\u6838\u7d20\u8d28\u91cf\u6570':'\u5e38\u7528\u7b80\u5199\uff1b\u5929\u7136\u540c\u4f4d\u7d20\u7684\u52a0\u6743\u7ed3\u679c';
+    this.periodText='\u7b2c'+e.period+'\u5468\u671f';this.groupText=e.group;
+    this.oxidationText=e.oxidation;this.ionization=e.ionization;this.electronegativity=e.electronegativity;
+    this.switchIsotope(0);
   },
-  onPrev: function () { this.go(-1); },
-  onNext: function () { this.go(1); },
-  onBack: function () {
-    var router = require('@system.router');
-    router.replace({ uri: 'pages/index/index' });
-  }
+  measure: function () {
+    var self=this,ticket=++this.ticket;
+    try{device.getInfo({
+      success:function(info){
+        if(!self.alive || !self.active || ticket!==self.ticket)return;
+        var v=model.viewport(info);if(!v){self.ready=false;self.error='\u5c4f\u5e55\u4fe1\u606f\u65e0\u6548\uff0c\u70b9\u6b64\u91cd\u8bd5';return;}
+        self.w=v.w;self.h=v.h;self.layout();self.ready=true;self.error='';self.focusLater();
+        console.info('PT:detail_ready z='+self.z+' w='+self.w+' h='+self.h+' isotope='+self.isoLabel+' p='+self.protonCount+' n='+self.neutronCount);
+      },
+      fail:function(){if(self.alive && self.active && ticket===self.ticket){self.ready=false;self.error='\u65e0\u6cd5\u8bfb\u53d6\u5c4f\u5e55\u4fe1\u606f\uff0c\u70b9\u6b64\u91cd\u8bd5';}}
+    });}catch(e){this.ready=false;this.error='\u5c4f\u5e55\u63a5\u53e3\u9519\u8bef';console.error('PT:detail_device_error');}
+  },
+  layout: function () {
+    var l=model.layout(this.w,this.h,1),f=l.font;
+    this.tableW=l.tableW;this.headerW=l.headerW;this.headerH=l.headerH;this.listH=l.detailH;
+    this.footerW=l.footerW;this.footerH=l.footerH;this.font=f;this.smallFont=l.smallFont;this.titleFont=l.titleFont;
+    this.textH=Math.round(f*1.5);this.captionH=Math.round(l.titleFont*1.5);
+    this.gap=Math.round(f*0.65);this.pad=Math.round(f*0.6);this.cardW=l.tableW-this.pad*2;
+    this.thirdW=Math.floor(this.cardW/3);this.halfW=Math.floor(this.cardW/2);
+    this.iconW=Math.round(this.cardW*0.25);this.iconH=Math.round(this.iconW*128/114);
+    this.nameW=this.cardW-this.iconW-this.gap;this.nameH=Math.round(f*2.25);this.nameFont=Math.round(f*1.65);
+    this.heroH=Math.max(this.iconH,this.nameH+this.textH*2)+this.pad*2;
+    this.structureH=this.captionH+this.textH*2+this.pad*2;
+    this.isoH=Math.round(f*2);this.isoW=Math.floor((this.cardW-this.gap*4)/3);
+    this.nucleusH=this.captionH+this.textH*3+this.isoH+this.pad*2+this.gap*2;
+    this.electronH=this.captionH+this.textH*6+this.pad*2;
+    this.positionH=this.textH*4+this.pad*2;
+    var columns=Math.max(12,Math.floor(this.cardW/f));
+    this.pointText=model.wrap(this.meta.keyPoint,columns);
+    this.pointH=this.pointText.split('\n').length*this.textH;
+    this.noteText=model.wrap(this.meta.note,columns);this.noteTextH=this.noteText.split('\n').length*this.textH;
+    this.valenceH=this.captionH+this.textH+this.pointH+this.pad*2+this.gap;
+    this.noteH=this.captionH+this.noteTextH+this.pad*2;
+  },
+  switchIsotope: function (i) {
+    var e=this.meta;if(!e || i<0 || i>=e.isotopes.length)return;
+    var a=e.isotopes[i],n=model.nucleus(e.z,a);if(!n){console.error('PT:nucleus_invalid');return;}
+    this.massNumber=a;this.neutronCount=n.neutrons;this.isoLabel=e.symbol+'-'+a;
+    this.iso1bg=i===0?'#31595d':'#24313f';this.iso2bg=i===1?'#31595d':'#24313f';this.iso3bg=i===2?'#31595d':'#24313f';
+    if(this.ready)this.focusLater();
+    console.info('PT:isotope z='+e.z+' a='+a+' n='+n.neutrons);
+  },
+  clearFocus: function () {if(this.focusTimer){clearTimeout(this.focusTimer);this.focusTimer=0;}},
+  focus: function (on) {var r=this.$refs && this.$refs.detailList;if(r && r.rotation){try{r.rotation({focus:on});}catch(e){console.warn('PT:detail_focus_error');}}},
+  focusLater: function () {this.clearFocus();if(!this.active)return;var self=this;this.focusTimer=setTimeout(function(){self.focusTimer=0;if(self.alive && self.active)self.focus(true);},150);},
+  onScrollEnd: function () {console.info('PT:detail_scroll_end z='+this.z);},
+  onHide: function () {this.active=false;this.ticket++;this.clearFocus();this.focus(false);},
+  onDestroy: function () {this.onHide();this.alive=false;this.meta=null;},
+  retry: function () {if(this.meta)this.measure();else this.back();},
+  back: function () {if(this.leaving)return;this.leaving=true;this.onHide();console.info('PT:back z='+this.z);router.replace({uri:'pages/index/index'});}
 };

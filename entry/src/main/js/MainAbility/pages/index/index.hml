@@ -1,66 +1,26 @@
 <div class="page">
-  <div class="head" style="width: {{ pageW }}px;">
-    <text class="head-t" style="width: {{ headTW }}px;">{{ title }}</text>
-    <text class="head-b" style="width: {{ headBW }}px;">{{ badge }} · {{ zoomLabel }}</text>
-  </div>
-
-  <!-- 表冠纵向滚 + onswipe 横向滑动手势（skill：div 的 swipe 真机不触发，list 的 onswipe 可用） -->
-  <list class="table-list" ref="tableList" style="width: {{ listW }}px; height: {{ listH }}px;" onswipe="onSwipe">
-    <list-item class="row" style="width: {{ listW }}px; height: {{ ch }}px;">
-      <div class="cell" for="{{ c in r0 }}" style="width: {{ cw }}px; height: {{ ch }}px; background-color: {{ c.bg }};" onclick="onOpenElement(c.z)">
-        <text class="csym" style="width: {{ cw }}px; color: {{ c.color }}; font-size: {{ c.fs }}px;">{{ c.sym }}</text>
-      </div>
-    </list-item>
-    <list-item class="row" style="width: {{ listW }}px; height: {{ ch }}px;">
-      <div class="cell" for="{{ c in r1 }}" style="width: {{ cw }}px; height: {{ ch }}px; background-color: {{ c.bg }};" onclick="onOpenElement(c.z)">
-        <text class="csym" style="width: {{ cw }}px; color: {{ c.color }}; font-size: {{ c.fs }}px;">{{ c.sym }}</text>
-      </div>
-    </list-item>
-    <list-item class="row" style="width: {{ listW }}px; height: {{ ch }}px;">
-      <div class="cell" for="{{ c in r2 }}" style="width: {{ cw }}px; height: {{ ch }}px; background-color: {{ c.bg }};" onclick="onOpenElement(c.z)">
-        <text class="csym" style="width: {{ cw }}px; color: {{ c.color }}; font-size: {{ c.fs }}px;">{{ c.sym }}</text>
-      </div>
-    </list-item>
-    <list-item class="row" style="width: {{ listW }}px; height: {{ ch }}px;">
-      <div class="cell" for="{{ c in r3 }}" style="width: {{ cw }}px; height: {{ ch }}px; background-color: {{ c.bg }};" onclick="onOpenElement(c.z)">
-        <text class="csym" style="width: {{ cw }}px; color: {{ c.color }}; font-size: {{ c.fs }}px;">{{ c.sym }}</text>
-      </div>
-    </list-item>
-    <list-item class="row" style="width: {{ listW }}px; height: {{ ch }}px;">
-      <div class="cell" for="{{ c in r4 }}" style="width: {{ cw }}px; height: {{ ch }}px; background-color: {{ c.bg }};" onclick="onOpenElement(c.z)">
-        <text class="csym" style="width: {{ cw }}px; color: {{ c.color }}; font-size: {{ c.fs }}px;">{{ c.sym }}</text>
-      </div>
-    </list-item>
-    <list-item class="row" style="width: {{ listW }}px; height: {{ ch }}px;">
-      <div class="cell" for="{{ c in r5 }}" style="width: {{ cw }}px; height: {{ ch }}px; background-color: {{ c.bg }};" onclick="onOpenElement(c.z)">
-        <text class="csym" style="width: {{ cw }}px; color: {{ c.color }}; font-size: {{ c.fs }}px;">{{ c.sym }}</text>
-      </div>
-    </list-item>
-    <list-item class="row" style="width: {{ listW }}px; height: {{ ch }}px;">
-      <div class="cell" for="{{ c in r6 }}" style="width: {{ cw }}px; height: {{ ch }}px; background-color: {{ c.bg }};" onclick="onOpenElement(c.z)">
-        <text class="csym" style="width: {{ cw }}px; color: {{ c.color }}; font-size: {{ c.fs }}px;">{{ c.sym }}</text>
-      </div>
-    </list-item>
-    <list-item class="frow" style="width: {{ listW }}px; height: {{ ch }}px;">
-      <div class="cell" for="{{ c in r7 }}" style="width: {{ cw }}px; height: {{ ch }}px; background-color: {{ c.bg }};" onclick="onOpenElement(c.z)">
-        <text class="csym" style="width: {{ cw }}px; color: {{ c.color }}; font-size: {{ c.fs }}px;">{{ c.sym }}</text>
-      </div>
-    </list-item>
-    <list-item class="frow2" style="width: {{ listW }}px; height: {{ ch }}px;">
-      <div class="cell" for="{{ c in r8 }}" style="width: {{ cw }}px; height: {{ ch }}px; background-color: {{ c.bg }};" onclick="onOpenElement(c.z)">
-        <text class="csym" style="width: {{ cw }}px; color: {{ c.color }}; font-size: {{ c.fs }}px;">{{ c.sym }}</text>
-      </div>
-    </list-item>
-  </list>
-
-  <div class="legend" style="width: {{ pageW }}px;">
-    <text class="legend-t" style="width: {{ legendTW }}px;">{{ hint }}</text>
-  </div>
-
-  <!-- 底部工具条：固定尺寸，缩放不随之缩放。左侧 − / ＋ 只缩放元素格；右侧 ◀ ▶ 已删，横滑换列 -->
-  <div class="zoombar" style="width: {{ pageW }}px;">
-    <div class="zb" style="width: {{ zbW }}px;" onclick="zoomOut()"><text class="zb-t" style="width: {{ zbW }}px;">－</text></div>
-    <div class="zb zbl" style="width: {{ zbLW }}px;"><text class="zb-l" style="width: {{ zbLW }}px;">{{ zoomLabel }}</text></div>
-    <div class="zb" style="width: {{ zbW }}px;" onclick="zoomIn()"><text class="zb-t" style="width: {{ zbW }}px;">＋</text></div>
+  <div class="loading" if="{{!ready}}" @click="measure"><text class="loading-t">{{error}}</text></div>
+  <div class="body" if="{{ready}}" style="width: {{w}}px; height: {{h}}px;">
+    <div class="head" style="width: {{headerW}}px; height: {{headerH}}px;">
+      <text class="title" style="width: {{titleW}}px; height: {{captionH}}px; font-size: {{titleFont}}px;">&#x5143;&#x7D20;&#x5468;&#x671F;&#x8868;</text>
+      <text class="badge" style="width: {{badgeW}}px; height: {{textH}}px; font-size: {{smallFont}}px;">118 &#x5143;&#x7D20;</text>
+    </div>
+    <list ref="tableList" class="table" style="width: {{tableW}}px; height: {{listH}}px;" onswipe="onSwipe" onscrollend="onScrollEnd" @touchstart="touchStart" @touchmove="touchMove">
+      <list-item class="canvas-row" style="width: {{tableW}}px; height: {{tileH}}px;"><canvas if="{{canvasOn}}" ref="c0" class="periodic-canvas" style="width: {{tableW}}px; height: {{tileH}}px;" @touchstart="touchStart" @click="openRow(0)"></canvas></list-item>
+      <list-item class="canvas-row" style="width: {{tableW}}px; height: {{tileH}}px;"><canvas if="{{canvasOn}}" ref="c1" class="periodic-canvas" style="width: {{tableW}}px; height: {{tileH}}px;" @touchstart="touchStart" @click="openRow(1)"></canvas></list-item>
+      <list-item class="canvas-row" style="width: {{tableW}}px; height: {{tileH}}px;"><canvas if="{{canvasOn}}" ref="c2" class="periodic-canvas" style="width: {{tableW}}px; height: {{tileH}}px;" @touchstart="touchStart" @click="openRow(2)"></canvas></list-item>
+      <list-item class="canvas-row" style="width: {{tableW}}px; height: {{tileH}}px;"><canvas if="{{canvasOn}}" ref="c3" class="periodic-canvas" style="width: {{tableW}}px; height: {{tileH}}px;" @touchstart="touchStart" @click="openRow(3)"></canvas></list-item>
+      <list-item class="canvas-row" style="width: {{tableW}}px; height: {{tileH}}px;"><canvas if="{{canvasOn}}" ref="c4" class="periodic-canvas" style="width: {{tableW}}px; height: {{tileH}}px;" @touchstart="touchStart" @click="openRow(4)"></canvas></list-item>
+      <list-item class="canvas-row" style="width: {{tableW}}px; height: {{tileH}}px;"><canvas if="{{canvasOn}}" ref="c5" class="periodic-canvas" style="width: {{tableW}}px; height: {{tileH}}px;" @touchstart="touchStart" @click="openRow(5)"></canvas></list-item>
+      <list-item class="canvas-row" style="width: {{tableW}}px; height: {{tileH}}px;"><canvas if="{{canvasOn}}" ref="c6" class="periodic-canvas" style="width: {{tableW}}px; height: {{tileH}}px;" @touchstart="touchStart" @click="openRow(6)"></canvas></list-item>
+      <list-item class="canvas-row" style="width: {{tableW}}px; height: {{tileH}}px;"><canvas if="{{canvasOn}}" ref="c7" class="periodic-canvas" style="width: {{tableW}}px; height: {{tileH}}px;" @touchstart="touchStart" @click="openRow(7)"></canvas></list-item>
+      <list-item class="canvas-row" style="width: {{tableW}}px; height: {{tileH}}px;"><canvas if="{{canvasOn}}" ref="c8" class="periodic-canvas" style="width: {{tableW}}px; height: {{tileH}}px;" @touchstart="touchStart" @click="openRow(8)"></canvas></list-item>
+    </list>
+    <div class="hint" style="width: {{tableW}}px; height: {{hintH}}px;"><text style="width: {{tableW}}px; height: {{textH}}px; font-size: {{smallFont}}px;">{{hint}}</text></div>
+    <div class="footer" style="width: {{footerW}}px; height: {{footerH}}px;">
+      <div class="tool" style="width: {{btnW}}px; height: {{footerH}}px; margin-left: {{btnGap}}px; margin-right: {{btnGap}}px;" @click="zoomOut"><text class="tool-symbol" style="height: {{captionH}}px; font-size: {{controlFont}}px;">&#x2212;</text></div>
+      <div class="tool reset" style="width: {{btnW}}px; height: {{footerH}}px; margin-left: {{btnGap}}px; margin-right: {{btnGap}}px;" @click="reset"><text class="zoom" style="height: {{captionH}}px; font-size: {{font}}px;">{{zoomLabel}}</text></div>
+      <div class="tool" style="width: {{btnW}}px; height: {{footerH}}px; margin-left: {{btnGap}}px; margin-right: {{btnGap}}px;" @click="zoomIn"><text class="tool-symbol" style="height: {{captionH}}px; font-size: {{controlFont}}px;">+</text></div>
+    </div>
   </div>
 </div>

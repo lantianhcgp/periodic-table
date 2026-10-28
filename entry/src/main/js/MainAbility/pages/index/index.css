@@ -1,116 +1,18 @@
-/* 100% 自适应布局：根容器 width/height 100%（lite 唯一合法百分比用法，随设备分辨率自适应）；
-   内部容器宽度由 JS @system.device 实测窗口算出并内联绑定（pageW/listW/cw），CSS 只定高度与视觉。
-   不写死任何分辨率像素。 */
-.page {
-  width: 100%;
-  height: 100%;
-  background-color: #0d0d16;
-  flex-direction: column;
-  align-items: center;
-}
-
-.head {
-  height: 34px;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 6px;
-}
-
-.head-t {
-  font-size: 18px;
-  color: #ffffff;
-  font-weight: bold;
-}
-
-.head-b {
-  font-size: 11px;
-  color: #4dd0e1;
-}
-
-/* 表冠纵向滚动 <list>：$refs.tableList.rotation({focus}) 授表冠焦点；onswipe 横向手势换列 */
-.table-list {
-  flex-direction: column;
-  background-color: #0d0d16;
-  margin-top: 4px;
-}
-
-.row {
-  flex-direction: row;
-  justify-content: center;
-}
-
-.frow {
-  flex-direction: row;
-  justify-content: center;
-  margin-top: 8px;
-}
-
-.frow2 {
-  flex-direction: row;
-  justify-content: center;
-  margin-top: 4px;
-}
-
-.cell {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.csym {
-  text-align: center;
-}
-
-/* 图例行：宽度内联绑定 pageW，视觉固定 */
-.legend {
-  height: 24px;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  margin-top: 6px;
-}
-
-.legend-t {
-  font-size: 10px;
-  color: #8a8a9a;
-  text-align: center;
-}
-
-/* 缩放工具条：固定 3 按钮（－ ⊕ ＋），只缩放元素格、本条尺寸不变（100% 宽随屏自适应） */
-.zoombar {
-  height: 44px;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2px;
-}
-
-.zb {
-  width: 72px;
-  height: 34px;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  background-color: #1a1a28;
-  border-radius: 8px;
-  margin-left: 8px;
-  margin-right: 8px;
-}
-
-.zb-t {
-  font-size: 18px;
-  color: #4dd0e1;
-  text-align: center;
-}
-
-.zbl {
-  background-color: #10222b;
-}
-
-.zb-l {
-  font-size: 14px;
-  color: #ffffff;
-  font-weight: bold;
-  text-align: center;
-}
+/* Only the root is 100%; child geometry comes from real SDK window data. */
+.page { width: 100%; height: 100%; background-color: #0c1119; flex-direction: column; align-items: center; }
+.loading { width: 100%; height: 100%; flex-direction: column; align-items: center; justify-content: center; }
+.loading-t { font-size: 20px; color: #becbd8; }
+.body { flex-direction: column; align-items: center; }
+.head { flex-direction: row; align-items: center; justify-content: space-between; }
+.title { color: #edf3fa; font-weight: bold; }
+.badge { color: #8ab8c8; text-align: right; }
+.table { flex-direction: column; background-color: #0c1119; }
+.canvas-row { flex-direction: row; background-color: #0c1119; }
+.periodic-canvas { background-color: #0c1119; }
+.hint { align-items: center; justify-content: center; }
+.hint text { color: #a8b8c8; text-align: center; }
+.footer { flex-direction: row; align-items: center; justify-content: center; }
+.tool { background-color: #213141; border-radius: 12px; flex-direction: row; align-items: center; justify-content: center; }
+.reset { background-color: #1d3b43; }
+.tool-symbol { color: #67ded2; text-align: center; }
+.zoom { color: #edf3fa; text-align: center; }

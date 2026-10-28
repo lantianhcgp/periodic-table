@@ -1,8 +1,9 @@
+import catalog from './common/catalog';
 export default {
-  onCreate: function () {
-    console.info("Application onCreate");
-  },
-  onDestroy: function () {
-    console.info("Application onDestroy");
-  }
+  selectedElement: 0,
+  tableZoom: 1,
+  tableColumn: 0,
+  getElement: function (z) { return catalog.get(z); },
+  onCreate: function () { console.info('PT:app_create'); },
+  onDestroy: function () { console.info('PT:app_destroy'); }
 };
