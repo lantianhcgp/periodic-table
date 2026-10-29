@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Audit the actual Lite .app/.hap payload, including Huawei signed.bin containers."""
 import argparse
+import hashlib
 import io
 import json
 import struct
@@ -11,6 +12,10 @@ from typing import NoReturn
 
 LIMIT=49152
 SIGN_MAGIC=b'hw signed app   '
+ROOT=Path(__file__).resolve().parents[1]
+ATLAS_SOURCE='entry/src/main/js/MainAbility/common/periodic_table_atlas.png'
+ATLAS_ENTRY='assets/js/MainAbility/common/periodic_table_atlas.png.bin'
+ATLAS_SIZE=(1152,648)
 
 
 def fail(message)->NoReturn:
@@ -67,6 +72,50 @@ def load_artifact(path):
     fail('neither Lite .app, unsigned .hap nor signed .hap payload: '+str(path))
 
 
+def audit_atlas(blob):
+    """Verify decoded atlas bytes against host-only, source-bound metadata.
+
+    periodic-table-27's real icon/icon_small bins match their complete source
+    PNGs as top-down BGRA8888 after this 8-byte header. Unknown SDK formats
+    fail closed; never infer validity from a filename or an upper size bound.
+    """
+    try:
+        manifest=json.loads((ROOT/'tools/atlas_manifest.json').read_text(encoding='utf-8'))
+    except (OSError,ValueError) as exc:
+        fail('cannot read atlas manifest: '+str(exc))
+    if (not isinstance(manifest,dict) or type(manifest.get('schema_version')) is not int
+            or manifest.get('schema_version')!=1 or manifest.get('source')!=ATLAS_SOURCE
+            or manifest.get('pixel_format')!='BGRA8888'):
+        fail('invalid atlas manifest metadata')
+    if (any(type(manifest.get(key)) is not int for key in ('width','height'))
+            or (manifest.get('width'),manifest.get('height'))!=ATLAS_SIZE):
+        fail('atlas manifest dimensions must be 1152x648')
+    for key in ('source_png_sha256','pixels_bgra_sha256'):
+        digest=manifest.get(key)
+        if (not isinstance(digest,str) or len(digest)!=64
+                or any(c not in '0123456789abcdef' for c in digest)):
+            fail('invalid atlas manifest '+key)
+    try:
+        source_hash=hashlib.sha256((ROOT/ATLAS_SOURCE).read_bytes()).hexdigest()
+    except OSError as exc:
+        fail('cannot read atlas source PNG: '+str(exc))
+    if source_hash!=manifest['source_png_sha256']:
+        fail('atlas source PNG sha256 mismatch; regenerate tools/atlas_manifest.json')
+    if len(blob)<8 or blob[:4]!=b'\x00\x01\x00\x00':
+        fail('invalid atlas image bin header: '+blob[:8].hex())
+    width,height=struct.unpack_from('<HH',blob,4)
+    if (width,height)!=ATLAS_SIZE:
+        fail('atlas image bin dimensions must be 1152x648, got %dx%d' % (width,height))
+    expected_length=8+width*height*4
+    if len(blob)!=expected_length:
+        fail('atlas image bin length mismatch: %d != %d' % (len(blob),expected_length))
+    pixel_hash=hashlib.sha256(memoryview(blob)[8:]).hexdigest()
+    if pixel_hash!=manifest['pixels_bgra_sha256']:
+        fail('atlas pixel sha256 mismatch: '+pixel_hash+' != '+manifest['pixels_bgra_sha256'])
+    return {'width':width,'height':height,'pixel_format':'BGRA8888',
+            'source_png_sha256':source_hash,'pixels_bgra_sha256':pixel_hash}
+
+
 def audit(app_path):
     app_path=Path(app_path)
     entries,container,payload_name,signed_bundle,payload_bytes=load_artifact(app_path)
@@ -83,12 +132,20 @@ def audit(app_path):
     if tile_entries:fail('per-element bitmap leaked into package: '+','.join(tile_entries[:8]))
     image_bins={name:len(content) for name,content in entries.items()
                 if name.endswith(('.png.bin','.jpg.bin','.jpeg.bin','.bmp.bin'))}
+    atlas=[n for n in image_bins if n.endswith('/common/periodic_table_atlas.png.bin')]
+    if len(atlas)!=1:fail('expected exactly one periodic table atlas, got '+str(len(atlas)))
+    if atlas[0]!=ATLAS_ENTRY:fail('periodic table atlas must be at '+ATLAS_ENTRY+', got '+atlas[0])
     unexpected=[n for n in image_bins if not n.endswith('/media/icon.png.bin')
-                and not n.endswith('/media/icon_small.png.bin')]
+                and not n.endswith('/media/icon_small.png.bin')
+                and n!=ATLAS_ENTRY]
     if unexpected:fail('unexpected packaged image bins: '+','.join(unexpected[:8]))
     for suffix in ('/media/icon.png.bin','/media/icon_small.png.bin'):
         if not any(n.endswith(suffix) for n in image_bins):fail('missing launcher image bin '+suffix)
-    if sum(image_bins.values())>100000:fail('launcher image bins unexpectedly large: '+str(sum(image_bins.values())))
+    icon_total=sum(size for name,size in image_bins.items() if '/media/icon' in name)
+    if icon_total>100000:fail('launcher image bins unexpectedly large: '+str(icon_total))
+    if image_bins[atlas[0]]>3100000:fail('periodic table atlas image bin too large: '+str(image_bins[atlas[0]]))
+    if sum(image_bins.values())>3200000:fail('total image bins unexpectedly large: '+str(sum(image_bins.values())))
+    atlas_validation=audit_atlas(entries[atlas[0]])
     if 'config.json' not in entries:fail('payload missing config.json')
     config=json.loads(entries['config.json'].decode('utf-8'));app=config.get('app') or {};version=app.get('version') or {}
     if app.get('bundleName')!='periodic.nexus.qu84q':fail('wrong bundleName '+str(app.get('bundleName')))
@@ -98,7 +155,8 @@ def audit(app_path):
     if version.get('name')!='1.1.0':fail('wrong version name '+str(version.get('name')))
     return {'artifact':str(app_path),'container':container,'payload':payload_name,
             'payload_bytes':payload_bytes,'compiled_js_bytes':js,'page_limit_bytes':LIMIT,
-            'image_bins':image_bins,'image_bin_total':sum(image_bins.values()),
+            'image_bins':image_bins,'image_bin_total':sum(image_bins.values()),'atlas_image_bin':atlas[0],
+            'atlas_validation':atlas_validation,
             'bundleName':app.get('bundleName'),'signed_bundle_header':signed_bundle,
             'version':version,'verdict':'PASS'}
 

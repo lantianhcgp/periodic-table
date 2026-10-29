@@ -5,22 +5,9 @@
       <text class="title" style="width: {{titleW}}px; height: {{captionH}}px; font-size: {{titleFont}}px;">&#x5143;&#x7D20;&#x5468;&#x671F;&#x8868;</text>
       <text class="badge" style="width: {{badgeW}}px; height: {{textH}}px; font-size: {{smallFont}}px;">118 &#x5143;&#x7D20;</text>
     </div>
-    <list if="{{listOn}}" ref="tableList" class="table" style="width: {{tableW}}px; height: {{listH}}px;" onswipe="onSwipe" onscrollend="onScrollEnd" @touchstart="touchStart" @touchmove="touchMove">
-      <list-item class="canvas-row" style="width: {{tableW}}px; height: {{tileH}}px;"><canvas if="{{canvasOn}}" ref="c0" class="periodic-canvas" style="width: {{tableW}}px; height: {{tileH}}px;" @touchstart="touchStart" @click="openRow0"></canvas></list-item>
-      <list-item class="canvas-row" style="width: {{tableW}}px; height: {{tileH}}px;"><canvas if="{{canvasOn}}" ref="c1" class="periodic-canvas" style="width: {{tableW}}px; height: {{tileH}}px;" @touchstart="touchStart" @click="openRow1"></canvas></list-item>
-      <list-item class="canvas-row" style="width: {{tableW}}px; height: {{tileH}}px;"><canvas if="{{canvasOn}}" ref="c2" class="periodic-canvas" style="width: {{tableW}}px; height: {{tileH}}px;" @touchstart="touchStart" @click="openRow2"></canvas></list-item>
-      <list-item class="canvas-row" style="width: {{tableW}}px; height: {{tileH}}px;"><canvas if="{{canvasOn}}" ref="c3" class="periodic-canvas" style="width: {{tableW}}px; height: {{tileH}}px;" @touchstart="touchStart" @click="openRow3"></canvas></list-item>
-      <list-item class="canvas-row" style="width: {{tableW}}px; height: {{tileH}}px;"><canvas if="{{canvasOn}}" ref="c4" class="periodic-canvas" style="width: {{tableW}}px; height: {{tileH}}px;" @touchstart="touchStart" @click="openRow4"></canvas></list-item>
-      <list-item class="canvas-row" style="width: {{tableW}}px; height: {{tileH}}px;"><canvas if="{{canvasOn}}" ref="c5" class="periodic-canvas" style="width: {{tableW}}px; height: {{tileH}}px;" @touchstart="touchStart" @click="openRow5"></canvas></list-item>
-      <list-item class="canvas-row" style="width: {{tableW}}px; height: {{tileH}}px;"><canvas if="{{canvasOn}}" ref="c6" class="periodic-canvas" style="width: {{tableW}}px; height: {{tileH}}px;" @touchstart="touchStart" @click="openRow6"></canvas></list-item>
-      <list-item class="canvas-row" style="width: {{tableW}}px; height: {{tileH}}px;"><canvas if="{{canvasOn}}" ref="c7" class="periodic-canvas" style="width: {{tableW}}px; height: {{tileH}}px;" @touchstart="touchStart" @click="openRow7"></canvas></list-item>
-      <list-item class="canvas-row" style="width: {{tableW}}px; height: {{tileH}}px;"><canvas if="{{canvasOn}}" ref="c8" class="periodic-canvas" style="width: {{tableW}}px; height: {{tileH}}px;" @touchstart="touchStart" @click="openRow8"></canvas></list-item>
-    </list>
-    <div class="hint" style="width: {{tableW}}px; height: {{hintH}}px;"><text style="width: {{tableW}}px; height: {{textH}}px; font-size: {{smallFont}}px;">{{hint}}</text></div>
-    <div class="footer" style="width: {{footerW}}px; height: {{footerH}}px;">
-      <div class="tool" style="width: {{btnW}}px; height: {{footerH}}px; margin-left: {{btnGap}}px; margin-right: {{btnGap}}px;" @click="zoomOut"><text class="tool-symbol" style="height: {{captionH}}px; font-size: {{controlFont}}px;">&#x2212;</text></div>
-      <div class="tool reset" style="width: {{btnW}}px; height: {{footerH}}px; margin-left: {{btnGap}}px; margin-right: {{btnGap}}px;" @click="reset"><text class="zoom" style="height: {{captionH}}px; font-size: {{font}}px;">{{zoomLabel}}</text></div>
-      <div class="tool" style="width: {{btnW}}px; height: {{footerH}}px; margin-left: {{btnGap}}px; margin-right: {{btnGap}}px;" @click="zoomIn"><text class="tool-symbol" style="height: {{captionH}}px; font-size: {{controlFont}}px;">+</text></div>
-    </div>
+    <stack class="viewport" style="width: {{viewportW}}px; height: {{viewportH}}px;" @touchstart="touchStart" @touchmove="touchMove" @touchend="touchEnd" @touchcancel="touchCancel" @click="tap">
+      <slider class="crown-proxy" ref="panCrown" min="0" max="100" value="{{crownValue}}" @change="listenCrown"></slider>
+      <image class="atlas" src="/common/periodic_table_atlas.png" style="width: {{atlasW}}px; height: {{atlasH}}px; left: {{imageLeft}}px; top: {{imageTop}}px;"></image>
+    </stack>
   </div>
 </div>

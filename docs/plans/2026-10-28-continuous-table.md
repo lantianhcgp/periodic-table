@@ -6,7 +6,9 @@
 
 **Architecture:** Generate one reproducible 18×9 PNG atlas from the existing grid labels and bundled CJK font. Render it as one dynamically positioned `<image>` inside a clipped `<stack>` viewport; keep only scalar pan state and map taps back to grid coordinates.
 
-**Tech Stack:** HarmonyOS Lite HML/CSS/ES5 JavaScript, Python/Pillow asset generator, Node test harness, GitHub Actions HarmonyOS build, official Lite Simulator.
+**Tech Stack:** HarmonyOS Lite HML/CSS/ES5 JavaScript, Python/Pillow asset generator, Node test harness, GitHub Actions HarmonyOS build, hmlwsim browser simulator (user choice 2026-10-29).
+
+**Acceptance update:** Official scripts in Task 4 are retained as manual tooling, not run for this delivery. Task 6 uses the user's friend's hmlwsim with the exact build artifact; browser evidence does not prove the 512KB JerryScript heap or true-device image memory behavior.
 
 ---
 
@@ -78,7 +80,7 @@
 
 **Steps:**
 1. Wait for GitHub build; require unsigned build, payload audit, signing, signature verification, and final signed audit all green.
-2. Run official macOS ARM64 Simulator; visually inspect cold frame, continuous partial drag positions, detail route, return, and stress frames.
+2. Run pinned hmlwsim locally through CDP; inspect cold frame, continuous partial drag positions, crown input, Cl isotope/detail/back route, and repeated-operation frames. Do not claim a 512KB JerryScript runtime test.
 3. Download signed HAP, rerun local CMS verification, confirm bundle/version/SHA.
 4. Copy to `/storage/emulated/0/haps/periodic-table-20261029-continuous-v1.1.0.hap` (date adjusted to actual build date).
 5. Report simulator evidence and clearly mark true-device behavior as pending the user's morning test.

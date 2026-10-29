@@ -1,18 +1,11 @@
-/* Only the root is 100%; child geometry comes from real SDK window data. */
-.page { width: 100%; height: 100%; background-color: #0c1119; flex-direction: column; align-items: center; }
+/* Root is 100%; all child geometry comes from live window dimensions. */
+.page { width: 100%; height: 100%; background-color: #0d1017; flex-direction: column; align-items: center; }
 .loading { width: 100%; height: 100%; flex-direction: column; align-items: center; justify-content: center; }
 .loading-t { font-size: 20px; color: #becbd8; }
 .body { flex-direction: column; align-items: center; }
 .head { flex-direction: row; align-items: center; justify-content: space-between; }
 .title { color: #edf3fa; font-weight: bold; }
 .badge { color: #8ab8c8; text-align: right; }
-.table { flex-direction: column; background-color: #0c1119; }
-.canvas-row { flex-direction: row; background-color: #0c1119; }
-.periodic-canvas { background-color: #0c1119; }
-.hint { align-items: center; justify-content: center; }
-.hint text { color: #a8b8c8; text-align: center; }
-.footer { flex-direction: row; align-items: center; justify-content: center; }
-.tool { background-color: #213141; border-radius: 12px; flex-direction: row; align-items: center; justify-content: center; }
-.reset { background-color: #1d3b43; }
-.tool-symbol { color: #67ded2; text-align: center; }
-.zoom { color: #edf3fa; text-align: center; }
+.viewport { background-color: #0d1017; overflow: hidden; }
+.crown-proxy { width: 1px; height: 1px; top: 0px; left: 0px; opacity: 0; }
+.atlas { top: 0px; left: 0px; }

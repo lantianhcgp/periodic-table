@@ -5,10 +5,8 @@
 # 计费：public 仓标准 runner 免费无限。
 # FIT3 主验由本仓 qa/official_capture.py 驱动：验证真实缩放、横滑、Cl详情、返回及512KB压力。
 name: sim-preview
+# 2026-10-29: user chose hmlwsim for local acceptance; official runs are opt-in only.
 on:
-  workflow_run:
-    workflows: [build]
-    types: [completed]
   workflow_dispatch:
 
 jobs:

@@ -1,0 +1,9 @@
+{
+  "height": 648,
+  "pixel_format": "BGRA8888",
+  "pixels_bgra_sha256": "b25a00a590b5ca32a744274f02e9412587d19cea225dba26e38011370c1a8a4a",
+  "schema_version": 1,
+  "source": "entry/src/main/js/MainAbility/common/periodic_table_atlas.png",
+  "source_png_sha256": "9400e220c65f338a847bc91d994a5ec21054804f4b4ed2d506d56489c691d4c4",
+  "width": 1152
+}

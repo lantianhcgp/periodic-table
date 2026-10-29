@@ -11,44 +11,43 @@ var GRID = [
   [0,0,0,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103]
 ];
 function clamp(n,a,b) { return Math.max(a,Math.min(b,n)); }
-function level(z) { return z===2 || z===3 ? z : 1; }
 function viewport(info) {
   if (!info || typeof info.windowWidth!=='number' || typeof info.windowHeight!=='number') return null;
   var w=info.windowWidth, h=info.windowHeight;
   if (!(w>0) || !(h>0) || !isFinite(w) || !isFinite(h)) return null;
   return {w:Math.floor(w),h:Math.floor(h)};
 }
-function layout(w,h,z) {
-  z=level(z);
-  var margin=Math.round(w*0.035), tableW=w-2*margin;
-  var headerH=Math.floor(h*0.13), hintH=Math.floor(h*0.055);
-  var footerH=Math.floor(h*0.10), bottomH=Math.ceil(h*0.16);
-  var footerW=Math.round(w*0.76), btnGap=Math.round(w*0.012);
+function layout(w,h) {
+  var margin=Math.max(8,Math.round(w*0.032));
+  var available=w-margin*2;
+  var viewportW=Math.floor(available/6)*6;
+  var tileW=viewportW/6;
+  var tileH=Math.round(tileW*72/64);
+  var headerH=Math.floor(h*0.12);
+  var safeBottom=Math.max(20,Math.round(h*0.06));
+  var viewportH=h-headerH-safeBottom;
   var font=Math.max(14,Math.round(w*0.045));
+  var footerH=Math.floor(h*0.10),detailBottom=Math.ceil(h*0.16);
   return {
-    w:w,h:h,margin:margin,tableW:tableW,headerW:Math.round(w*0.72),
-    cols:6/z,tileW:tableW/6*z,tileH:Math.round(tableW/6*z*128/114),
-    headerH:headerH,hintH:hintH,footerH:footerH,bottomH:bottomH,
-    listH:h-headerH-hintH-footerH-bottomH,
-    detailH:h-headerH-footerH-bottomH,footerBottom:h-bottomH,
-    footerW:footerW,btnGap:btnGap,btnW:Math.floor((footerW-btnGap*6)/3),
+    w:w,h:h,margin:Math.floor((w-viewportW)/2),headerW:Math.round(w*0.72),headerH:headerH,
+    tableW:viewportW,footerW:Math.round(w*0.76),footerH:footerH,
+    detailH:h-headerH-footerH-detailBottom,
+    viewportW:viewportW,viewportH:viewportH,safeBottom:safeBottom,
+    tileW:tileW,tileH:tileH,atlasW:tileW*18,atlasH:tileH*9,
     font:font,titleFont:Math.round(font*1.1),smallFont:Math.max(14,Math.round(font*0.84))
   };
 }
 function at(row,col) { return row>=0 && row<9 && col>=0 && col<18 ? GRID[row][col] : 0; }
-function columns(zoom) { return 6/level(zoom); }
-function cell(row,slot,start,zoom) {
-  var cols=columns(zoom);
-  if(slot<0 || slot>=cols || Math.floor(slot)!==slot)return 0;
-  start=clamp(Math.round(start),0,18-cols);
-  return at(row,start+slot);
+function clampPan(left,top,l) {
+  return {
+    left:clamp(left,l.viewportW-l.atlasW,0),
+    top:clamp(top,l.viewportH-l.atlasH,0)
+  };
 }
-function shift(start,zoom,direction) {
-  zoom=level(zoom); var cols=6/zoom;
-  var step=Math.max(1,cols-1);
-  if(direction==='left') start+=step;
-  else if(direction==='right') start-=step;
-  return clamp(start,0,18-cols);
+function hit(localX,localY,left,top,l) {
+  var x=localX-left, y=localY-top;
+  if(x<0 || y<0 || x>=l.atlasW || y>=l.atlasH)return 0;
+  return at(Math.floor(y/l.tileH),Math.floor(x/l.tileW));
 }
 function nucleus(z,a) {
   if(typeof z!=='number' || typeof a!=='number' || !isFinite(z) || !isFinite(a) || z<1 || z>118 || Math.floor(z)!==z || a<z || Math.floor(a)!==a) return null;
@@ -65,4 +64,4 @@ function wrap(text,columns) {
   }
   return out+line;
 }
-export default {viewport:viewport,layout:layout,at:at,cell:cell,columns:columns,shift:shift,nucleus:nucleus,wrap:wrap};
+export default {viewport:viewport,layout:layout,at:at,clampPan:clampPan,hit:hit,nucleus:nucleus,wrap:wrap};
